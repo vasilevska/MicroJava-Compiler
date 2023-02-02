@@ -1,0 +1,165 @@
+INFO  20:25:33,836 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  20:25:33,927 - #37 program
+INFO  20:25:33,927 - #47 test
+INFO  20:25:33,927 - #47 int
+INFO  20:25:33,929 - #47 x
+INFO  20:25:33,929 - #8 ,
+INFO  20:25:33,931 - #47 y
+INFO  20:25:33,932 - #43 ;
+INFO  20:25:33,932 - #47 char
+INFO  20:25:33,933 - #47 c
+INFO  20:25:33,933 - #28 [
+INFO  20:25:33,934 - #42 ]
+INFO  20:25:33,934 - #8 ,
+INFO  20:25:33,934 - #47 na
+INFO  20:25:33,934 - #8 ,
+INFO  20:25:33,934 - #47 n
+INFO  20:25:33,935 - #28 [
+INFO  20:25:33,935 - #42 ]
+INFO  20:25:33,937 - #8 ,
+INFO  20:25:33,937 - #47 k
+INFO  20:25:33,937 - #43 ;
+INFO  20:25:33,937 - #9 const
+INFO  20:25:33,937 - #47 int
+INFO  20:25:33,937 - #47 x
+INFO  20:25:33,941 - #4 =
+INFO  20:25:33,941 - #48 3
+INFO  20:25:33,942 - #43 ;
+INFO  20:25:33,944 - #25 {
+INFO  20:25:33,945 - #47 int
+INFO  20:25:33,946 - #47 main
+INFO  20:25:33,946 - #26 (
+INFO  20:25:33,946 - #41 )
+INFO  20:25:33,947 - #47 int
+INFO  20:25:33,948 - #47 f
+INFO  20:25:33,948 - #43 ;
+INFO  20:25:33,949 - #25 {
+INFO  20:25:33,949 - #36 print
+INFO  20:25:33,950 - #26 (
+INFO  20:25:33,950 - #48 3
+INFO  20:25:33,950 - #41 )
+INFO  20:25:33,953 - #43 ;
+INFO  20:25:33,953 - #38 }
+INFO  20:25:33,953 - #38 }
+INFO  20:25:33,962 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      DeclsVar(
+        NoDecl(
+        ) [NoDecl]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+         x
+          NotArray(
+          ) [NotArray]
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           y
+            NotArray(
+            ) [NotArray]
+          ) [ArrayVar]
+        ) [VarDecl]
+      ) [DeclsVar]
+      VarDecl(
+        Type(
+         char
+        ) [Type]
+       c
+        ArrayBrackets(
+        ) [ArrayBrackets]
+        ArrayVar(
+          ArrayVar(
+            ArrayVar(
+              NotIdentArray(
+              ) [NotIdentArray]
+             na
+              NotArray(
+              ) [NotArray]
+            ) [ArrayVar]
+           n
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [ArrayVar]
+         k
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       int
+      ) [Type]
+      AssignConst(
+       x
+        Assignop(
+        ) [Assignop]
+        IntConst(
+         3
+        ) [IntConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           f
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorNumber(
+                 3
+                ) [FactorNumber]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  20:25:33,963 - ===================================
+INFO  20:25:37,404 - Deklarisana promenljiva x na liniji 2
+INFO  20:25:38,037 - Deklarisana promenljiva c na liniji 3
+INFO  20:27:49,872 - Obradjuje se funkcija main na liniji 6
+INFO  20:27:51,141 - Deklarisana promenljiva f na liniji 6
+ERROR 20:27:51,141 - Semanticka greska na liniji 7: Operand instrukcije PRINT mora biti char ili int tipa
+ERROR 20:27:51,142 - Semanticka greska na liniji 6: funkcija main nema return iskaz!

@@ -1,0 +1,59 @@
+INFO  16:59:17,156 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  16:59:17,215 - #37 program
+INFO  16:59:17,215 - #47 test
+INFO  16:59:17,215 - #47 int
+INFO  16:59:17,217 - #47 x
+INFO  16:59:17,217 - #8 ,
+INFO  16:59:17,220 - #47 y
+INFO  16:59:17,220 - #43 ;
+INFO  16:59:17,220 - #47 char
+INFO  16:59:17,221 - #47 c
+INFO  16:59:17,221 - #43 ;
+INFO  16:59:17,221 - #25 {
+INFO  16:59:17,222 - #38 }
+INFO  16:59:17,230 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  16:59:17,234 - ===================================
+INFO  16:59:17,241 - Deklarisana promenljiva x na liniji 2
+INFO  16:59:17,241 - Deklarisana promenljiva c na liniji 3
+ERROR 16:59:17,241 - nema main-a
+INFO  16:59:17,242 -  Print count calls = 0
+INFO  16:59:17,242 -  Deklarisanih promenljivih ima = 3
+INFO  16:59:17,242 - ===================================
+ERROR 16:59:17,243 - Parsiranje NIJE uspesno zavrseno!

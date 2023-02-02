@@ -1,10 +1,13 @@
 package rs.ac.bg.etf.pp1;
 
 
+import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
+import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
+import rs.etf.pp1.symboltable.concepts.Struct;
 
 public class CodeGenerator extends VisitorAdaptor {
 
@@ -15,7 +18,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(StatementPrintExpr printStmt){
-		if(printStmt.getExpr().struct == Tab.intType){
+		if(printStmt.getExpr().struct != Tab.charType){
 			Code.loadConst(5);
 			Code.put(Code.print);
 		}else{
@@ -32,15 +35,29 @@ public class CodeGenerator extends VisitorAdaptor {
 		methodName.obj.setAdr(Code.pc);
 		// Collect arguments and local variables
 		MethodName methodNode = (MethodName) methodName.getParent();
+		VarCounter varCnt = new VarCounter();
+		methodNode.traverseTopDown(varCnt);
 		
+		FormParamCounter fpCnt = new FormParamCounter();
+		methodNode.traverseTopDown(fpCnt);
 		// Generate the entry
 		Code.put(Code.enter);
-		//Code.put(fpCnt.getCount());
-		//Code.put(fpCnt.getCount() + varCnt.getCount());
+		Code.put(fpCnt.getCount());
+		Code.put(fpCnt.getCount() + varCnt.getCount());
 	
 	}
 	
 	public void visit(MethodDecl methodDecl){
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	public void visit(StatementReturnExpr returnExpr){
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	public void visit(StatementReturnVoid returnNoExpr){
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
@@ -52,10 +69,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		Code.load(con);
 	}
-	
-	
-	
-
 	
 	public void visit(Assignment assignment){
 		Code.store(assignment.getDesignator().obj);
@@ -87,15 +100,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
-	public void visit(ReturnExpr returnExpr){
-		Code.put(Code.exit);
-		Code.put(Code.return_);
-	}
-	
-	public void visit(ReturnNoExpr returnNoExpr){
-		Code.put(Code.exit);
-		Code.put(Code.return_);
-	}
 	
 	public void visit(AddExpr addExpr){
 		Code.put(Code.add);

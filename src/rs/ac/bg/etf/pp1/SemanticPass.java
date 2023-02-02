@@ -14,15 +14,17 @@ public class SemanticPass extends VisitorAdaptor {
 	int varDeclCount = 0;
 	
 	Obj currentMethod = null;
-	Vector<Scope> scope = new Vector<Scope>(4);
+	//Vector<Scope> scope = new Vector<Scope>(10);
+	Vector<String> cur = new Vector<String>(10);
 	
 	boolean returnFound = false;
 	boolean errorDetected = false;
 	int nVars;
-	public static final Struct BOOL_STRUCT = new Struct(Struct.Bool);
+	public static final Struct boolType =  new Struct(Struct.Bool);
 	
     public SemanticPass() {
-        Tab.currentScope().addToLocals(new Obj(Obj.Type, "bool", BOOL_STRUCT));
+        Tab.currentScope().addToLocals(new Obj(Obj.Type, "bool", boolType));
+        
     }
     
 	Logger log = Logger.getLogger(getClass());
@@ -51,8 +53,11 @@ public class SemanticPass extends VisitorAdaptor {
     
 	public void visit(Program program){
     	nVars = Tab.currentScope.getnVars();
+    	Obj main = Tab.find("main");
+    	if(main == Tab.noObj) this.report_error("nema main-a", null); 
+    	
     	Tab.chainLocalSymbols(program.getProgName().obj);
-    	Tab.closeScope();
+    	Tab.closeScope();    	
     }
     
 	public void visit(ProgName progName){
@@ -78,7 +83,32 @@ public class SemanticPass extends VisitorAdaptor {
 	public void visit(VarDecl varDecl){
 		varDeclCount++;
 		report_info("Deklarisana promenljiva "+ varDecl.getI2(), varDecl);
-		Obj varNode = Tab.insert(Obj.Var, varDecl.getI2(), varDecl.getType().struct);
+		if(cur.firstElement() == "")
+			Tab.insert(Obj.Var, varDecl.getI2(), varDecl.getType().struct);
+		else
+			Tab.insert(Obj.Var, varDecl.getI2(), new Struct(Struct.Array, varDecl.getType().struct));
+		cur.remove(0);
+		
+		while(!cur.isEmpty()) {
+			varDeclCount++;
+			String el = cur.lastElement();
+			cur.remove(cur.size()-1);
+			if(cur.lastElement() == "")
+				Tab.insert(Obj.Var, el, varDecl.getType().struct);
+			else
+				Tab.insert(Obj.Var, el, new Struct(Struct.Array, varDecl.getType().struct));
+			cur.remove(cur.size()-1);
+		}
+	}
+	public void visit(ArrayVar varDecl) {
+		cur.add(varDecl.getI2());
+	}
+	
+	public void visit(NotArray noArr) {
+		cur.add("");
+	}
+	public void visit(ArrayBrackets brackets) {
+		cur.add("[]");
 	}
 	
 	public void visit(MethodNameType methodName){
@@ -95,7 +125,7 @@ public class SemanticPass extends VisitorAdaptor {
 		report_info("Obradjuje se funkcija " + methodName.getI1(), methodName);
     }
     
-    public void visit(MethodDecl methodDecl){
+    public void visit(MethodDeclDerived1 methodDecl){
     	if(!returnFound && currentMethod.getType() != Tab.noType){
 			report_error("Semanticka greska na liniji " + methodDecl.getLine() + ": funkcija " + currentMethod.getName() + " nema return iskaz!", null);
     	}
@@ -105,12 +135,14 @@ public class SemanticPass extends VisitorAdaptor {
     	returnFound = false;
     	currentMethod = null;
     }
-	
-	/*
-    public void visit(PrintStmt print) {
-    	if(print.getExpr().struct != Tab.intType && print.getExpr().struct!= Tab.charType) report_error ("Semanticka greska na liniji " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
+    
+    public void visit(StatementPrintExpr print) {
+    	if(print.getExpr().struct != Tab.intType && print.getExpr().struct!= Tab.charType && print.getExpr().struct!= boolType) report_error ("Semanticka greska na liniji " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
 		printCallCount++;
 	}
+	
+	/*
+    
     
     public void visit(Designator designator){
     	Obj obj = Tab.find(designator.getName());

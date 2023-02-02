@@ -66,6 +66,7 @@ nonterminal Const Const;
 nonterminal ConstDecl ConstDecl;
 nonterminal ConstructorDecl ConstructorDecl;
 nonterminal ConstructorDeclList ConstructorDeclList;
+nonterminal ConstructorName ConstructorName;
 nonterminal DeclList DeclList;
 nonterminal DesignList DesignList;
 nonterminal DesignatorStatement DesignatorStatement;
@@ -122,13 +123,14 @@ Condition ::= (Condition) CondTerm:C1 CondTermList:C2 {: RESULT=new Condition(C1
 Const ::= (IntConst) NUMBER:N1 {: RESULT=new IntConst(N1); RESULT.setLine(N1left); :} | (CharConst) CHAR:C1 {: RESULT=new CharConst(C1); RESULT.setLine(C1left); :} | (BoolConst) BOOL:B1 {: RESULT=new BoolConst(B1); RESULT.setLine(B1left); :};
 ConstDecl ::= (ConstDecl) CONST Type:T1 AssignConst:A2 RepeatConst:R3 SEMI {: RESULT=new ConstDecl(T1, A2, R3); RESULT.setLine(T1left); :};
 
-ConstructorDeclList ::= (ConstructorDecls) ConstructorDeclList:C1 ConstructorDecl:C2 {: RESULT=new ConstructorDecls(C1, C2); RESULT.setLine(C1left); :} | (NoConstructorDecl) {: RESULT=new NoConstructorDecl(); :}/* epsilon */ ;
-//ConstructorDecl ::= (ConstructorDecl)IDENT LPAREN OptionalFormPars RPAREN FunctionBody;
+ConstructorDeclList ::= (ConstructorDecls) ConstructorDeclList:C1 ConstructorDecl:C2 {: RESULT=new ConstructorDecls(C1, C2); RESULT.setLine(C1left); :} | (ConstructorSingleDecl) ConstructorDecl:C1 {: RESULT=new ConstructorSingleDecl(C1); RESULT.setLine(C1left); :} /* epsilon */ ;
+ConstructorDecl ::= (ConstructorDecl) ConstructorName:C1 LPAREN OptionalFormPars:O2 RPAREN FunctionBody:F3 {: RESULT=new ConstructorDecl(C1, O2, F3); RESULT.setLine(C1left); :};
+ConstructorName ::= (ConstructorName) IDENT:I1 {: RESULT=new ConstructorName(I1); RESULT.setLine(I1left); :};
 
 DeclList ::= (DeclsConst) DeclList:D1 ConstDecl:C2 {: RESULT=new DeclsConst(D1, C2); RESULT.setLine(D1left); :} | (DeclsVar) DeclList:D1 VarDecl:V2 {: RESULT=new DeclsVar(D1, V2); RESULT.setLine(D1left); :} | (DeclsClass) DeclList:D1 ClassDecl:C2 {: RESULT=new DeclsClass(D1, C2); RESULT.setLine(D1left); :} | (NoDecl) {: RESULT=new NoDecl(); :}/* epsilon */ ;
 DesignList ::= (DesignListMulti) DesignList:D1 COMMA OptionalDesign:O2 {: RESULT=new DesignListMulti(D1, O2); RESULT.setLine(D1left); :} | (NoDesignList) {: RESULT=new NoDesignList(); :} /* epsilon */ ;
 Designator ::= (Designator) IDENT:I1 OptionalDesignList:O2 {: RESULT=new Designator(I1, O2); RESULT.setLine(I1left); :};
-DesignatorStatement ::= (DesignatorStatementBase) Designator:D1 {: RESULT=new DesignatorStatementBase(D1); RESULT.setLine(D1left); :} | (DesignatorStatementAssignExpr) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesignatorStatementAssignExpr(D1, A2, E3); RESULT.setLine(D1left); :} | (DesignatorStatementParens) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorStatementParens(D1); RESULT.setLine(D1left); :} | (DesignatorStatementActPars) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorStatementActPars(D1, A2); RESULT.setLine(D1left); :} | (DesignatorStatementInc) Designator:D1 INC {: RESULT=new DesignatorStatementInc(D1); RESULT.setLine(D1left); :} | (DesignatorStatementDec) Designator:D1 DEC {: RESULT=new DesignatorStatementDec(D1); RESULT.setLine(D1left); :} | (DesignatorStatementListAssign) LSQUARE OptionalDesign:O1 DesignList:D2 RSQUARE AssignDesign:A3 {: RESULT=new DesignatorStatementListAssign(O1, D2, A3); RESULT.setLine(O1left); :} ; // | (DesignatorStatementForeach) Designator DOT FOREACH LPAREN IDENT NEXT Statement RPAREN SEMI;
+DesignatorStatement ::= (DesignatorStatementBase) Designator:D1 {: RESULT=new DesignatorStatementBase(D1); RESULT.setLine(D1left); :} | (DesignatorStatementAssignExpr) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesignatorStatementAssignExpr(D1, A2, E3); RESULT.setLine(D1left); :} | (DesignatorStatementParens) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorStatementParens(D1); RESULT.setLine(D1left); :} | (DesignatorStatementActPars) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorStatementActPars(D1, A2); RESULT.setLine(D1left); :} | (DesignatorStatementInc) Designator:D1 INC {: RESULT=new DesignatorStatementInc(D1); RESULT.setLine(D1left); :} | (DesignatorStatementDec) Designator:D1 DEC {: RESULT=new DesignatorStatementDec(D1); RESULT.setLine(D1left); :} | (DesignatorStatementListAssign) LSQUARE OptionalDesign:O1 DesignList:D2 RSQUARE AssignDesign:A3 {: RESULT=new DesignatorStatementListAssign(O1, D2, A3); RESULT.setLine(O1left); :} ; // | (StatementForeach) Designator DOT FOREACH LPAREN IDENT NEXT Statement RPAREN SEMI;
 EmptySqBrackets ::= (ArrayBrackets) LSQUARE RSQUARE {: RESULT=new ArrayBrackets(); :} | (NotArray) {: RESULT=new NotArray(); :} /* epsilon */ ;
 Expr ::= (ExprBase) Term:T1 AddTermList:A2 {: RESULT=new ExprBase(T1, A2); RESULT.setLine(T1left); :} | (ExprSub) SUB Term:T1 AddTermList:A2 {: RESULT=new ExprSub(T1, A2); RESULT.setLine(T1left); :};
 ExprList ::= (Exprs) ExprList:E1 COMMA Expr:E2 {: RESULT=new Exprs(E1, E2); RESULT.setLine(E1left); :} | (NoExpr) {: RESULT=new NoExpr(); :} /* epsiolon*/;
@@ -143,7 +145,7 @@ MethodName ::= (MethodNameVoid) VOID IDENT:I1 LPAREN OptionalFormPars:O2 RPAREN 
 MulFactorList ::= (MulFactors) MulFactorList:M1 MulOpp:M2 Factor:F3 {: RESULT=new MulFactors(M1, M2, F3); RESULT.setLine(M1left); :} | (NoMulFactor) {: RESULT=new NoMulFactor(); :} /* epsilon */ ;
 MulOpp ::= (MulOp) MUL {: RESULT=new MulOp(); :} | (DivOp) DIV {: RESULT=new DivOp(); :} | (ModOp) MOD {: RESULT=new ModOp(); :};
 
-OptionalClassBody ::= (ClassBody) LBRACE ConstructorDeclList:C1 MethodDeclList:M2 RBRACE {: RESULT=new ClassBody(C1, M2); RESULT.setLine(C1left); :} | (NoClassBody) {: RESULT=new NoClassBody(); :} /* epsilon */ ;
+OptionalClassBody ::= (ClassBodyEmpty) LBRACE RBRACE {: RESULT=new ClassBodyEmpty(); :} | (ClassBodyConstr) LBRACE ConstructorDeclList:C1 RBRACE {: RESULT=new ClassBodyConstr(C1); RESULT.setLine(C1left); :} | (ClassBodyMeth) LBRACE MethodDecl:M1 MethodDeclList:M2 RBRACE {: RESULT=new ClassBodyMeth(M1, M2); RESULT.setLine(M1left); :} | (ClassBodyConstrMeth) LBRACE ConstructorDeclList:C1 MethodDecl:M2 MethodDeclList:M3 RBRACE {: RESULT=new ClassBodyConstrMeth(C1, M2, M3); RESULT.setLine(C1left); :};
 
 OptionalDesign ::= (DesignatorArr) Designator:D1 {: RESULT=new DesignatorArr(D1); RESULT.setLine(D1left); :} | (NoDesignatorArr) {: RESULT=new NoDesignatorArr(); :} ;
 OptionalDesignList ::= (DesignIdentList) OptionalDesignList:O1 DOT IDENT:I2 {: RESULT=new DesignIdentList(O1, I2); RESULT.setLine(O1left); :} | (DesignExprList) OptionalDesignList:O1 LSQUARE Expr:E2 RSQUARE {: RESULT=new DesignExprList(O1, E2); RESULT.setLine(O1left); :} | (NoOptDesignList) {: RESULT=new NoOptDesignList(); :};

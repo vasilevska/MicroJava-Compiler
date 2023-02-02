@@ -1,0 +1,107 @@
+INFO  19:04:21,259 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  19:04:21,324 - #37 program
+INFO  19:04:21,324 - #47 test
+INFO  19:04:21,324 - #47 int
+INFO  19:04:21,326 - #47 x
+INFO  19:04:21,329 - #8 ,
+INFO  19:04:21,331 - #47 y
+INFO  19:04:21,331 - #43 ;
+INFO  19:04:21,332 - #47 char
+INFO  19:04:21,333 - #47 c
+INFO  19:04:21,333 - #28 [
+INFO  19:04:21,333 - #42 ]
+INFO  19:04:21,333 - #8 ,
+INFO  19:04:21,334 - #47 na
+INFO  19:04:21,334 - #8 ,
+INFO  19:04:21,334 - #47 n
+INFO  19:04:21,334 - #28 [
+INFO  19:04:21,334 - #42 ]
+INFO  19:04:21,334 - #8 ,
+INFO  19:04:21,334 - #47 k
+INFO  19:04:21,334 - #43 ;
+INFO  19:04:21,335 - #25 {
+INFO  19:04:21,335 - #47 int
+INFO  19:04:21,335 - #47 main
+INFO  19:04:21,339 - #26 (
+INFO  19:04:21,339 - #41 )
+INFO  19:04:21,340 - #25 {
+INFO  19:04:21,341 - #38 }
+INFO  19:04:21,342 - #38 }
+INFO  19:04:21,350 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      ArrayBrackets(
+      ) [ArrayBrackets]
+      ArrayVar(
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           na
+            NotArray(
+            ) [NotArray]
+          ) [ArrayVar]
+         n
+          ArrayBrackets(
+          ) [ArrayBrackets]
+        ) [ArrayVar]
+       k
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  19:04:21,351 - ===================================
+INFO  19:04:21,357 - Deklarisana promenljiva x na liniji 2
+INFO  19:04:21,357 - Deklarisana promenljiva c na liniji 3
+INFO  19:04:21,358 - Obradjuje se funkcija main na liniji 5
+INFO  19:04:21,358 -  Print count calls = 0
+INFO  19:04:21,358 -  Deklarisanih promenljivih ima = 6
+INFO  19:04:21,358 - ===================================

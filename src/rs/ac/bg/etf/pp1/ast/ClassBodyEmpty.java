@@ -1,13 +1,13 @@
 // generated with ast extension for cup
 // version 0.8
-// 1/1/2023 22:40:19
+// 2/1/2023 16:38:13
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NoConstructorDecl extends ConstructorDeclList {
+public class ClassBodyEmpty extends OptionalClassBody {
 
-    public NoConstructorDecl () {
+    public ClassBodyEmpty () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class NoConstructorDecl extends ConstructorDeclList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("NoConstructorDecl(\n");
+        buffer.append("ClassBodyEmpty(\n");
 
         buffer.append(tab);
-        buffer.append(") [NoConstructorDecl]");
+        buffer.append(") [ClassBodyEmpty]");
         return buffer.toString();
     }
 }

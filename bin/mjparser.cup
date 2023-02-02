@@ -49,7 +49,7 @@ scan with {:
 :}
 
 terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DO, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
-nonterminal ActPars, AddOpp, AddTermList, AssignConst, AssignDesign, Assignop, ClassDecl, ClassName, CondFact, CondFactList, CondTerm, CondTermList, Condition, Const, ConstDecl, ConstructorDecl, ConstructorDeclList, DeclList, DesignList, DesignatorStatement, EmptySqBrackets, ExprList, ExtendClass, FormPars, FunctionBody, IdentSqList, MethodDeclList, MulFactorList, MulOpp, OptionalClassBody, OptionalDesign, OptionalDesignList, OptionalElse, OptionalFormPars, ParamSqList, Program, RelOpp, RepeatConst, Statement, StatementList, VarDecl, VarDeclList;
+nonterminal ActPars, AddOpp, AddTermList, AssignConst, AssignDesign, Assignop, ClassDecl, ClassName, CondFact, CondFactList, CondTerm, CondTermList, Condition, Const, ConstDecl, ConstructorDecl, ConstructorDeclList, ConstructorName, DeclList, DesignList, DesignatorStatement, EmptySqBrackets, ExprList, ExtendClass, FormPars, FunctionBody, IdentSqList, MethodDeclList, MulFactorList, MulOpp, OptionalClassBody, OptionalDesign, OptionalDesignList, OptionalElse, OptionalFormPars, ParamSqList, Program, RelOpp, RepeatConst, Statement, StatementList, VarDecl, VarDeclList;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
@@ -81,13 +81,14 @@ Condition ::= (Condition) CondTerm CondTermList;
 Const ::= (IntConst) NUMBER | (CharConst) CHAR | (BoolConst) BOOL;
 ConstDecl ::= (ConstDecl) CONST Type AssignConst RepeatConst SEMI;
 
-ConstructorDeclList ::= (ConstructorDecls) ConstructorDeclList ConstructorDecl | (NoConstructorDecl)/* epsilon */ ;
-//ConstructorDecl ::= (ConstructorDecl)IDENT LPAREN OptionalFormPars RPAREN FunctionBody;
+ConstructorDeclList ::= (ConstructorDecls) ConstructorDeclList ConstructorDecl | (ConstructorSingleDecl) ConstructorDecl /* epsilon */ ;
+ConstructorDecl ::= (ConstructorDecl) ConstructorName LPAREN OptionalFormPars RPAREN FunctionBody;
+ConstructorName ::= (ConstructorName) IDENT;
 
 DeclList ::= (DeclsConst) DeclList ConstDecl | (DeclsVar) DeclList VarDecl | (DeclsClass) DeclList ClassDecl | (NoDecl)/* epsilon */ ;
 DesignList ::= (DesignListMulti) DesignList COMMA OptionalDesign | (NoDesignList) /* epsilon */ ;
 Designator ::= (Designator) IDENT OptionalDesignList;
-DesignatorStatement ::= (DesignatorStatementBase) Designator | (DesignatorStatementAssignExpr) Designator Assignop Expr | (DesignatorStatementParens) Designator LPAREN RPAREN | (DesignatorStatementActPars) Designator LPAREN ActPars RPAREN | (DesignatorStatementInc) Designator INC | (DesignatorStatementDec) Designator DEC | (DesignatorStatementListAssign) LSQUARE OptionalDesign DesignList RSQUARE AssignDesign ; // | (DesignatorStatementForeach) Designator DOT FOREACH LPAREN IDENT NEXT Statement RPAREN SEMI;
+DesignatorStatement ::= (DesignatorStatementBase) Designator | (DesignatorStatementAssignExpr) Designator Assignop Expr | (DesignatorStatementParens) Designator LPAREN RPAREN | (DesignatorStatementActPars) Designator LPAREN ActPars RPAREN | (DesignatorStatementInc) Designator INC | (DesignatorStatementDec) Designator DEC | (DesignatorStatementListAssign) LSQUARE OptionalDesign DesignList RSQUARE AssignDesign ; // | (StatementForeach) Designator DOT FOREACH LPAREN IDENT NEXT Statement RPAREN SEMI;
 EmptySqBrackets ::= (ArrayBrackets) LSQUARE RSQUARE | (NotArray) /* epsilon */ ;
 Expr ::= (ExprBase) Term AddTermList | (ExprSub) SUB Term AddTermList;
 ExprList ::= (Exprs) ExprList COMMA Expr | (NoExpr) /* epsiolon*/;
@@ -96,13 +97,13 @@ Factor ::= (FactorBase) Designator | (FactorParen) Designator LPAREN RPAREN | (F
 FormPars ::= (FormPars) Type IDENT EmptySqBrackets ParamSqList;
 FunctionBody ::= VarDeclList LBRACE StatementList RBRACE;
 IdentSqList ::= (ArrayVar) IdentSqList COMMA IDENT EmptySqBrackets | (NotIdentArray) /* epsilon */ ;
-MethodDecl ::= MethodName FunctionBody;
+MethodDecl ::= MethodName LPAREN OptionalFormPars RPAREN FunctionBody;
 MethodDeclList ::= (MethDecls) MethodDeclList MethodDecl | (NoMethDecl)/* epsilon */ ;
-MethodName ::= (MethodNameVoid) VOID IDENT LPAREN OptionalFormPars RPAREN | (MethodNameType) Type IDENT LPAREN OptionalFormPars RPAREN;
+MethodName ::= (MethodNameVoid) VOID IDENT | (MethodNameType) Type IDENT LPAREN OptionalFormPars RPAREN;
 MulFactorList ::= (MulFactors) MulFactorList MulOpp Factor | (NoMulFactor) /* epsilon */ ;
 MulOpp ::= (MulOp) MUL | (DivOp) DIV | (ModOp) MOD;
 
-OptionalClassBody ::= (ClassBody) LBRACE ConstructorDeclList MethodDeclList RBRACE | (NoClassBody) /* epsilon */ ;
+OptionalClassBody ::= (ClassBodyEmpty) LBRACE RBRACE | (ClassBodyConstr) LBRACE ConstructorDeclList RBRACE | (ClassBodyMeth) LBRACE MethodDecl MethodDeclList RBRACE | (ClassBodyConstrMeth) LBRACE ConstructorDeclList MethodDecl MethodDeclList RBRACE;
 
 OptionalDesign ::= (DesignatorArr) Designator | (NoDesignatorArr) ;
 OptionalDesignList ::= (DesignIdentList) OptionalDesignList DOT IDENT | (DesignExprList) OptionalDesignList LSQUARE Expr RSQUARE | (NoOptDesignList);

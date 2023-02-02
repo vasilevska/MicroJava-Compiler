@@ -1,0 +1,75 @@
+INFO  17:13:59,476 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  17:13:59,537 - #37 program
+INFO  17:13:59,537 - #47 test
+INFO  17:13:59,538 - #47 int
+INFO  17:13:59,539 - #47 x
+INFO  17:13:59,540 - #8 ,
+INFO  17:13:59,542 - #47 y
+INFO  17:13:59,542 - #43 ;
+INFO  17:13:59,542 - #47 char
+INFO  17:13:59,543 - #47 c
+INFO  17:13:59,543 - #28 [
+INFO  17:13:59,543 - #42 ]
+INFO  17:13:59,543 - #8 ,
+INFO  17:13:59,544 - #47 na
+INFO  17:13:59,544 - #8 ,
+INFO  17:13:59,544 - #47 n
+INFO  17:13:59,544 - #43 ;
+INFO  17:13:59,545 - #25 {
+INFO  17:13:59,545 - #38 }
+INFO  17:13:59,552 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      ArrayBrackets(
+      ) [ArrayBrackets]
+      ArrayVar(
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         na
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+       n
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  17:13:59,556 - ===================================
+INFO  17:13:59,560 - Deklarisana promenljiva x na liniji 2
+INFO  17:13:59,561 - Deklarisana promenljiva c na liniji 3
+ERROR 17:13:59,561 - nema main-a
+INFO  17:13:59,561 -  Print count calls = 0
+INFO  17:13:59,561 -  Deklarisanih promenljivih ima = 5
+INFO  17:13:59,561 - ===================================
+ERROR 17:13:59,562 - Parsiranje NIJE uspesno zavrseno!

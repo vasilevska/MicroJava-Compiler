@@ -1,0 +1,84 @@
+INFO  17:16:06,557 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  17:16:06,627 - #37 program
+INFO  17:16:06,627 - #47 test
+INFO  17:16:06,627 - #47 int
+INFO  17:16:06,629 - #47 x
+INFO  17:16:06,630 - #8 ,
+INFO  17:16:06,633 - #47 y
+INFO  17:16:06,633 - #43 ;
+INFO  17:16:06,634 - #47 char
+INFO  17:16:06,635 - #47 c
+INFO  17:16:06,635 - #28 [
+INFO  17:16:06,635 - #42 ]
+INFO  17:16:06,635 - #8 ,
+INFO  17:16:06,636 - #47 na
+INFO  17:16:06,637 - #8 ,
+INFO  17:16:06,637 - #47 n
+INFO  17:16:06,637 - #28 [
+INFO  17:16:06,637 - #42 ]
+INFO  17:16:06,637 - #8 ,
+INFO  17:16:06,637 - #47 k
+INFO  17:16:06,638 - #43 ;
+INFO  17:16:06,638 - #25 {
+INFO  17:16:06,638 - #38 }
+INFO  17:16:06,646 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      ArrayBrackets(
+      ) [ArrayBrackets]
+      ArrayVar(
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           na
+            NotArray(
+            ) [NotArray]
+          ) [ArrayVar]
+         n
+          ArrayBrackets(
+          ) [ArrayBrackets]
+        ) [ArrayVar]
+       k
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  17:16:06,650 - ===================================
+INFO  17:16:06,659 - Deklarisana promenljiva x na liniji 2
+INFO  17:16:06,659 - Deklarisana promenljiva c na liniji 3
+ERROR 17:16:06,659 - nema main-a
+INFO  17:16:06,659 -  Print count calls = 0
+INFO  17:16:06,659 -  Deklarisanih promenljivih ima = 6
+INFO  17:16:06,659 - ===================================
+ERROR 17:16:06,660 - Parsiranje NIJE uspesno zavrseno!

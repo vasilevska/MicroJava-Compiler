@@ -1,15 +1,50 @@
 // generated with ast extension for cup
 // version 0.8
-// 1/1/2023 22:40:19
+// 2/1/2023 16:38:13
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public abstract class ConstructorDecl implements SyntaxNode {
+public class ConstructorDecl implements SyntaxNode {
 
     private SyntaxNode parent;
-
     private int line;
+    private ConstructorName ConstructorName;
+    private OptionalFormPars OptionalFormPars;
+    private FunctionBody FunctionBody;
+
+    public ConstructorDecl (ConstructorName ConstructorName, OptionalFormPars OptionalFormPars, FunctionBody FunctionBody) {
+        this.ConstructorName=ConstructorName;
+        if(ConstructorName!=null) ConstructorName.setParent(this);
+        this.OptionalFormPars=OptionalFormPars;
+        if(OptionalFormPars!=null) OptionalFormPars.setParent(this);
+        this.FunctionBody=FunctionBody;
+        if(FunctionBody!=null) FunctionBody.setParent(this);
+    }
+
+    public ConstructorName getConstructorName() {
+        return ConstructorName;
+    }
+
+    public void setConstructorName(ConstructorName ConstructorName) {
+        this.ConstructorName=ConstructorName;
+    }
+
+    public OptionalFormPars getOptionalFormPars() {
+        return OptionalFormPars;
+    }
+
+    public void setOptionalFormPars(OptionalFormPars OptionalFormPars) {
+        this.OptionalFormPars=OptionalFormPars;
+    }
+
+    public FunctionBody getFunctionBody() {
+        return FunctionBody;
+    }
+
+    public void setFunctionBody(FunctionBody FunctionBody) {
+        this.FunctionBody=FunctionBody;
+    }
 
     public SyntaxNode getParent() {
         return parent;
@@ -27,11 +62,55 @@ public abstract class ConstructorDecl implements SyntaxNode {
         this.line=line;
     }
 
-    public abstract void accept(Visitor visitor);
-    public abstract void childrenAccept(Visitor visitor);
-    public abstract void traverseTopDown(Visitor visitor);
-    public abstract void traverseBottomUp(Visitor visitor);
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 
-    public String toString() { return toString(""); }
-    public abstract String toString(String tab);
+    public void childrenAccept(Visitor visitor) {
+        if(ConstructorName!=null) ConstructorName.accept(visitor);
+        if(OptionalFormPars!=null) OptionalFormPars.accept(visitor);
+        if(FunctionBody!=null) FunctionBody.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(ConstructorName!=null) ConstructorName.traverseTopDown(visitor);
+        if(OptionalFormPars!=null) OptionalFormPars.traverseTopDown(visitor);
+        if(FunctionBody!=null) FunctionBody.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(ConstructorName!=null) ConstructorName.traverseBottomUp(visitor);
+        if(OptionalFormPars!=null) OptionalFormPars.traverseBottomUp(visitor);
+        if(FunctionBody!=null) FunctionBody.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("ConstructorDecl(\n");
+
+        if(ConstructorName!=null)
+            buffer.append(ConstructorName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(OptionalFormPars!=null)
+            buffer.append(OptionalFormPars.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(FunctionBody!=null)
+            buffer.append(FunctionBody.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [ConstructorDecl]");
+        return buffer.toString();
+    }
 }
