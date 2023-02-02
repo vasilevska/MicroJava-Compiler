@@ -1,0 +1,207 @@
+INFO  23:50:55,664 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  23:50:55,733 - #37 program
+INFO  23:50:55,733 - #47 test
+INFO  23:50:55,733 - #47 int
+INFO  23:50:55,734 - #47 x
+INFO  23:50:55,736 - #8 ,
+INFO  23:50:55,738 - #47 y
+INFO  23:50:55,738 - #43 ;
+INFO  23:50:55,738 - #47 char
+INFO  23:50:55,739 - #47 c
+INFO  23:50:55,739 - #28 [
+INFO  23:50:55,739 - #42 ]
+INFO  23:50:55,740 - #8 ,
+INFO  23:50:55,740 - #47 na
+INFO  23:50:55,740 - #8 ,
+INFO  23:50:55,740 - #47 n
+INFO  23:50:55,741 - #28 [
+INFO  23:50:55,741 - #42 ]
+INFO  23:50:55,741 - #8 ,
+INFO  23:50:55,741 - #47 k
+INFO  23:50:55,741 - #43 ;
+INFO  23:50:55,741 - #25 {
+INFO  23:50:55,741 - #45 void
+INFO  23:50:55,742 - #47 main
+INFO  23:50:55,746 - #26 (
+INFO  23:50:55,746 - #41 )
+INFO  23:50:55,747 - #47 int
+INFO  23:50:55,748 - #47 f
+INFO  23:50:55,748 - #43 ;
+INFO  23:50:55,748 - #25 {
+INFO  23:50:55,749 - #28 [
+INFO  23:50:55,749 - #8 ,
+INFO  23:50:55,751 - #47 a
+INFO  23:50:55,751 - #8 ,
+INFO  23:50:55,753 - #42 ]
+INFO  23:50:55,753 - #4 =
+INFO  23:50:55,753 - #47 a
+INFO  23:50:55,755 - #14 .
+INFO  23:50:55,755 - #47 b
+INFO  23:50:55,755 - #28 [
+INFO  23:50:55,756 - #48 3
+INFO  23:50:55,756 - #42 ]
+INFO  23:50:55,759 - #14 .
+INFO  23:50:55,759 - #47 c
+INFO  23:50:55,759 - #43 ;
+INFO  23:50:55,761 - #36 print
+INFO  23:50:55,762 - #26 (
+INFO  23:50:55,762 - #48 3
+INFO  23:50:55,762 - #41 )
+INFO  23:50:55,762 - #43 ;
+INFO  23:50:55,762 - #38 }
+INFO  23:50:55,763 - #38 }
+INFO  23:50:55,772 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      ArrayBrackets(
+      ) [ArrayBrackets]
+      ArrayVar(
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           na
+            NotArray(
+            ) [NotArray]
+          ) [ArrayVar]
+         n
+          ArrayBrackets(
+          ) [ArrayBrackets]
+        ) [ArrayVar]
+       k
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           f
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementDesignator(
+              DesignatorStatementListAssign(
+                NoDesignatorArr(
+                ) [NoDesignatorArr]
+                DesignListMulti(
+                  DesignListMulti(
+                    NoDesignList(
+                    ) [NoDesignList]
+                    DesignatorArr(
+                      Designator(
+                       a
+                        NoOptDesignList(
+                        ) [NoOptDesignList]
+                      ) [Designator]
+                    ) [DesignatorArr]
+                  ) [DesignListMulti]
+                  NoDesignatorArr(
+                  ) [NoDesignatorArr]
+                ) [DesignListMulti]
+                AssignDesign(
+                  Assignop(
+                  ) [Assignop]
+                  Designator(
+                   a
+                    DesignIdentList(
+                      DesignExprList(
+                        DesignIdentList(
+                          NoOptDesignList(
+                          ) [NoOptDesignList]
+                         b
+                        ) [DesignIdentList]
+                        ExprBase(
+                          Term(
+                            FactorNumber(
+                             3
+                            ) [FactorNumber]
+                            NoMulFactor(
+                            ) [NoMulFactor]
+                          ) [Term]
+                          NoAddTerm(
+                          ) [NoAddTerm]
+                        ) [ExprBase]
+                      ) [DesignExprList]
+                     c
+                    ) [DesignIdentList]
+                  ) [Designator]
+                ) [AssignDesign]
+              ) [DesignatorStatementListAssign]
+            ) [StatementDesignator]
+          ) [Statements]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorNumber(
+                 3
+                ) [FactorNumber]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  23:50:55,773 - ===================================
+INFO  23:50:55,778 - Deklarisana promenljiva x na liniji 2
+INFO  23:50:55,778 - Deklarisana promenljiva c na liniji 3
+INFO  23:50:55,778 - Obradjuje se funkcija main na liniji 8
+INFO  23:50:55,778 - Deklarisana promenljiva f na liniji 9
+INFO  23:50:55,779 -  Print count calls = 1
+INFO  23:50:55,779 -  Deklarisanih promenljivih ima = 7
+INFO  23:50:55,779 - ===================================
+INFO  23:50:55,780 - Parsiranje uspesno zavrseno!

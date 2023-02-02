@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 22:9:53
+// 2/1/2023 23:59:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,7 +8,6 @@ package rs.ac.bg.etf.pp1.ast;
 public abstract class VisitorAdaptor implements Visitor { 
 
     public void visit(MethodDecl MethodDecl) { }
-    public void visit(ConstructorDecl ConstructorDecl) { }
     public void visit(RelOpp RelOpp) { }
     public void visit(CondTermList CondTermList) { }
     public void visit(MulOpp MulOpp) { }
@@ -19,9 +18,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Factor Factor) { }
     public void visit(CondFactList CondFactList) { }
     public void visit(DeclList DeclList) { }
+    public void visit(Designator Designator) { }
     public void visit(MethodName MethodName) { }
     public void visit(MulFactorList MulFactorList) { }
-    public void visit(ConstructorName ConstructorName) { }
     public void visit(EmptySqBrackets EmptySqBrackets) { }
     public void visit(OptionalFormPars OptionalFormPars) { }
     public void visit(ExprList ExprList) { }
@@ -50,6 +49,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Term Term) { visit(); }
     public void visit(NoStatement NoStatement) { visit(); }
     public void visit(Statements Statements) { visit(); }
+    public void visit(StatementForeach StatementForeach) { visit(); }
     public void visit(StatementBlock StatementBlock) { visit(); }
     public void visit(StatementPrintExprNumber StatementPrintExprNumber) { visit(); }
     public void visit(StatementPrintExpr StatementPrintExpr) { visit(); }
@@ -125,13 +125,16 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorStatementParens DesignatorStatementParens) { visit(); }
     public void visit(DesignatorStatementAssignExpr DesignatorStatementAssignExpr) { visit(); }
     public void visit(DesignatorStatementBase DesignatorStatementBase) { visit(); }
-    public void visit(Designator Designator) { visit(); }
+    public void visit(DesignatorExpr DesignatorExpr) { visit(); }
+    public void visit(DesignatorIdent DesignatorIdent) { visit(); }
     public void visit(NoDesignList NoDesignList) { visit(); }
     public void visit(DesignListMulti DesignListMulti) { visit(); }
     public void visit(NoDecl NoDecl) { visit(); }
     public void visit(DeclsClass DeclsClass) { visit(); }
     public void visit(DeclsVar DeclsVar) { visit(); }
     public void visit(DeclsConst DeclsConst) { visit(); }
+    public void visit(ConstructorName ConstructorName) { visit(); }
+    public void visit(ConstructorDecl ConstructorDecl) { visit(); }
     public void visit(ConstructorSingleDecl ConstructorSingleDecl) { visit(); }
     public void visit(ConstructorDecls ConstructorDecls) { visit(); }
     public void visit(ConstDecl ConstDecl) { visit(); }

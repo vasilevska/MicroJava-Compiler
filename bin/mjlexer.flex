@@ -95,7 +95,7 @@ import java_cup.runtime.Symbol;
 
 // Literals --------------------------------------------------
 
-[0-9]+             { return new_symbol(sym.NUMBER, new Integer (yytext())); }
+[0-9]+             { return new_symbol(sym.NUMBER, Integer.parseInt(yytext())); }
 ("true" | "false") { return (yytext().equals("true"))? new_symbol(sym.BOOL, true) : new_symbol(sym.BOOL, false);}
 \' [^\'\n\r\\] \'  { return new_symbol(sym.CHAR, yytext().charAt(1)); }
 

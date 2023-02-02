@@ -1,28 +1,38 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 22:9:53
+// 2/1/2023 23:59:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DesignExprList extends OptionalDesignList {
 
-    private OptionalDesignList OptionalDesignList;
+    private Designator Designator;
+    private String I2;
     private Expr Expr;
 
-    public DesignExprList (OptionalDesignList OptionalDesignList, Expr Expr) {
-        this.OptionalDesignList=OptionalDesignList;
-        if(OptionalDesignList!=null) OptionalDesignList.setParent(this);
+    public DesignExprList (Designator Designator, String I2, Expr Expr) {
+        this.Designator=Designator;
+        if(Designator!=null) Designator.setParent(this);
+        this.I2=I2;
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public OptionalDesignList getOptionalDesignList() {
-        return OptionalDesignList;
+    public Designator getDesignator() {
+        return Designator;
     }
 
-    public void setOptionalDesignList(OptionalDesignList OptionalDesignList) {
-        this.OptionalDesignList=OptionalDesignList;
+    public void setDesignator(Designator Designator) {
+        this.Designator=Designator;
+    }
+
+    public String getI2() {
+        return I2;
+    }
+
+    public void setI2(String I2) {
+        this.I2=I2;
     }
 
     public Expr getExpr() {
@@ -38,18 +48,18 @@ public class DesignExprList extends OptionalDesignList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(OptionalDesignList!=null) OptionalDesignList.accept(visitor);
+        if(Designator!=null) Designator.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(OptionalDesignList!=null) OptionalDesignList.traverseTopDown(visitor);
+        if(Designator!=null) Designator.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(OptionalDesignList!=null) OptionalDesignList.traverseBottomUp(visitor);
+        if(Designator!=null) Designator.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,10 +69,13 @@ public class DesignExprList extends OptionalDesignList {
         buffer.append(tab);
         buffer.append("DesignExprList(\n");
 
-        if(OptionalDesignList!=null)
-            buffer.append(OptionalDesignList.toString("  "+tab));
+        if(Designator!=null)
+            buffer.append(Designator.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+I2);
         buffer.append("\n");
 
         if(Expr!=null)

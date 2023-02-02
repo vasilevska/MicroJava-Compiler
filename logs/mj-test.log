@@ -1,141 +1,64 @@
-INFO  22:10:32,703 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
-INFO  22:10:32,762 - #37 program
-INFO  22:10:32,762 - #47 test
-INFO  22:10:32,762 - #47 int
-INFO  22:10:32,764 - #47 x
-INFO  22:10:32,765 - #8 ,
-INFO  22:10:32,768 - #47 y
-INFO  22:10:32,768 - #43 ;
-INFO  22:10:32,768 - #47 char
-INFO  22:10:32,769 - #47 c
-INFO  22:10:32,770 - #28 [
-INFO  22:10:32,770 - #42 ]
-INFO  22:10:32,770 - #8 ,
-INFO  22:10:32,770 - #47 na
-INFO  22:10:32,771 - #8 ,
-INFO  22:10:32,771 - #47 n
-INFO  22:10:32,771 - #28 [
-INFO  22:10:32,771 - #42 ]
-INFO  22:10:32,771 - #8 ,
-INFO  22:10:32,771 - #47 k
-INFO  22:10:32,771 - #43 ;
-INFO  22:10:32,771 - #25 {
-INFO  22:10:32,772 - #45 void
-INFO  22:10:32,772 - #47 main
-INFO  22:10:32,776 - #26 (
-INFO  22:10:32,776 - #41 )
-INFO  22:10:32,777 - #47 int
-INFO  22:10:32,778 - #47 f
-INFO  22:10:32,778 - #43 ;
-INFO  22:10:32,778 - #25 {
-INFO  22:10:32,778 - #36 print
-INFO  22:10:32,779 - #26 (
-INFO  22:10:32,779 - #48 3
-INFO  22:10:32,779 - #41 )
-INFO  22:10:32,782 - #43 ;
-INFO  22:10:32,782 - #38 }
-INFO  22:10:32,782 - #38 }
-INFO  22:10:32,793 - Program(
-  ProgName(
-   test
-  ) [ProgName]
-  DeclsVar(
-    DeclsVar(
-      NoDecl(
-      ) [NoDecl]
-      VarDecl(
-        Type(
-         int
-        ) [Type]
-       x
-        NotArray(
-        ) [NotArray]
-        ArrayVar(
-          NotIdentArray(
-          ) [NotIdentArray]
-         y
-          NotArray(
-          ) [NotArray]
-        ) [ArrayVar]
-      ) [VarDecl]
-    ) [DeclsVar]
-    VarDecl(
-      Type(
-       char
-      ) [Type]
-     c
-      ArrayBrackets(
-      ) [ArrayBrackets]
-      ArrayVar(
-        ArrayVar(
-          ArrayVar(
-            NotIdentArray(
-            ) [NotIdentArray]
-           na
-            NotArray(
-            ) [NotArray]
-          ) [ArrayVar]
-         n
-          ArrayBrackets(
-          ) [ArrayBrackets]
-        ) [ArrayVar]
-       k
-        NotArray(
-        ) [NotArray]
-      ) [ArrayVar]
-    ) [VarDecl]
-  ) [DeclsVar]
-  MethDecls(
-    NoMethDecl(
-    ) [NoMethDecl]
-    MethodDeclDerived1(
-      MethodNameVoid(
-       main
-      ) [MethodNameVoid]
-      NoFormPars(
-      ) [NoFormPars]
-      FunctionBodyDerived1(
-        VarDecls(
-          NoVarDecl(
-          ) [NoVarDecl]
-          VarDecl(
-            Type(
-             int
-            ) [Type]
-           f
-            NotArray(
-            ) [NotArray]
-            NotIdentArray(
-            ) [NotIdentArray]
-          ) [VarDecl]
-        ) [VarDecls]
-        Statements(
-          NoStatement(
-          ) [NoStatement]
-          StatementPrintExpr(
-            ExprBase(
-              Term(
-                FactorNumber(
-                 3
-                ) [FactorNumber]
-                NoMulFactor(
-                ) [NoMulFactor]
-              ) [Term]
-              NoAddTerm(
-              ) [NoAddTerm]
-            ) [ExprBase]
-          ) [StatementPrintExpr]
-        ) [Statements]
-      ) [FunctionBodyDerived1]
-    ) [MethodDeclDerived1]
-  ) [MethDecls]
-) [Program]
-INFO  22:10:32,793 - ===================================
-INFO  22:10:32,797 - Deklarisana promenljiva x na liniji 2
-INFO  22:10:32,798 - Deklarisana promenljiva c na liniji 3
-INFO  22:10:32,798 - Obradjuje se funkcija main na liniji 5
-INFO  22:10:32,798 - Deklarisana promenljiva f na liniji 5
-INFO  22:10:32,798 -  Print count calls = 1
-INFO  22:10:32,798 -  Deklarisanih promenljivih ima = 7
-INFO  22:10:32,798 - ===================================
-INFO  22:10:32,799 - Parsiranje uspesno zavrseno!
+INFO  00:49:46,067 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  00:49:46,135 - #37 program
+INFO  00:49:46,136 - #47 test_303
+INFO  00:49:46,136 - #9 const
+INFO  00:49:46,137 - #47 int
+INFO  00:49:46,137 - #47 cinilac
+INFO  00:49:46,138 - #4 =
+INFO  00:49:46,138 - #48 4
+INFO  00:49:46,139 - #8 ,
+INFO  00:49:46,141 - #47 delilac
+INFO  00:49:46,141 - #4 =
+INFO  00:49:46,141 - #48 3
+INFO  00:49:46,141 - #43 ;
+INFO  00:49:46,141 - #47 int
+INFO  00:49:46,142 - #47 zapreminaK
+INFO  00:49:46,143 - #8 ,
+INFO  00:49:46,144 - #47 zapreminaS
+INFO  00:49:46,144 - #43 ;
+INFO  00:49:46,145 - #47 int
+INFO  00:49:46,146 - #47 tezinaK
+INFO  00:49:46,146 - #8 ,
+INFO  00:49:46,146 - #47 tezinaS
+INFO  00:49:46,150 - #43 ;
+INFO  00:49:46,150 - #25 {
+INFO  00:49:46,150 - #45 void
+INFO  00:49:46,151 - #47 main
+INFO  00:49:46,151 - #26 (
+INFO  00:49:46,151 - #41 )
+INFO  00:49:46,152 - #47 Predmet
+INFO  00:49:46,153 - #47 predmeti
+INFO  00:49:46,153 - #28 [
+INFO  00:49:46,153 - #42 ]
+INFO  00:49:46,153 - #43 ;
+INFO  00:49:46,154 - #47 int
+INFO  00:49:46,155 - #47 i
+INFO  00:49:46,155 - #43 ;
+INFO  00:49:46,155 - #47 Sfera
+INFO  00:49:46,155 - #47 s1
+INFO  00:49:46,155 - #8 ,
+INFO  00:49:46,155 - #47 s2
+INFO  00:49:46,155 - #8 ,
+INFO  00:49:46,156 - #47 s3
+INFO  00:49:46,156 - #43 ;
+INFO  00:49:46,156 - #47 Kvadar
+INFO  00:49:46,156 - #47 k1
+INFO  00:49:46,156 - #8 ,
+INFO  00:49:46,156 - #47 k2
+INFO  00:49:46,156 - #8 ,
+INFO  00:49:46,156 - #47 k3
+INFO  00:49:46,156 - #43 ;
+INFO  00:49:46,157 - #47 int
+INFO  00:49:46,157 - #47 t
+INFO  00:49:46,157 - #43 ;
+INFO  00:49:46,157 - #25 {
+INFO  00:49:46,157 - #47 this
+INFO  00:49:46,159 - #14 .
+INFO  00:49:46,159 - #47 predmeti
+INFO  00:49:46,159 - #28 [
+INFO  00:49:46,159 - #48 5
+INFO  00:49:46,160 - #42 ]
+INFO  00:49:46,163 - #4 =
+ERROR 00:49:46,163 - 
+Sintaksna greska na liniji 14
+ERROR 00:49:46,164 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 14

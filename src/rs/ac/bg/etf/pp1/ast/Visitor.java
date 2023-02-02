@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 22:9:53
+// 2/1/2023 23:59:19
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,7 +8,6 @@ package rs.ac.bg.etf.pp1.ast;
 public interface Visitor { 
 
     public void visit(MethodDecl MethodDecl);
-    public void visit(ConstructorDecl ConstructorDecl);
     public void visit(RelOpp RelOpp);
     public void visit(CondTermList CondTermList);
     public void visit(MulOpp MulOpp);
@@ -19,9 +18,9 @@ public interface Visitor {
     public void visit(Factor Factor);
     public void visit(CondFactList CondFactList);
     public void visit(DeclList DeclList);
+    public void visit(Designator Designator);
     public void visit(MethodName MethodName);
     public void visit(MulFactorList MulFactorList);
-    public void visit(ConstructorName ConstructorName);
     public void visit(EmptySqBrackets EmptySqBrackets);
     public void visit(OptionalFormPars OptionalFormPars);
     public void visit(ExprList ExprList);
@@ -50,6 +49,7 @@ public interface Visitor {
     public void visit(Term Term);
     public void visit(NoStatement NoStatement);
     public void visit(Statements Statements);
+    public void visit(StatementForeach StatementForeach);
     public void visit(StatementBlock StatementBlock);
     public void visit(StatementPrintExprNumber StatementPrintExprNumber);
     public void visit(StatementPrintExpr StatementPrintExpr);
@@ -125,13 +125,16 @@ public interface Visitor {
     public void visit(DesignatorStatementParens DesignatorStatementParens);
     public void visit(DesignatorStatementAssignExpr DesignatorStatementAssignExpr);
     public void visit(DesignatorStatementBase DesignatorStatementBase);
-    public void visit(Designator Designator);
+    public void visit(DesignatorExpr DesignatorExpr);
+    public void visit(DesignatorIdent DesignatorIdent);
     public void visit(NoDesignList NoDesignList);
     public void visit(DesignListMulti DesignListMulti);
     public void visit(NoDecl NoDecl);
     public void visit(DeclsClass DeclsClass);
     public void visit(DeclsVar DeclsVar);
     public void visit(DeclsConst DeclsConst);
+    public void visit(ConstructorName ConstructorName);
+    public void visit(ConstructorDecl ConstructorDecl);
     public void visit(ConstructorSingleDecl ConstructorSingleDecl);
     public void visit(ConstructorDecls ConstructorDecls);
     public void visit(ConstDecl ConstDecl);

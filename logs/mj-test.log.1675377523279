@@ -1,0 +1,145 @@
+INFO  23:38:17,181 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  23:38:17,293 - #37 program
+INFO  23:38:17,293 - #47 test
+INFO  23:38:17,293 - #47 int
+INFO  23:38:17,296 - #47 x
+INFO  23:38:17,298 - #8 ,
+INFO  23:38:17,302 - #47 y
+INFO  23:38:17,302 - #43 ;
+INFO  23:38:17,302 - #47 char
+INFO  23:38:17,305 - #47 c
+INFO  23:38:17,305 - #28 [
+INFO  23:38:17,305 - #42 ]
+INFO  23:38:17,306 - #8 ,
+INFO  23:38:17,308 - #47 na
+INFO  23:38:17,308 - #8 ,
+INFO  23:38:17,308 - #47 n
+INFO  23:38:17,308 - #28 [
+INFO  23:38:17,309 - #42 ]
+INFO  23:38:17,309 - #8 ,
+INFO  23:38:17,309 - #47 k
+INFO  23:38:17,309 - #43 ;
+INFO  23:38:17,310 - #25 {
+INFO  23:38:17,310 - #47 int
+INFO  23:38:17,312 - #47 main
+INFO  23:38:17,316 - #26 (
+INFO  23:38:17,316 - #41 )
+INFO  23:38:17,317 - #47 int
+INFO  23:38:17,318 - #47 f
+INFO  23:38:17,319 - #43 ;
+INFO  23:38:17,319 - #25 {
+INFO  23:38:17,319 - #36 print
+INFO  23:38:17,321 - #26 (
+INFO  23:38:17,321 - #48 3
+INFO  23:38:17,321 - #41 )
+INFO  23:38:17,327 - #43 ;
+INFO  23:38:17,328 - #38 }
+INFO  23:38:17,328 - #38 }
+INFO  23:38:17,337 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      ArrayBrackets(
+      ) [ArrayBrackets]
+      ArrayVar(
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           na
+            NotArray(
+            ) [NotArray]
+          ) [ArrayVar]
+         n
+          ArrayBrackets(
+          ) [ArrayBrackets]
+        ) [ArrayVar]
+       k
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+      ) [MethodNameType]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           f
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorNumber(
+                 3
+                ) [FactorNumber]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  23:38:17,338 - ===================================
+INFO  23:38:17,343 - Deklarisana promenljiva x na liniji 2
+INFO  23:38:17,344 - Deklarisana promenljiva c na liniji 3
+INFO  23:38:17,344 - Obradjuje se funkcija main na liniji 6
+INFO  23:38:17,344 - Deklarisana promenljiva f na liniji 8
+ERROR 23:38:17,344 - Semanticka greska na liniji 6: funkcija main nema return iskaz!
+INFO  23:38:17,344 -  Print count calls = 1
+INFO  23:38:17,344 -  Deklarisanih promenljivih ima = 7
+INFO  23:38:17,345 - ===================================
+ERROR 23:38:17,346 - Parsiranje NIJE uspesno zavrseno!

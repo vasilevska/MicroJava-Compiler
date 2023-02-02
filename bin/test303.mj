@@ -10,7 +10,10 @@ class Predmet
 	 char vrsta;
 	{
 		 
-		 void postaviTezinu(int tezina) {this.tezina = tezina;}  
+		 void postaviTezinu(int tezina)
+		  {
+		  this.tezina = tezina;
+		  }  
 		 void ucitajTezinu() { read(tezina); }
 		 int zapremina() { return 0;}
 		 int Q() {return zapremina() * tezina;}

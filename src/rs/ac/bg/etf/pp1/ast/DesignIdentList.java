@@ -1,27 +1,27 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 22:9:53
+// 2/1/2023 23:59:19
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DesignIdentList extends OptionalDesignList {
 
-    private OptionalDesignList OptionalDesignList;
+    private Designator Designator;
     private String I2;
 
-    public DesignIdentList (OptionalDesignList OptionalDesignList, String I2) {
-        this.OptionalDesignList=OptionalDesignList;
-        if(OptionalDesignList!=null) OptionalDesignList.setParent(this);
+    public DesignIdentList (Designator Designator, String I2) {
+        this.Designator=Designator;
+        if(Designator!=null) Designator.setParent(this);
         this.I2=I2;
     }
 
-    public OptionalDesignList getOptionalDesignList() {
-        return OptionalDesignList;
+    public Designator getDesignator() {
+        return Designator;
     }
 
-    public void setOptionalDesignList(OptionalDesignList OptionalDesignList) {
-        this.OptionalDesignList=OptionalDesignList;
+    public void setDesignator(Designator Designator) {
+        this.Designator=Designator;
     }
 
     public String getI2() {
@@ -37,16 +37,16 @@ public class DesignIdentList extends OptionalDesignList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(OptionalDesignList!=null) OptionalDesignList.accept(visitor);
+        if(Designator!=null) Designator.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(OptionalDesignList!=null) OptionalDesignList.traverseTopDown(visitor);
+        if(Designator!=null) Designator.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(OptionalDesignList!=null) OptionalDesignList.traverseBottomUp(visitor);
+        if(Designator!=null) Designator.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -55,8 +55,8 @@ public class DesignIdentList extends OptionalDesignList {
         buffer.append(tab);
         buffer.append("DesignIdentList(\n");
 
-        if(OptionalDesignList!=null)
-            buffer.append(OptionalDesignList.toString("  "+tab));
+        if(Designator!=null)
+            buffer.append(Designator.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
