@@ -1,0 +1,79 @@
+INFO  22:42:02,085 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  22:42:02,176 - #37 program
+INFO  22:42:02,177 - #47 test
+INFO  22:42:02,177 - #47 int
+INFO  22:42:02,179 - #47 k
+INFO  22:42:02,180 - #43 ;
+INFO  22:42:02,182 - #47 char
+INFO  22:42:02,184 - #47 c
+INFO  22:42:02,184 - #8 ,
+INFO  22:42:02,184 - #47 b
+INFO  22:42:02,184 - #43 ;
+INFO  22:42:02,184 - #25 {
+INFO  22:42:02,184 - #47 int
+INFO  22:42:02,186 - #47 main
+INFO  22:42:02,186 - #26 (
+INFO  22:42:02,186 - #41 )
+INFO  22:42:02,187 - #25 {
+INFO  22:42:02,188 - #38 }
+INFO  22:42:02,189 - #38 }
+INFO  22:42:02,197 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       k
+        NotArray(
+        ) [NotArray]
+        NotIdentArray(
+        ) [NotIdentArray]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      NotArray(
+      ) [NotArray]
+      ArrayVar(
+        NotIdentArray(
+        ) [NotIdentArray]
+       b
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  22:42:02,201 - ===================================
+INFO  22:42:02,205 -  Print count calls = 0
+INFO  22:42:02,205 -  Deklarisanih promenljivih ima = 0
+INFO  22:42:02,205 - ===================================

@@ -1,0 +1,170 @@
+INFO  00:00:29,333 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  00:00:29,360 - #37 program
+INFO  00:00:29,360 - #47 MJProgram
+INFO  00:00:29,361 - #47 int
+INFO  00:00:29,363 - #47 x
+INFO  00:00:29,363 - #28 [
+INFO  00:00:29,363 - #42 ]
+INFO  00:00:29,364 - #8 ,
+INFO  00:00:29,366 - #47 y
+INFO  00:00:29,366 - #28 [
+INFO  00:00:29,366 - #42 ]
+INFO  00:00:29,366 - #8 ,
+INFO  00:00:29,366 - #47 c
+INFO  00:00:29,366 - #43 ;
+INFO  00:00:29,367 - #47 bool
+INFO  00:00:29,368 - #47 l
+INFO  00:00:29,368 - #43 ;
+INFO  00:00:29,368 - #25 {
+INFO  00:00:29,369 - #47 int
+INFO  00:00:29,369 - #47 k
+INFO  00:00:29,369 - #26 (
+INFO  00:00:29,369 - #47 int
+INFO  00:00:29,369 - #47 f
+INFO  00:00:29,369 - #28 [
+INFO  00:00:29,374 - #42 ]
+INFO  00:00:29,374 - #8 ,
+INFO  00:00:29,374 - #47 bool
+INFO  00:00:29,374 - #47 c
+INFO  00:00:29,374 - #8 ,
+INFO  00:00:29,374 - #47 char
+INFO  00:00:29,374 - #47 k
+INFO  00:00:29,374 - #28 [
+INFO  00:00:29,375 - #42 ]
+INFO  00:00:29,375 - #41 )
+INFO  00:00:29,375 - #47 int
+INFO  00:00:29,376 - #47 c
+INFO  00:00:29,376 - #43 ;
+INFO  00:00:29,376 - #25 {
+INFO  00:00:29,376 - #5 break
+INFO  00:00:29,377 - #43 ;
+INFO  00:00:29,377 - #38 }
+INFO  00:00:29,378 - #47 int
+INFO  00:00:29,378 - #47 main
+INFO  00:00:29,378 - #26 (
+INFO  00:00:29,378 - #41 )
+INFO  00:00:29,379 - #25 {
+INFO  00:00:29,379 - #38 }
+INFO  00:00:29,379 - #38 }
+INFO  00:00:29,383 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        ArrayBrackets(
+        ) [ArrayBrackets]
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           y
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [ArrayVar]
+         c
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       bool
+      ) [Type]
+     l
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    MethDecls(
+      NoMethDecl(
+      ) [NoMethDecl]
+      MethodDeclDerived1(
+        MethodNameType(
+          Type(
+           int
+          ) [Type]
+         k
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             f
+              ArrayBrackets(
+              ) [ArrayBrackets]
+              ArrayParam(
+                ArrayParam(
+                  NotParamArray(
+                  ) [NotParamArray]
+                  Type(
+                   bool
+                  ) [Type]
+                 c
+                  NotArray(
+                  ) [NotArray]
+                ) [ArrayParam]
+                Type(
+                 char
+                ) [Type]
+               k
+                ArrayBrackets(
+                ) [ArrayBrackets]
+              ) [ArrayParam]
+            ) [FormPars]
+          ) [OptFormPars]
+        ) [MethodNameType]
+        FunctionBodyDerived1(
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+             c
+              NotArray(
+              ) [NotArray]
+              NotIdentArray(
+              ) [NotIdentArray]
+            ) [VarDecl]
+          ) [VarDecls]
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementBreak(
+            ) [StatementBreak]
+          ) [Statements]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  00:00:29,384 - ===================================

@@ -1,0 +1,93 @@
+INFO  20:52:24,199 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  20:52:24,224 - #37 program
+INFO  20:52:24,224 - #47 MJProgram
+INFO  20:52:24,224 - #47 int
+INFO  20:52:24,225 - #47 x
+INFO  20:52:24,226 - #8 ,
+INFO  20:52:24,228 - #47 y
+INFO  20:52:24,228 - #43 ;
+INFO  20:52:24,229 - #9 const
+INFO  20:52:24,230 - #47 char
+INFO  20:52:24,230 - #47 c
+INFO  20:52:24,230 - #4 =
+INFO  20:52:24,230 - #50 a
+INFO  20:52:24,231 - #43 ;
+INFO  20:52:24,233 - #25 {
+INFO  20:52:24,234 - #45 void
+INFO  20:52:24,236 - #47 m
+INFO  20:52:24,236 - #26 (
+INFO  20:52:24,236 - #47 int
+INFO  20:52:24,236 - #47 j
+INFO  20:52:24,236 - #41 )
+INFO  20:52:24,238 - #25 {
+INFO  20:52:24,239 - #38 }
+INFO  20:52:24,240 - #38 }
+INFO  20:52:24,245 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       char
+      ) [Type]
+      AssignConst(
+       c
+        Assignop(
+        ) [Assignop]
+        CharConst(
+         a
+        ) [CharConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       m
+        OptFormPars(
+          FormPars(
+            Type(
+             int
+            ) [Type]
+           j
+            NotArray(
+            ) [NotArray]
+            NotParamArray(
+            ) [NotParamArray]
+          ) [FormPars]
+        ) [OptFormPars]
+      ) [MethodNameVoid]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  20:52:24,245 - ===================================

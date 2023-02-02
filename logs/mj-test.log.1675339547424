@@ -1,0 +1,35 @@
+INFO  23:35:51,198 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  23:35:51,290 - #37 program
+INFO  23:35:51,291 - #47 test
+INFO  23:35:51,291 - #47 int
+INFO  23:35:51,293 - #47 x
+INFO  23:35:51,294 - #43 ;
+INFO  23:35:51,296 - #25 {
+INFO  23:35:51,298 - #38 }
+INFO  23:35:51,306 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    NoDecl(
+    ) [NoDecl]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     x
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  23:35:51,306 - ===================================
+INFO  23:35:51,310 - Deklarisana promenljiva x na liniji 2
+INFO  23:35:51,310 -  Print count calls = 0
+INFO  23:35:51,314 -  Deklarisanih promenljivih ima = 1
+INFO  23:35:51,314 - ===================================
+INFO  23:35:51,317 - Parsiranje uspesno zavrseno!

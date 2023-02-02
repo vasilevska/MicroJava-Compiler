@@ -1,0 +1,351 @@
+INFO  14:47:43,597 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  14:47:43,622 - #37 program
+INFO  14:47:43,622 - #47 MJProgram
+INFO  14:47:43,622 - #47 int
+INFO  14:47:43,625 - #47 x
+INFO  14:47:43,626 - #28 [
+INFO  14:47:43,626 - #42 ]
+INFO  14:47:43,626 - #8 ,
+INFO  14:47:43,627 - #47 y
+INFO  14:47:43,627 - #28 [
+INFO  14:47:43,627 - #42 ]
+INFO  14:47:43,627 - #8 ,
+INFO  14:47:43,627 - #47 c
+INFO  14:47:43,627 - #43 ;
+INFO  14:47:43,628 - #9 const
+INFO  14:47:43,629 - #47 char
+INFO  14:47:43,629 - #47 l
+INFO  14:47:43,629 - #4 =
+INFO  14:47:43,629 - #49 true
+INFO  14:47:43,630 - #43 ;
+INFO  14:47:43,630 - #25 {
+INFO  14:47:43,631 - #47 int
+INFO  14:47:43,632 - #47 k
+INFO  14:47:43,632 - #26 (
+INFO  14:47:43,635 - #47 int
+INFO  14:47:43,635 - #47 f
+INFO  14:47:43,636 - #28 [
+INFO  14:47:43,636 - #42 ]
+INFO  14:47:43,636 - #8 ,
+INFO  14:47:43,636 - #47 bool
+INFO  14:47:43,636 - #47 c
+INFO  14:47:43,636 - #8 ,
+INFO  14:47:43,636 - #47 char
+INFO  14:47:43,636 - #47 k
+INFO  14:47:43,636 - #28 [
+INFO  14:47:43,636 - #42 ]
+INFO  14:47:43,637 - #41 )
+INFO  14:47:43,637 - #47 int
+INFO  14:47:43,637 - #47 c
+INFO  14:47:43,638 - #43 ;
+INFO  14:47:43,638 - #25 {
+INFO  14:47:43,638 - #5 break
+INFO  14:47:43,638 - #43 ;
+INFO  14:47:43,638 - #38 }
+INFO  14:47:43,639 - #47 int
+INFO  14:47:43,639 - #47 main
+INFO  14:47:43,639 - #26 (
+INFO  14:47:43,639 - #41 )
+INFO  14:47:43,639 - #25 {
+INFO  14:47:43,639 - #39 read
+INFO  14:47:43,640 - #26 (
+INFO  14:47:43,640 - #47 c
+INFO  14:47:43,640 - #14 .
+INFO  14:47:43,640 - #47 k
+INFO  14:47:43,640 - #28 [
+INFO  14:47:43,640 - #48 6
+INFO  14:47:43,640 - #31 *
+INFO  14:47:43,641 - #48 2
+INFO  14:47:43,642 - #12 /
+INFO  14:47:43,642 - #48 4
+INFO  14:47:43,642 - #30 %
+INFO  14:47:43,642 - #48 3
+INFO  14:47:43,643 - #42 ]
+INFO  14:47:43,644 - #41 )
+INFO  14:47:43,645 - #43 ;
+INFO  14:47:43,645 - #21 if
+INFO  14:47:43,645 - #26 (
+INFO  14:47:43,645 - #48 3
+INFO  14:47:43,645 - #41 )
+INFO  14:47:43,646 - #10 continue
+INFO  14:47:43,647 - #43 ;
+INFO  14:47:43,647 - #15 else
+INFO  14:47:43,647 - #5 break
+INFO  14:47:43,647 - #43 ;
+INFO  14:47:43,647 - #10 continue
+INFO  14:47:43,647 - #43 ;
+INFO  14:47:43,647 - #25 {
+INFO  14:47:43,647 - #5 break
+INFO  14:47:43,647 - #43 ;
+INFO  14:47:43,647 - #38 }
+INFO  14:47:43,647 - #36 print
+INFO  14:47:43,648 - #26 (
+INFO  14:47:43,648 - #47 c
+INFO  14:47:43,648 - #26 (
+INFO  14:47:43,648 - #48 3
+INFO  14:47:43,648 - #8 ,
+INFO  14:47:43,648 - #48 4
+INFO  14:47:43,649 - #41 )
+INFO  14:47:43,649 - #41 )
+INFO  14:47:43,649 - #43 ;
+INFO  14:47:43,649 - #38 }
+INFO  14:47:43,649 - #38 }
+INFO  14:47:43,654 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        ArrayBrackets(
+        ) [ArrayBrackets]
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           y
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [ArrayVar]
+         c
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       char
+      ) [Type]
+      AssignConst(
+       l
+        Assignop(
+        ) [Assignop]
+        BoolConst(
+         true
+        ) [BoolConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    MethDecls(
+      NoMethDecl(
+      ) [NoMethDecl]
+      MethodDeclDerived1(
+        MethodNameType(
+          Type(
+           int
+          ) [Type]
+         k
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             f
+              ArrayBrackets(
+              ) [ArrayBrackets]
+              ArrayParam(
+                ArrayParam(
+                  NotParamArray(
+                  ) [NotParamArray]
+                  Type(
+                   bool
+                  ) [Type]
+                 c
+                  NotArray(
+                  ) [NotArray]
+                ) [ArrayParam]
+                Type(
+                 char
+                ) [Type]
+               k
+                ArrayBrackets(
+                ) [ArrayBrackets]
+              ) [ArrayParam]
+            ) [FormPars]
+          ) [OptFormPars]
+        ) [MethodNameType]
+        FunctionBodyDerived1(
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+             c
+              NotArray(
+              ) [NotArray]
+              NotIdentArray(
+              ) [NotIdentArray]
+            ) [VarDecl]
+          ) [VarDecls]
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementBreak(
+            ) [StatementBreak]
+          ) [Statements]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementRead(
+                    Designator(
+                     c
+                      DesignExprList(
+                        DesignIdentList(
+                          NoOptDesignList(
+                          ) [NoOptDesignList]
+                         k
+                        ) [DesignIdentList]
+                        ExprBase(
+                          Term(
+                            FactorNumber(
+                             6
+                            ) [FactorNumber]
+                            MulFactors(
+                              MulFactors(
+                                MulFactors(
+                                  NoMulFactor(
+                                  ) [NoMulFactor]
+                                  MulOp(
+                                  ) [MulOp]
+                                  FactorNumber(
+                                   2
+                                  ) [FactorNumber]
+                                ) [MulFactors]
+                                DivOp(
+                                ) [DivOp]
+                                FactorNumber(
+                                 4
+                                ) [FactorNumber]
+                              ) [MulFactors]
+                              ModOp(
+                              ) [ModOp]
+                              FactorNumber(
+                               3
+                              ) [FactorNumber]
+                            ) [MulFactors]
+                          ) [Term]
+                          NoAddTerm(
+                          ) [NoAddTerm]
+                        ) [ExprBase]
+                      ) [DesignExprList]
+                    ) [Designator]
+                  ) [StatementRead]
+                ) [Statements]
+                StatementIfElse(
+                  Condition(
+                    ExprBase(
+                      Term(
+                        FactorNumber(
+                         3
+                        ) [FactorNumber]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                    NoCondTerm(
+                    ) [NoCondTerm]
+                  ) [Condition]
+                  StatementContinue(
+                  ) [StatementContinue]
+                  Else(
+                    StatementBreak(
+                    ) [StatementBreak]
+                  ) [Else]
+                ) [StatementIfElse]
+              ) [Statements]
+              StatementContinue(
+              ) [StatementContinue]
+            ) [Statements]
+            StatementBlock(
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+                StatementBreak(
+                ) [StatementBreak]
+              ) [Statements]
+            ) [StatementBlock]
+          ) [Statements]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorActPars(
+                  Designator(
+                   c
+                    NoOptDesignList(
+                    ) [NoOptDesignList]
+                  ) [Designator]
+                  ActPars(
+                    ExprBase(
+                      Term(
+                        FactorNumber(
+                         3
+                        ) [FactorNumber]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                    Exprs(
+                      NoExpr(
+                      ) [NoExpr]
+                      ExprBase(
+                        Term(
+                          FactorNumber(
+                           4
+                          ) [FactorNumber]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [Exprs]
+                  ) [ActPars]
+                ) [FactorActPars]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  14:47:43,654 - ===================================

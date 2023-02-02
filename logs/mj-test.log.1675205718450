@@ -1,0 +1,108 @@
+INFO  23:15:39,070 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  23:15:39,097 - #37 program
+INFO  23:15:39,098 - #47 MJProgram
+INFO  23:15:39,098 - #47 int
+INFO  23:15:39,099 - #47 x
+INFO  23:15:39,100 - #43 ;
+INFO  23:15:39,103 - #47 int
+INFO  23:15:39,105 - #47 y
+INFO  23:15:39,106 - #43 ;
+INFO  23:15:39,106 - #25 {
+INFO  23:15:39,106 - #47 int
+INFO  23:15:39,107 - #47 k
+INFO  23:15:39,107 - #26 (
+INFO  23:15:39,107 - #41 )
+INFO  23:15:39,107 - #47 int
+INFO  23:15:39,108 - #47 c
+INFO  23:15:39,108 - #43 ;
+INFO  23:15:39,108 - #25 {
+INFO  23:15:39,108 - #38 }
+INFO  23:15:39,109 - #47 int
+INFO  23:15:39,109 - #47 main
+INFO  23:15:39,109 - #26 (
+INFO  23:15:39,109 - #41 )
+INFO  23:15:39,110 - #25 {
+INFO  23:15:39,113 - #38 }
+INFO  23:15:39,113 - #38 }
+INFO  23:15:39,118 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        NotIdentArray(
+        ) [NotIdentArray]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     y
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    MethDecls(
+      NoMethDecl(
+      ) [NoMethDecl]
+      MethodDeclDerived1(
+        MethodNameType(
+          Type(
+           int
+          ) [Type]
+         k
+          NoFormPars(
+          ) [NoFormPars]
+        ) [MethodNameType]
+        FunctionBodyDerived1(
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+             c
+              NotArray(
+              ) [NotArray]
+              NotIdentArray(
+              ) [NotIdentArray]
+            ) [VarDecl]
+          ) [VarDecls]
+          NoStatement(
+          ) [NoStatement]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  23:15:39,118 - ===================================

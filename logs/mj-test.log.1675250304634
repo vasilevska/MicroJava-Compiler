@@ -1,0 +1,218 @@
+INFO  12:17:57,494 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  12:17:57,535 - #37 program
+INFO  12:17:57,535 - #47 MJProgram
+INFO  12:17:57,535 - #47 int
+INFO  12:17:57,537 - #47 x
+INFO  12:17:57,538 - #28 [
+INFO  12:17:57,538 - #42 ]
+INFO  12:17:57,538 - #8 ,
+INFO  12:17:57,539 - #47 y
+INFO  12:17:57,540 - #28 [
+INFO  12:17:57,540 - #42 ]
+INFO  12:17:57,540 - #8 ,
+INFO  12:17:57,540 - #47 c
+INFO  12:17:57,540 - #43 ;
+INFO  12:17:57,541 - #9 const
+INFO  12:17:57,541 - #47 bool
+INFO  12:17:57,541 - #47 l
+INFO  12:17:57,541 - #4 =
+INFO  12:17:57,542 - #49 true
+INFO  12:17:57,542 - #43 ;
+INFO  12:17:57,543 - #25 {
+INFO  12:17:57,544 - #47 int
+INFO  12:17:57,544 - #47 k
+INFO  12:17:57,544 - #26 (
+INFO  12:17:57,545 - #47 int
+INFO  12:17:57,545 - #47 f
+INFO  12:17:57,545 - #28 [
+INFO  12:17:57,545 - #42 ]
+INFO  12:17:57,545 - #8 ,
+INFO  12:17:57,545 - #47 bool
+INFO  12:17:57,545 - #47 c
+INFO  12:17:57,545 - #8 ,
+INFO  12:17:57,546 - #47 char
+INFO  12:17:57,546 - #47 k
+INFO  12:17:57,546 - #28 [
+INFO  12:17:57,546 - #42 ]
+INFO  12:17:57,546 - #41 )
+INFO  12:17:57,547 - #47 int
+INFO  12:17:57,547 - #47 c
+INFO  12:17:57,547 - #43 ;
+INFO  12:17:57,547 - #25 {
+INFO  12:17:57,547 - #5 break
+INFO  12:17:57,548 - #43 ;
+INFO  12:17:57,548 - #38 }
+INFO  12:17:57,549 - #47 int
+INFO  12:17:57,549 - #47 main
+INFO  12:17:57,549 - #26 (
+INFO  12:17:57,549 - #41 )
+INFO  12:17:57,550 - #25 {
+INFO  12:17:57,550 - #10 continue
+INFO  12:17:57,550 - #43 ;
+INFO  12:17:57,550 - #25 {
+INFO  12:17:57,551 - #5 break
+INFO  12:17:57,551 - #43 ;
+INFO  12:17:57,551 - #38 }
+INFO  12:17:57,551 - #36 print
+INFO  12:17:57,551 - #26 (
+INFO  12:17:57,551 - #48 4
+INFO  12:17:57,551 - #41 )
+INFO  12:17:57,555 - #43 ;
+INFO  12:17:57,555 - #38 }
+INFO  12:17:57,555 - #38 }
+INFO  12:17:57,560 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        ArrayBrackets(
+        ) [ArrayBrackets]
+        ArrayVar(
+          ArrayVar(
+            NotIdentArray(
+            ) [NotIdentArray]
+           y
+            ArrayBrackets(
+            ) [ArrayBrackets]
+          ) [ArrayVar]
+         c
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       bool
+      ) [Type]
+      AssignConst(
+       l
+        Assignop(
+        ) [Assignop]
+        BoolConst(
+         true
+        ) [BoolConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    MethDecls(
+      NoMethDecl(
+      ) [NoMethDecl]
+      MethodDeclDerived1(
+        MethodNameType(
+          Type(
+           int
+          ) [Type]
+         k
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             f
+              ArrayBrackets(
+              ) [ArrayBrackets]
+              ArrayParam(
+                ArrayParam(
+                  NotParamArray(
+                  ) [NotParamArray]
+                  Type(
+                   bool
+                  ) [Type]
+                 c
+                  NotArray(
+                  ) [NotArray]
+                ) [ArrayParam]
+                Type(
+                 char
+                ) [Type]
+               k
+                ArrayBrackets(
+                ) [ArrayBrackets]
+              ) [ArrayParam]
+            ) [FormPars]
+          ) [OptFormPars]
+        ) [MethodNameType]
+        FunctionBodyDerived1(
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+             c
+              NotArray(
+              ) [NotArray]
+              NotIdentArray(
+              ) [NotIdentArray]
+            ) [VarDecl]
+          ) [VarDecls]
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementBreak(
+            ) [StatementBreak]
+          ) [Statements]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameType]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          Statements(
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementContinue(
+              ) [StatementContinue]
+            ) [Statements]
+            StatementBlock(
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+                StatementBreak(
+                ) [StatementBreak]
+              ) [Statements]
+            ) [StatementBlock]
+          ) [Statements]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorNumber(
+                 4
+                ) [FactorNumber]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  12:17:57,560 - ===================================

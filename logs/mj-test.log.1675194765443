@@ -1,0 +1,108 @@
+INFO  20:52:32,226 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  20:52:32,256 - #37 program
+INFO  20:52:32,256 - #47 MJProgram
+INFO  20:52:32,256 - #47 int
+INFO  20:52:32,257 - #47 x
+INFO  20:52:32,258 - #8 ,
+INFO  20:52:32,260 - #47 y
+INFO  20:52:32,260 - #43 ;
+INFO  20:52:32,260 - #9 const
+INFO  20:52:32,262 - #47 char
+INFO  20:52:32,262 - #47 c
+INFO  20:52:32,262 - #4 =
+INFO  20:52:32,262 - #50 a
+INFO  20:52:32,263 - #43 ;
+INFO  20:52:32,264 - #25 {
+INFO  20:52:32,265 - #45 void
+INFO  20:52:32,266 - #47 m
+INFO  20:52:32,266 - #26 (
+INFO  20:52:32,266 - #47 int
+INFO  20:52:32,266 - #47 j
+INFO  20:52:32,266 - #41 )
+INFO  20:52:32,267 - #47 int
+INFO  20:52:32,268 - #47 k
+INFO  20:52:32,268 - #43 ;
+INFO  20:52:32,272 - #25 {
+INFO  20:52:32,272 - #38 }
+INFO  20:52:32,272 - #38 }
+INFO  20:52:32,277 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       char
+      ) [Type]
+      AssignConst(
+       c
+        Assignop(
+        ) [Assignop]
+        CharConst(
+         a
+        ) [CharConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       m
+        OptFormPars(
+          FormPars(
+            Type(
+             int
+            ) [Type]
+           j
+            NotArray(
+            ) [NotArray]
+            NotParamArray(
+            ) [NotParamArray]
+          ) [FormPars]
+        ) [OptFormPars]
+      ) [MethodNameVoid]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           k
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  20:52:32,277 - ===================================

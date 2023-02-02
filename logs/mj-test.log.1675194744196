@@ -1,0 +1,81 @@
+INFO  20:52:11,984 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  20:52:12,010 - #37 program
+INFO  20:52:12,010 - #47 MJProgram
+INFO  20:52:12,010 - #47 int
+INFO  20:52:12,011 - #47 x
+INFO  20:52:12,012 - #8 ,
+INFO  20:52:12,014 - #47 y
+INFO  20:52:12,014 - #43 ;
+INFO  20:52:12,015 - #9 const
+INFO  20:52:12,015 - #47 char
+INFO  20:52:12,016 - #47 c
+INFO  20:52:12,016 - #4 =
+INFO  20:52:12,016 - #50 a
+INFO  20:52:12,016 - #43 ;
+INFO  20:52:12,018 - #25 {
+INFO  20:52:12,018 - #45 void
+INFO  20:52:12,019 - #47 m
+INFO  20:52:12,019 - #26 (
+INFO  20:52:12,019 - #41 )
+INFO  20:52:12,019 - #25 {
+INFO  20:52:12,020 - #38 }
+INFO  20:52:12,021 - #38 }
+INFO  20:52:12,025 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         y
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       char
+      ) [Type]
+      AssignConst(
+       c
+        Assignop(
+        ) [Assignop]
+        CharConst(
+         a
+        ) [CharConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       m
+        NoFormPars(
+        ) [NoFormPars]
+      ) [MethodNameVoid]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  20:52:12,028 - ===================================

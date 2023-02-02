@@ -1,0 +1,121 @@
+package rs.ac.bg.etf.pp1;
+
+import java_cup.runtime.*;
+import org.apache.log4j.*;
+import rs.ac.bg.etf.pp1.ast.*;
+
+parser code {:
+
+	boolean errorDetected;
+	
+	Logger log = Logger.getLogger(getClass());
+   
+   
+    // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
+     
+    public void report_fatal_error(String message, Object info) throws java.lang.Exception {
+      done_parsing();
+      report_error(message, info);
+    }
+  
+    public void syntax_error(Symbol cur_token) {
+        report_error("\nSintaksna greska", cur_token);
+    }
+  
+    public void unrecovered_syntax_error(Symbol cur_token) throws java.lang.Exception {
+        report_fatal_error("Fatalna greska, parsiranje se ne moze nastaviti", cur_token);
+    }
+
+    public void report_error(String message, Object info) {
+    	errorDetected = true;
+    	StringBuilder msg = new StringBuilder(message); 
+    	if (info instanceof Symbol)
+            msg.append (" na liniji ").append(((Symbol)info).left);
+        log.error(msg.toString());
+    }
+
+
+:}
+
+init with {:
+	errorDetected = false;
+:}
+
+scan with {:
+	Symbol s = this.getScanner().next_token();
+	if (s != null && s.value != null) 
+		log.info(s.toString() + " " + s.value.toString());
+	return s;
+:}
+
+terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DO, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
+nonterminal ActPars, AddOpp, AddTermList, AssignConst, AssignDesign, Assignop, ClassDecl, ClassName, CondFact, CondFactList, CondTerm, CondTermList, Condition, Const, ConstDecl, ConstructorDecl, ConstructorDeclList, DeclList, DesignList, DesignatorStatement, EmptySqBrackets, ExprList, ExtendClass, FormPars, FunctionBody, IdentSqList, MethodDeclList, MulFactorList, MulOpp, OptionalClassBody, OptionalDesign, OptionalDesignList, OptionalElse, OptionalFormPars, ParamSqList, Program, RelOpp, RepeatConst, Statement, StatementList, VarDecl, VarDeclList;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+
+terminal String IDENT;
+terminal Integer NUMBER;
+terminal Boolean BOOL;
+terminal Character CHAR;
+
+precedence left ELSE;
+start with Program;
+
+
+ActPars ::= (ActPars) Expr ExprList;
+AddOpp ::= (AddOp) ADD | (SubOp) SUB;
+AddTermList ::= (AddTerms) AddTermList AddOpp Term | (NoAddTerm) /* epsilon */ ;
+AssignConst ::= (AssignConst) IDENT Assignop Const;
+AssignDesign ::= (AssignDesign) Assignop Designator;
+Assignop ::= (Assignop) ASSIGN;
+
+ClassDecl ::= (ClassDecl) ClassName ExtendClass LBRACE VarDeclList OptionalClassBody RBRACE ;
+ClassName ::= (ClassName) CLASS IDENT;
+
+CondFact ::= (CondFactBase) Expr | (CondFactRel) Expr RelOpp Expr;
+CondFactList ::= (CondFacts) CondFactList AND CondFact | (NoCondFact) /* epsilon */ ;
+CondTerm ::= (CondTerm) CondFact CondFactList;
+CondTermList ::= (CondTerms) CondTermList OR CondTerm | (NoCondTerm) /* epsilon */ ;
+Condition ::= (Condition) CondTerm CondTermList;
+Const ::= (IntConst) NUMBER | (CharConst) CHAR | (BoolConst) BOOL;
+ConstDecl ::= (ConstDecl) CONST Type AssignConst RepeatConst SEMI;
+
+ConstructorDeclList ::= (ConstructorDecls) ConstructorDeclList ConstructorDecl | (NoConstructorDecl)/* epsilon */ ;
+//ConstructorDecl ::= (ConstructorDecl)IDENT LPAREN OptionalFormPars RPAREN FunctionBody;
+
+DeclList ::= (DeclsConst) DeclList ConstDecl | (DeclsVar) DeclList VarDecl | (DeclsClass) DeclList ClassDecl | (NoDecl)/* epsilon */ ;
+DesignList ::= (DesignListMulti) DesignList COMMA OptionalDesign | (NoDesignList) /* epsilon */ ;
+Designator ::= (Designator) IDENT OptionalDesignList;
+DesignatorStatement ::= (DesignatorStatementBase) Designator | (DesignatorStatementAssignExpr) Designator Assignop Expr | (DesignatorStatementParens) Designator LPAREN RPAREN | (DesignatorStatementActPars) Designator LPAREN ActPars RPAREN | (DesignatorStatementInc) Designator INC | (DesignatorStatementDec) Designator DEC | (DesignatorStatementListAssign) LSQUARE OptionalDesign DesignList RSQUARE AssignDesign ; // | (DesignatorStatementForeach) Designator DOT FOREACH LPAREN IDENT NEXT Statement RPAREN SEMI;
+EmptySqBrackets ::= (ArrayBrackets) LSQUARE RSQUARE | (NotArray) /* epsilon */ ;
+Expr ::= (ExprBase) Term AddTermList | (ExprSub) SUB Term AddTermList;
+ExprList ::= (Exprs) ExprList COMMA Expr | (NoExpr) /* epsiolon*/;
+ExtendClass ::= (ParentClass) EXTENDS Type | (NoParent) /* epsilon */ ;
+Factor ::= (FactorBase) Designator | (FactorParen) Designator LPAREN RPAREN | (FactorActPars) Designator LPAREN ActPars RPAREN | (FactorNumber) NUMBER | (FactorChar) CHAR | (FactorBool) BOOL | (FactorNewSquare) NEW Type LSQUARE Expr RSQUARE | (FactorNewParen) NEW Type LPAREN RPAREN | (FactorNewActPars) NEW Type LPAREN ActPars RPAREN | (FactorParensExpr) LPAREN Expr RPAREN;
+FormPars ::= (FormPars) Type IDENT EmptySqBrackets ParamSqList;
+FunctionBody ::= VarDeclList LBRACE StatementList RBRACE;
+IdentSqList ::= (ArrayVar) IdentSqList COMMA IDENT EmptySqBrackets | (NotIdentArray) /* epsilon */ ;
+MethodDecl ::= MethodName FunctionBody;
+MethodDeclList ::= (MethDecls) MethodDeclList MethodDecl | (NoMethDecl)/* epsilon */ ;
+MethodName ::= (MethodNameVoid) VOID IDENT LPAREN OptionalFormPars RPAREN | (MethodNameType) Type IDENT LPAREN OptionalFormPars RPAREN;
+MulFactorList ::= (MulFactors) MulFactorList MulOpp Factor | (NoMulFactor) /* epsilon */ ;
+MulOpp ::= (MulOp) MUL | (DivOp) DIV | (ModOp) MOD;
+
+OptionalClassBody ::= (ClassBody) LBRACE ConstructorDeclList MethodDeclList RBRACE | (NoClassBody) /* epsilon */ ;
+
+OptionalDesign ::= (DesignatorArr) Designator | (NoDesignatorArr) ;
+OptionalDesignList ::= (DesignIdentList) OptionalDesignList DOT IDENT | (DesignExprList) OptionalDesignList LSQUARE Expr RSQUARE | (NoOptDesignList);
+OptionalElse ::= (Else) ELSE Statement | (NoElse) /* epsilon */ ;
+OptionalFormPars ::= (OptFormPars) FormPars | (NoFormPars) /* epsilon */ ;
+ParamSqList ::= (ArrayParam) ParamSqList COMMA Type IDENT EmptySqBrackets | (NotParamArray) /* epsilon */ ;
+Program ::= (Program) ProgName DeclList LBRACE MethodDeclList RBRACE;
+ProgName ::= (ProgName) PROG IDENT;
+RelOpp ::= (EqOp) EQUAL | (NeqOp) NEQUAL | (GreOp) GRE | (LeqOp) LEQ | (GrOp) GR | (LsOp) LS;
+RepeatConst ::= (NewRepeatConst) RepeatConst COMMA AssignConst | (NoRepeatConst) /*epsion */;
+Statement ::= (StatementDesignator) DesignatorStatement SEMI | (StatementIfElse) IF LPAREN Condition RPAREN Statement OptionalElse | (StatementWhile) WHILE LPAREN Condition RPAREN Statement | (StatementBreak) BREAK SEMI | (StatementContinue) CONTINUE SEMI | (StatementReturnVoid) RETURN SEMI | (StatementReturnExpr) RETURN Expr SEMI | (StatementRead) READ LPAREN Designator RPAREN SEMI | (StatementPrintExpr) PRINT LPAREN Expr RPAREN SEMI | (StatementPrintExprNumber) PRINT LPAREN Expr COMMA NUMBER RPAREN SEMI |  (StatementBlock) LBRACE StatementList RBRACE;
+StatementList ::= (Statements) StatementList Statement | (NoStatement) /* epsilon */ ;
+Term ::= (Term) Factor MulFactorList;
+Type ::= (Type) IDENT;
+VarDecl ::= (VarDecl) Type IDENT EmptySqBrackets IdentSqList SEMI;
+VarDeclList ::= (VarDecls) VarDeclList VarDecl | (NoVarDecl)/* epsilon */ ;

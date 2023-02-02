@@ -1,0 +1,52 @@
+INFO  22:09:40,594 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  22:09:40,695 - #37 program
+INFO  22:09:40,695 - #47 test
+INFO  22:09:40,695 - #47 int
+INFO  22:09:40,697 - #47 k
+INFO  22:09:40,699 - #43 ;
+INFO  22:09:40,702 - #47 char
+INFO  22:09:40,703 - #47 c
+INFO  22:09:40,703 - #8 ,
+INFO  22:09:40,703 - #47 b
+INFO  22:09:40,704 - #43 ;
+INFO  22:09:40,704 - #25 {
+INFO  22:09:40,704 - #38 }
+INFO  22:09:40,712 - Program(
+  ProgName(
+   test
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       k
+        NotArray(
+        ) [NotArray]
+        NotIdentArray(
+        ) [NotIdentArray]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       char
+      ) [Type]
+     c
+      NotArray(
+      ) [NotArray]
+      ArrayVar(
+        NotIdentArray(
+        ) [NotIdentArray]
+       b
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  22:09:40,716 - ===================================

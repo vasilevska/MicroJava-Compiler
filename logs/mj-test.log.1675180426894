@@ -1,0 +1,49 @@
+INFO  15:49:30,375 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  15:49:30,413 - #37 program
+INFO  15:49:30,413 - #47 MJProgram
+INFO  15:49:30,414 - #47 int
+INFO  15:49:30,415 - #47 x
+INFO  15:49:30,417 - #43 ;
+INFO  15:49:30,419 - #47 int
+INFO  15:49:30,420 - #47 y
+INFO  15:49:30,420 - #43 ;
+INFO  15:49:30,420 - #25 {
+INFO  15:49:30,420 - #38 }
+INFO  15:49:30,428 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      NoDecl(
+      ) [NoDecl]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       x
+        NotArray(
+        ) [NotArray]
+        NotIdentArray(
+        ) [NotIdentArray]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     y
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  15:49:30,434 - ===================================
+INFO  15:49:30,437 -  Print count calls = 0
+INFO  15:49:30,438 -  Deklarisanih promenljivih ima = 0
+INFO  15:49:30,438 - ===================================
+INFO  15:49:30,441 - Parsiranje uspesno zavrseno!

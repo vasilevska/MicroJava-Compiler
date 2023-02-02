@@ -1,0 +1,259 @@
+INFO  15:31:04,493 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  15:31:04,540 - #37 program
+INFO  15:31:04,540 - #47 test302
+INFO  15:31:04,540 - #6 class
+INFO  15:31:04,541 - #47 Sfera
+INFO  15:31:04,542 - #17 extends
+INFO  15:31:04,542 - #47 Predmet
+INFO  15:31:04,542 - #25 {
+INFO  15:31:04,543 - #47 int
+INFO  15:31:04,544 - #47 r
+INFO  15:31:04,545 - #43 ;
+INFO  15:31:04,546 - #25 {
+INFO  15:31:04,546 - #45 void
+INFO  15:31:04,547 - #47 postaviPoluprecnik
+INFO  15:31:04,547 - #26 (
+INFO  15:31:04,547 - #47 int
+INFO  15:31:04,548 - #47 r
+INFO  15:31:04,548 - #41 )
+INFO  15:31:04,549 - #25 {
+INFO  15:31:04,549 - #47 this
+INFO  15:31:04,549 - #14 .
+INFO  15:31:04,550 - #47 r
+INFO  15:31:04,554 - #4 =
+INFO  15:31:04,555 - #47 r
+INFO  15:31:04,555 - #43 ;
+INFO  15:31:04,558 - #38 }
+INFO  15:31:04,558 - #47 int
+INFO  15:31:04,558 - #47 zapremina
+INFO  15:31:04,558 - #26 (
+INFO  15:31:04,558 - #41 )
+INFO  15:31:04,559 - #47 int
+INFO  15:31:04,559 - #47 z
+INFO  15:31:04,559 - #43 ;
+INFO  15:31:04,560 - #25 {
+INFO  15:31:04,560 - #47 z
+INFO  15:31:04,560 - #4 =
+INFO  15:31:04,560 - #47 cinilac
+INFO  15:31:04,560 - #43 ;
+INFO  15:31:04,560 - #40 return
+INFO  15:31:04,560 - #47 z
+INFO  15:31:04,560 - #31 *
+INFO  15:31:04,560 - #26 (
+INFO  15:31:04,561 - #47 r
+INFO  15:31:04,561 - #12 /
+INFO  15:31:04,561 - #47 delilac
+INFO  15:31:04,562 - #41 )
+INFO  15:31:04,562 - #43 ;
+INFO  15:31:04,562 - #38 }
+INFO  15:31:04,563 - #38 }
+INFO  15:31:04,563 - #38 }
+INFO  15:31:04,563 - #25 {
+INFO  15:31:04,565 - #38 }
+INFO  15:31:04,569 - Program(
+  ProgName(
+   test302
+  ) [ProgName]
+  DeclsClass(
+    NoDecl(
+    ) [NoDecl]
+    ClassDecl(
+      ClassName(
+       Sfera
+      ) [ClassName]
+      ParentClass(
+        Type(
+         Predmet
+        ) [Type]
+      ) [ParentClass]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+         r
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [VarDecls]
+      ClassBody(
+        NoConstructorDecl(
+        ) [NoConstructorDecl]
+        MethDecls(
+          MethDecls(
+            NoMethDecl(
+            ) [NoMethDecl]
+            MethodDeclDerived1(
+              MethodNameVoid(
+               postaviPoluprecnik
+                OptFormPars(
+                  FormPars(
+                    Type(
+                     int
+                    ) [Type]
+                   r
+                    NotArray(
+                    ) [NotArray]
+                    NotParamArray(
+                    ) [NotParamArray]
+                  ) [FormPars]
+                ) [OptFormPars]
+              ) [MethodNameVoid]
+              FunctionBodyDerived1(
+                NoVarDecl(
+                ) [NoVarDecl]
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementDesignator(
+                    DesignatorStatementAssignExpr(
+                      Designator(
+                       this
+                        DesignIdentList(
+                          NoOptDesignList(
+                          ) [NoOptDesignList]
+                         r
+                        ) [DesignIdentList]
+                      ) [Designator]
+                      Assignop(
+                      ) [Assignop]
+                      ExprBase(
+                        Term(
+                          FactorBase(
+                            Designator(
+                             r
+                              NoOptDesignList(
+                              ) [NoOptDesignList]
+                            ) [Designator]
+                          ) [FactorBase]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [DesignatorStatementAssignExpr]
+                  ) [StatementDesignator]
+                ) [Statements]
+              ) [FunctionBodyDerived1]
+            ) [MethodDeclDerived1]
+          ) [MethDecls]
+          MethodDeclDerived1(
+            MethodNameType(
+              Type(
+               int
+              ) [Type]
+             zapremina
+              NoFormPars(
+              ) [NoFormPars]
+            ) [MethodNameType]
+            FunctionBodyDerived1(
+              VarDecls(
+                NoVarDecl(
+                ) [NoVarDecl]
+                VarDecl(
+                  Type(
+                   int
+                  ) [Type]
+                 z
+                  NotArray(
+                  ) [NotArray]
+                  NotIdentArray(
+                  ) [NotIdentArray]
+                ) [VarDecl]
+              ) [VarDecls]
+              Statements(
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementDesignator(
+                    DesignatorStatementAssignExpr(
+                      Designator(
+                       z
+                        NoOptDesignList(
+                        ) [NoOptDesignList]
+                      ) [Designator]
+                      Assignop(
+                      ) [Assignop]
+                      ExprBase(
+                        Term(
+                          FactorBase(
+                            Designator(
+                             cinilac
+                              NoOptDesignList(
+                              ) [NoOptDesignList]
+                            ) [Designator]
+                          ) [FactorBase]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [DesignatorStatementAssignExpr]
+                  ) [StatementDesignator]
+                ) [Statements]
+                StatementReturnExpr(
+                  ExprBase(
+                    Term(
+                      FactorBase(
+                        Designator(
+                         z
+                          NoOptDesignList(
+                          ) [NoOptDesignList]
+                        ) [Designator]
+                      ) [FactorBase]
+                      MulFactors(
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                        MulOp(
+                        ) [MulOp]
+                        FactorParensExpr(
+                          ExprBase(
+                            Term(
+                              FactorBase(
+                                Designator(
+                                 r
+                                  NoOptDesignList(
+                                  ) [NoOptDesignList]
+                                ) [Designator]
+                              ) [FactorBase]
+                              MulFactors(
+                                NoMulFactor(
+                                ) [NoMulFactor]
+                                DivOp(
+                                ) [DivOp]
+                                FactorBase(
+                                  Designator(
+                                   delilac
+                                    NoOptDesignList(
+                                    ) [NoOptDesignList]
+                                  ) [Designator]
+                                ) [FactorBase]
+                              ) [MulFactors]
+                            ) [Term]
+                            NoAddTerm(
+                            ) [NoAddTerm]
+                          ) [ExprBase]
+                        ) [FactorParensExpr]
+                      ) [MulFactors]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [StatementReturnExpr]
+              ) [Statements]
+            ) [FunctionBodyDerived1]
+          ) [MethodDeclDerived1]
+        ) [MethDecls]
+      ) [ClassBody]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  NoMethDecl(
+  ) [NoMethDecl]
+) [Program]
+INFO  15:31:04,569 - ===================================

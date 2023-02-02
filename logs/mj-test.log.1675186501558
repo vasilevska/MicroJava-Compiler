@@ -1,0 +1,66 @@
+INFO  18:08:13,038 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  18:08:13,109 - #37 program
+INFO  18:08:13,109 - #47 MJProgram
+INFO  18:08:13,110 - #47 int
+INFO  18:08:13,113 - #47 x
+INFO  18:08:13,114 - #43 ;
+INFO  18:08:13,118 - #47 int
+INFO  18:08:13,120 - #47 y
+INFO  18:08:13,120 - #43 ;
+INFO  18:08:13,120 - #9 const
+INFO  18:08:13,120 - #47 char
+INFO  18:08:13,120 - #47 c
+INFO  18:08:13,121 - #4 =
+INFO  18:08:13,121 - #50 a
+INFO  18:08:13,122 - #43 ;
+INFO  18:08:13,125 - #25 {
+INFO  18:08:13,126 - #38 }
+INFO  18:08:13,138 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsConst(
+    DeclsVar(
+      DeclsVar(
+        NoDecl(
+        ) [NoDecl]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+         x
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [DeclsVar]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       y
+        NotArray(
+        ) [NotArray]
+        NotIdentArray(
+        ) [NotIdentArray]
+      ) [VarDecl]
+    ) [DeclsVar]
+    ConstDecl(
+      Type(
+       char
+      ) [Type]
+      AssignConst(
+       c
+        Assignop(
+        ) [Assignop]
+        CharConst(
+         a
+        ) [CharConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+) [Program]
+INFO  18:08:13,142 - ===================================
