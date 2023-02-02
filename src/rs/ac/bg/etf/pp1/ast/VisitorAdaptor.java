@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 16:38:13
+// 2/1/2023 22:9:53
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,6 +8,7 @@ package rs.ac.bg.etf.pp1.ast;
 public abstract class VisitorAdaptor implements Visitor { 
 
     public void visit(MethodDecl MethodDecl) { }
+    public void visit(ConstructorDecl ConstructorDecl) { }
     public void visit(RelOpp RelOpp) { }
     public void visit(CondTermList CondTermList) { }
     public void visit(MulOpp MulOpp) { }
@@ -20,6 +21,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DeclList DeclList) { }
     public void visit(MethodName MethodName) { }
     public void visit(MulFactorList MulFactorList) { }
+    public void visit(ConstructorName ConstructorName) { }
     public void visit(EmptySqBrackets EmptySqBrackets) { }
     public void visit(OptionalFormPars OptionalFormPars) { }
     public void visit(ExprList ExprList) { }
@@ -28,6 +30,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FunctionBody FunctionBody) { }
     public void visit(Expr Expr) { }
     public void visit(ParamSqList ParamSqList) { }
+    public void visit(OptionalSquareExpr OptionalSquareExpr) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(Const Const) { }
     public void visit(DesignList DesignList) { }
@@ -129,8 +132,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DeclsClass DeclsClass) { visit(); }
     public void visit(DeclsVar DeclsVar) { visit(); }
     public void visit(DeclsConst DeclsConst) { visit(); }
-    public void visit(ConstructorName ConstructorName) { visit(); }
-    public void visit(ConstructorDecl ConstructorDecl) { visit(); }
     public void visit(ConstructorSingleDecl ConstructorSingleDecl) { visit(); }
     public void visit(ConstructorDecls ConstructorDecls) { visit(); }
     public void visit(ConstDecl ConstDecl) { visit(); }

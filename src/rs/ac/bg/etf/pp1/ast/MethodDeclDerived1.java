@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 16:38:13
+// 2/1/2023 22:9:53
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,11 +8,14 @@ package rs.ac.bg.etf.pp1.ast;
 public class MethodDeclDerived1 extends MethodDecl {
 
     private MethodName MethodName;
+    private OptionalFormPars OptionalFormPars;
     private FunctionBody FunctionBody;
 
-    public MethodDeclDerived1 (MethodName MethodName, FunctionBody FunctionBody) {
+    public MethodDeclDerived1 (MethodName MethodName, OptionalFormPars OptionalFormPars, FunctionBody FunctionBody) {
         this.MethodName=MethodName;
         if(MethodName!=null) MethodName.setParent(this);
+        this.OptionalFormPars=OptionalFormPars;
+        if(OptionalFormPars!=null) OptionalFormPars.setParent(this);
         this.FunctionBody=FunctionBody;
         if(FunctionBody!=null) FunctionBody.setParent(this);
     }
@@ -23,6 +26,14 @@ public class MethodDeclDerived1 extends MethodDecl {
 
     public void setMethodName(MethodName MethodName) {
         this.MethodName=MethodName;
+    }
+
+    public OptionalFormPars getOptionalFormPars() {
+        return OptionalFormPars;
+    }
+
+    public void setOptionalFormPars(OptionalFormPars OptionalFormPars) {
+        this.OptionalFormPars=OptionalFormPars;
     }
 
     public FunctionBody getFunctionBody() {
@@ -39,17 +50,20 @@ public class MethodDeclDerived1 extends MethodDecl {
 
     public void childrenAccept(Visitor visitor) {
         if(MethodName!=null) MethodName.accept(visitor);
+        if(OptionalFormPars!=null) OptionalFormPars.accept(visitor);
         if(FunctionBody!=null) FunctionBody.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(MethodName!=null) MethodName.traverseTopDown(visitor);
+        if(OptionalFormPars!=null) OptionalFormPars.traverseTopDown(visitor);
         if(FunctionBody!=null) FunctionBody.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodName!=null) MethodName.traverseBottomUp(visitor);
+        if(OptionalFormPars!=null) OptionalFormPars.traverseBottomUp(visitor);
         if(FunctionBody!=null) FunctionBody.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -61,6 +75,12 @@ public class MethodDeclDerived1 extends MethodDecl {
 
         if(MethodName!=null)
             buffer.append(MethodName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(OptionalFormPars!=null)
+            buffer.append(OptionalFormPars.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -51,6 +51,8 @@ public class SemanticPass extends VisitorAdaptor {
     }
     
     
+    //BASIC
+    
 	public void visit(Program program){
     	nVars = Tab.currentScope.getnVars();
     	Obj main = Tab.find("main");
@@ -79,6 +81,9 @@ public class SemanticPass extends VisitorAdaptor {
     		}
     	}
     }
+	
+	
+	//VAR DECL
 	
 	public void visit(VarDecl varDecl){
 		varDeclCount++;
@@ -111,6 +116,9 @@ public class SemanticPass extends VisitorAdaptor {
 		cur.add("[]");
 	}
 	
+	
+	//METHODS
+	
 	public void visit(MethodNameType methodName){
     	currentMethod = Tab.insert(Obj.Meth, methodName.getI2(), methodName.getType().struct);
     	methodName.obj = currentMethod;
@@ -136,11 +144,41 @@ public class SemanticPass extends VisitorAdaptor {
     	currentMethod = null;
     }
     
+    //EXPRESION
+    
+    public void visit(ExprBase expr) {
+    	expr.struct = expr.getTerm().struct;
+    }
+    
+    public void visit(ExprSub expr) {
+    	expr.struct = expr.getTerm().struct;
+    }
+    
+    public void visit(Term term) {
+    	term.struct = term.getFactor().struct;
+    }
+    
+    public void visit(FactorNumber factor) {
+    	factor.struct = Tab.intType;
+    }
+    
+    public void visit(FactorChar factor) {
+    	factor.struct = Tab.charType;
+    }
+    
+    public void visit(FactorBool factor) {
+    	factor.struct = boolType;
+    }
+    
+    //STATEMENTS
+    
     public void visit(StatementPrintExpr print) {
     	if(print.getExpr().struct != Tab.intType && print.getExpr().struct!= Tab.charType && print.getExpr().struct!= boolType) report_error ("Semanticka greska na liniji " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
 		printCallCount++;
 	}
 	
+    
+    
 	/*
     
     
