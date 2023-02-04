@@ -1,0 +1,162 @@
+INFO  02:06:55,548 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  02:06:55,622 - #37 program
+INFO  02:06:55,622 - #47 MJProgram
+INFO  02:06:55,623 - #6 class
+INFO  02:06:55,625 - #47 Predmet
+INFO  02:06:55,625 - #25 {
+INFO  02:06:55,626 - #47 int
+INFO  02:06:55,628 - #47 tezina
+INFO  02:06:55,629 - #43 ;
+INFO  02:06:55,632 - #47 char
+INFO  02:06:55,634 - #47 vrsta
+INFO  02:06:55,634 - #43 ;
+INFO  02:06:55,634 - #25 {
+INFO  02:06:55,634 - #45 void
+INFO  02:06:55,635 - #47 postaviTezinu
+INFO  02:06:55,635 - #26 (
+INFO  02:06:55,635 - #47 int
+INFO  02:06:55,636 - #47 tezina
+INFO  02:06:55,636 - #41 )
+INFO  02:06:55,638 - #25 {
+INFO  02:06:55,639 - #47 this
+INFO  02:06:55,641 - #4 =
+INFO  02:06:55,645 - #47 tezina
+INFO  02:06:55,646 - #43 ;
+INFO  02:06:55,650 - #38 }
+INFO  02:06:55,650 - #38 }
+INFO  02:06:55,651 - #38 }
+INFO  02:06:55,652 - #25 {
+INFO  02:06:55,653 - #47 int
+INFO  02:06:55,653 - #47 main
+INFO  02:06:55,653 - #26 (
+INFO  02:06:55,654 - #41 )
+INFO  02:06:55,655 - #25 {
+INFO  02:06:55,655 - #38 }
+INFO  02:06:55,655 - #38 }
+INFO  02:06:55,665 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsClass(
+    NoDecl(
+    ) [NoDecl]
+    ClassDecl(
+      ClassName(
+       Predmet
+      ) [ClassName]
+      NoParent(
+      ) [NoParent]
+      VarDecls(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           tezina
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          Type(
+           char
+          ) [Type]
+         vrsta
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [VarDecls]
+      ClassBodyMeth(
+        MethodDeclDerived1(
+          MethodNameVoid(
+           postaviTezinu
+          ) [MethodNameVoid]
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             tezina
+              NotArray(
+              ) [NotArray]
+              NotParamArray(
+              ) [NotParamArray]
+            ) [FormPars]
+          ) [OptFormPars]
+          FunctionBodyDerived1(
+            NoVarDecl(
+            ) [NoVarDecl]
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementDesignator(
+                DesignatorStatementAssignExpr(
+                  DesignatorIdent(
+                    NoOptDesignList(
+                    ) [NoOptDesignList]
+                   this
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  ExprBase(
+                    Term(
+                      FactorBase(
+                        DesignatorIdent(
+                          NoOptDesignList(
+                          ) [NoOptDesignList]
+                         tezina
+                        ) [DesignatorIdent]
+                      ) [FactorBase]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [DesignatorStatementAssignExpr]
+              ) [StatementDesignator]
+            ) [Statements]
+          ) [FunctionBodyDerived1]
+        ) [MethodDeclDerived1]
+        NoMethDecl(
+        ) [NoMethDecl]
+      ) [ClassBodyMeth]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+      ) [MethodNameType]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  02:06:55,666 - ===================================
+INFO  02:06:55,671 - Deklarisana promenljiva tezina na liniji 6
+INFO  02:06:55,672 - Deklarisana promenljiva vrsta na liniji 7
+INFO  02:06:55,672 - Obradjuje se funkcija postaviTezinu na liniji 10
+INFO  02:06:55,672 - Obradjuje se funkcija main na liniji 21
+ERROR 02:06:55,672 - Semanticka greska na liniji 21: funkcija main nema return iskaz!
+INFO  02:06:55,673 -  Print count calls = 0
+INFO  02:06:55,673 -  Deklarisanih promenljivih ima = 2
+INFO  02:06:55,673 - ===================================
+ERROR 02:06:55,674 - Parsiranje NIJE uspesno zavrseno!

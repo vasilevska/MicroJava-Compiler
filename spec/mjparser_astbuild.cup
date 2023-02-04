@@ -48,7 +48,7 @@ scan with {:
 	return s;
 :}
 
-terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DO, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
+terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
 nonterminal ActPars ActPars;
 nonterminal AddOpp AddOpp;
 nonterminal AddTermList AddTermList;
@@ -56,7 +56,6 @@ nonterminal AssignConst AssignConst;
 nonterminal AssignDesign AssignDesign;
 nonterminal Assignop Assignop;
 nonterminal ClassDecl ClassDecl;
-nonterminal ClassName ClassName;
 nonterminal CondFact CondFact;
 nonterminal CondFactList CondFactList;
 nonterminal CondTerm CondTerm;
@@ -64,9 +63,7 @@ nonterminal CondTermList CondTermList;
 nonterminal Condition Condition;
 nonterminal Const Const;
 nonterminal ConstDecl ConstDecl;
-nonterminal ConstructorDecl ConstructorDecl;
 nonterminal ConstructorDeclList ConstructorDeclList;
-nonterminal ConstructorName ConstructorName;
 nonterminal DeclList DeclList;
 nonterminal DesignList DesignList;
 nonterminal DesignatorStatement DesignatorStatement;
@@ -93,7 +90,7 @@ nonterminal StatementList StatementList;
 nonterminal VarDecl VarDecl;
 nonterminal VarDeclList VarDeclList;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator, ClassName, ConstructorDecl, ConstructorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulFactorList;
 
 terminal String IDENT;
@@ -127,7 +124,9 @@ ConstructorName ::= (ConstructorName) IDENT:I1 {: RESULT=new ConstructorName(I1)
 
 DeclList ::= (DeclsConst) DeclList:D1 ConstDecl:C2 {: RESULT=new DeclsConst(D1, C2); RESULT.setLine(D1left); :} | (DeclsVar) DeclList:D1 VarDecl:V2 {: RESULT=new DeclsVar(D1, V2); RESULT.setLine(D1left); :} | (DeclsClass) DeclList:D1 ClassDecl:C2 {: RESULT=new DeclsClass(D1, C2); RESULT.setLine(D1left); :} | (NoDecl) {: RESULT=new NoDecl(); :}/* epsilon */ ;
 DesignList ::= (DesignListMulti) DesignList:D1 COMMA OptionalDesign:O2 {: RESULT=new DesignListMulti(D1, O2); RESULT.setLine(D1left); :} | (NoDesignList) {: RESULT=new NoDesignList(); :} /* epsilon */ ;
-Designator ::= (DesignatorIdent) OptionalDesignList:O1 IDENT:I2 {: RESULT=new DesignatorIdent(O1, I2); RESULT.setLine(O1left); :} | (DesignatorExpr) OptionalDesignList:O1 IDENT:I2 LSQUARE Expr:E3 RSQUARE {: RESULT=new DesignatorExpr(O1, I2, E3); RESULT.setLine(O1left); :} ;
+
+Designator ::= (DesignatorIdent) IDENT:I1 {: RESULT=new DesignatorIdent(I1); RESULT.setLine(I1left); :} | (DesignatorExpr) Designator:D1 LSQUARE Expr:E2 RSQUARE {: RESULT=new DesignatorExpr(D1, E2); RESULT.setLine(D1left); :}  | (DesignatorClassField) Designator:D1 DOT IDENT:I2 {: RESULT=new DesignatorClassField(D1, I2); RESULT.setLine(D1left); :};
+
 DesignatorStatement ::= (DesignatorStatementBase) Designator:D1 {: RESULT=new DesignatorStatementBase(D1); RESULT.setLine(D1left); :} | (DesignatorStatementAssignExpr) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesignatorStatementAssignExpr(D1, A2, E3); RESULT.setLine(D1left); :} | (DesignatorStatementParens) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorStatementParens(D1); RESULT.setLine(D1left); :} | (DesignatorStatementActPars) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorStatementActPars(D1, A2); RESULT.setLine(D1left); :} | (DesignatorStatementInc) Designator:D1 INC {: RESULT=new DesignatorStatementInc(D1); RESULT.setLine(D1left); :} | (DesignatorStatementDec) Designator:D1 DEC {: RESULT=new DesignatorStatementDec(D1); RESULT.setLine(D1left); :} | (DesignatorStatementListAssign) LSQUARE OptionalDesign:O1 DesignList:D2 RSQUARE AssignDesign:A3 {: RESULT=new DesignatorStatementListAssign(O1, D2, A3); RESULT.setLine(O1left); :} ;
 EmptySqBrackets ::= (ArrayBrackets) LSQUARE RSQUARE {: RESULT=new ArrayBrackets(); :} | (NotArray) {: RESULT=new NotArray(); :} /* epsilon */ ;
 Expr ::= (ExprBase) Term:T1 AddTermList:A2 {: RESULT=new ExprBase(T1, A2); RESULT.setLine(T1left); :} | (ExprSub) SUB Term:T1 AddTermList:A2 {: RESULT=new ExprSub(T1, A2); RESULT.setLine(T1left); :};
@@ -144,7 +143,6 @@ MulFactorList ::= (MulFactors) MulFactorList:M1 MulOpp:M2 Factor:F3 {: RESULT=ne
 MulOpp ::= (MulOp) MUL {: RESULT=new MulOp(); :} | (DivOp) DIV {: RESULT=new DivOp(); :} | (ModOp) MOD {: RESULT=new ModOp(); :};
 OptionalClassBody ::= (ClassBodyEmpty) LBRACE RBRACE {: RESULT=new ClassBodyEmpty(); :} | (ClassBodyConstr) LBRACE ConstructorDeclList:C1 RBRACE {: RESULT=new ClassBodyConstr(C1); RESULT.setLine(C1left); :} | (ClassBodyMeth) LBRACE MethodDecl:M1 MethodDeclList:M2 RBRACE {: RESULT=new ClassBodyMeth(M1, M2); RESULT.setLine(M1left); :} | (ClassBodyConstrMeth) LBRACE ConstructorDeclList:C1 MethodDecl:M2 MethodDeclList:M3 RBRACE {: RESULT=new ClassBodyConstrMeth(C1, M2, M3); RESULT.setLine(C1left); :};
 OptionalDesign ::= (DesignatorArr) Designator:D1 {: RESULT=new DesignatorArr(D1); RESULT.setLine(D1left); :} | (NoDesignatorArr) {: RESULT=new NoDesignatorArr(); :} ;
-OptionalDesignList ::= (DesignIdentList) Designator:D1 DOT IDENT:I2 {: RESULT=new DesignIdentList(D1, I2); RESULT.setLine(D1left); :} | (DesignExprList) Designator:D1 DOT IDENT:I2 LSQUARE Expr:E3 RSQUARE {: RESULT=new DesignExprList(D1, I2, E3); RESULT.setLine(D1left); :} | (NoOptDesignList) {: RESULT=new NoOptDesignList(); :};
 OptionalElse ::= (Else) ELSE Statement:S1 {: RESULT=new Else(S1); RESULT.setLine(S1left); :} | (NoElse) {: RESULT=new NoElse(); :} /* epsilon */ ;
 OptionalFormPars ::= (OptFormPars) FormPars:F1 {: RESULT=new OptFormPars(F1); RESULT.setLine(F1left); :} | (NoFormPars) {: RESULT=new NoFormPars(); :} /* epsilon */ ;
 ParamSqList ::= (ArrayParam) ParamSqList:P1 COMMA Type:T2 IDENT:I3 EmptySqBrackets:E4 {: RESULT=new ArrayParam(P1, T2, I3, E4); RESULT.setLine(P1left); :} | (NotParamArray) {: RESULT=new NotParamArray(); :} /* epsilon */ ;

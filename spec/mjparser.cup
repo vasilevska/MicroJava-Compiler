@@ -48,10 +48,10 @@ scan with {:
 	return s;
 :}
 
-terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DO, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
-nonterminal ActPars, AddOpp, AddTermList, AssignConst, AssignDesign, Assignop, ClassDecl, ClassName, CondFact, CondFactList, CondTerm, CondTermList, Condition, Const, ConstDecl, ConstructorDecl, ConstructorDeclList, ConstructorName, DeclList, DesignList, DesignatorStatement, EmptySqBrackets, ExprList, ExtendClass, FormPars, FunctionBody, IdentSqList, MethodDeclList, MulOpp, OptionalClassBody, OptionalDesign, OptionalDesignList, OptionalElse, OptionalFormPars, OptionalSquareExpr, ParamSqList, Program, RelOpp, RepeatConst, Statement, StatementList, VarDecl, VarDeclList;
+terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
+nonterminal ActPars, AddOpp, AddTermList, AssignConst, AssignDesign, Assignop, ClassDecl, CondFact, CondFactList, CondTerm, CondTermList, Condition, Const, ConstDecl, ConstructorDeclList, DeclList, DesignList, DesignatorStatement, EmptySqBrackets, ExprList, ExtendClass, FormPars, FunctionBody, IdentSqList, MethodDeclList, MulOpp, OptionalClassBody, OptionalDesign, OptionalDesignList, OptionalElse, OptionalFormPars, OptionalSquareExpr, ParamSqList, Program, RelOpp, RepeatConst, Statement, StatementList, VarDecl, VarDeclList;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator, ClassName, ConstructorDecl, ConstructorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulFactorList;
 
 terminal String IDENT;
@@ -85,7 +85,9 @@ ConstructorName ::= (ConstructorName) IDENT;
 
 DeclList ::= (DeclsConst) DeclList ConstDecl | (DeclsVar) DeclList VarDecl | (DeclsClass) DeclList ClassDecl | (NoDecl)/* epsilon */ ;
 DesignList ::= (DesignListMulti) DesignList COMMA OptionalDesign | (NoDesignList) /* epsilon */ ;
-Designator ::= (DesignatorIdent) OptionalDesignList IDENT | (DesignatorExpr) OptionalDesignList IDENT LSQUARE Expr RSQUARE ;
+
+Designator ::= (DesignatorIdent) IDENT | (DesignatorExpr) Designator LSQUARE Expr RSQUARE  | (DesignatorClassField) Designator DOT IDENT;
+
 DesignatorStatement ::= (DesignatorStatementBase) Designator | (DesignatorStatementAssignExpr) Designator Assignop Expr | (DesignatorStatementParens) Designator LPAREN RPAREN | (DesignatorStatementActPars) Designator LPAREN ActPars RPAREN | (DesignatorStatementInc) Designator INC | (DesignatorStatementDec) Designator DEC | (DesignatorStatementListAssign) LSQUARE OptionalDesign DesignList RSQUARE AssignDesign ;
 EmptySqBrackets ::= (ArrayBrackets) LSQUARE RSQUARE | (NotArray) /* epsilon */ ;
 Expr ::= (ExprBase) Term AddTermList | (ExprSub) SUB Term AddTermList;
@@ -102,7 +104,6 @@ MulFactorList ::= (MulFactors) MulFactorList MulOpp Factor | (NoMulFactor) /* ep
 MulOpp ::= (MulOp) MUL | (DivOp) DIV | (ModOp) MOD;
 OptionalClassBody ::= (ClassBodyEmpty) LBRACE RBRACE | (ClassBodyConstr) LBRACE ConstructorDeclList RBRACE | (ClassBodyMeth) LBRACE MethodDecl MethodDeclList RBRACE | (ClassBodyConstrMeth) LBRACE ConstructorDeclList MethodDecl MethodDeclList RBRACE;
 OptionalDesign ::= (DesignatorArr) Designator | (NoDesignatorArr) ;
-OptionalDesignList ::= (DesignIdentList) Designator DOT IDENT | (DesignExprList) Designator DOT IDENT LSQUARE Expr RSQUARE | (NoOptDesignList);
 OptionalElse ::= (Else) ELSE Statement | (NoElse) /* epsilon */ ;
 OptionalFormPars ::= (OptFormPars) FormPars | (NoFormPars) /* epsilon */ ;
 ParamSqList ::= (ArrayParam) ParamSqList COMMA Type IDENT EmptySqBrackets | (NotParamArray) /* epsilon */ ;

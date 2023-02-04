@@ -1,0 +1,130 @@
+INFO  03:39:59,428 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  03:39:59,484 - #37 program
+INFO  03:39:59,485 - #47 MJProgram
+INFO  03:39:59,485 - #6 class
+INFO  03:39:59,486 - #47 Predmet
+INFO  03:39:59,486 - #25 {
+INFO  03:39:59,488 - #47 int
+INFO  03:39:59,488 - #47 tezina
+INFO  03:39:59,489 - #43 ;
+INFO  03:39:59,491 - #47 char
+INFO  03:39:59,492 - #47 vrsta
+INFO  03:39:59,492 - #43 ;
+INFO  03:39:59,492 - #25 {
+INFO  03:39:59,492 - #45 void
+INFO  03:39:59,492 - #47 postaviTezinu
+INFO  03:39:59,492 - #26 (
+INFO  03:39:59,493 - #47 int
+INFO  03:39:59,493 - #47 tezina
+INFO  03:39:59,493 - #41 )
+INFO  03:39:59,494 - #25 {
+INFO  03:39:59,494 - #38 }
+INFO  03:39:59,496 - #38 }
+INFO  03:39:59,501 - #38 }
+INFO  03:39:59,501 - #25 {
+INFO  03:39:59,502 - #47 int
+INFO  03:39:59,502 - #47 main
+INFO  03:39:59,502 - #26 (
+INFO  03:39:59,503 - #41 )
+INFO  03:39:59,503 - #25 {
+INFO  03:39:59,504 - #38 }
+INFO  03:39:59,504 - #38 }
+INFO  03:39:59,511 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsClass(
+    NoDecl(
+    ) [NoDecl]
+    ClassDecl(
+      ClassName(
+       Predmet
+      ) [ClassName]
+      NoParent(
+      ) [NoParent]
+      VarDecls(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           tezina
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          Type(
+           char
+          ) [Type]
+         vrsta
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [VarDecls]
+      ClassBodyMeth(
+        MethodDeclDerived1(
+          MethodNameVoid(
+           postaviTezinu
+          ) [MethodNameVoid]
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             tezina
+              NotArray(
+              ) [NotArray]
+              NotParamArray(
+              ) [NotParamArray]
+            ) [FormPars]
+          ) [OptFormPars]
+          FunctionBodyDerived1(
+            NoVarDecl(
+            ) [NoVarDecl]
+            NoStatement(
+            ) [NoStatement]
+          ) [FunctionBodyDerived1]
+        ) [MethodDeclDerived1]
+        NoMethDecl(
+        ) [NoMethDecl]
+      ) [ClassBodyMeth]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+      ) [MethodNameType]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  03:39:59,511 - ===================================
+INFO  03:39:59,515 - Deklarisana promenljiva tezina na liniji 6
+INFO  03:39:59,515 - Deklarisana promenljiva vrsta na liniji 7
+INFO  03:39:59,515 - Obradjuje se funkcija postaviTezinu na liniji 10
+INFO  03:39:59,515 - Obradjuje se funkcija main na liniji 20
+ERROR 03:39:59,516 - Semanticka greska na liniji 20: funkcija main nema return iskaz!
+INFO  03:39:59,516 -  Print count calls = 0
+INFO  03:39:59,516 -  Deklarisanih promenljivih ima = 2
+INFO  03:39:59,516 - ===================================
+ERROR 03:39:59,517 - Parsiranje NIJE uspesno zavrseno!

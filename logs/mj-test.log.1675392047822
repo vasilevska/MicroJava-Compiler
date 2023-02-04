@@ -1,0 +1,150 @@
+INFO  03:40:10,773 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  03:40:10,832 - #37 program
+INFO  03:40:10,832 - #47 MJProgram
+INFO  03:40:10,832 - #6 class
+INFO  03:40:10,834 - #47 Predmet
+INFO  03:40:10,834 - #25 {
+INFO  03:40:10,835 - #47 int
+INFO  03:40:10,836 - #47 tezina
+INFO  03:40:10,837 - #43 ;
+INFO  03:40:10,838 - #47 char
+INFO  03:40:10,840 - #47 vrsta
+INFO  03:40:10,840 - #43 ;
+INFO  03:40:10,840 - #25 {
+INFO  03:40:10,840 - #47 Predmet
+INFO  03:40:10,841 - #26 (
+INFO  03:40:10,842 - #41 )
+INFO  03:40:10,842 - #25 {
+INFO  03:40:10,843 - #38 }
+INFO  03:40:10,843 - #45 void
+INFO  03:40:10,845 - #47 postaviTezinu
+INFO  03:40:10,845 - #26 (
+INFO  03:40:10,846 - #47 int
+INFO  03:40:10,850 - #47 tezina
+INFO  03:40:10,850 - #41 )
+INFO  03:40:10,851 - #25 {
+INFO  03:40:10,852 - #38 }
+INFO  03:40:10,852 - #38 }
+INFO  03:40:10,853 - #38 }
+INFO  03:40:10,853 - #25 {
+INFO  03:40:10,855 - #47 int
+INFO  03:40:10,855 - #47 main
+INFO  03:40:10,856 - #26 (
+INFO  03:40:10,856 - #41 )
+INFO  03:40:10,856 - #25 {
+INFO  03:40:10,856 - #38 }
+INFO  03:40:10,856 - #38 }
+INFO  03:40:10,865 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsClass(
+    NoDecl(
+    ) [NoDecl]
+    ClassDecl(
+      ClassName(
+       Predmet
+      ) [ClassName]
+      NoParent(
+      ) [NoParent]
+      VarDecls(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           tezina
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          Type(
+           char
+          ) [Type]
+         vrsta
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [VarDecls]
+      ClassBodyConstrMeth(
+        ConstructorSingleDecl(
+          ConstructorDecl(
+            ConstructorName(
+             Predmet
+            ) [ConstructorName]
+            NoFormPars(
+            ) [NoFormPars]
+            FunctionBodyDerived1(
+              NoVarDecl(
+              ) [NoVarDecl]
+              NoStatement(
+              ) [NoStatement]
+            ) [FunctionBodyDerived1]
+          ) [ConstructorDecl]
+        ) [ConstructorSingleDecl]
+        MethodDeclDerived1(
+          MethodNameVoid(
+           postaviTezinu
+          ) [MethodNameVoid]
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             tezina
+              NotArray(
+              ) [NotArray]
+              NotParamArray(
+              ) [NotParamArray]
+            ) [FormPars]
+          ) [OptFormPars]
+          FunctionBodyDerived1(
+            NoVarDecl(
+            ) [NoVarDecl]
+            NoStatement(
+            ) [NoStatement]
+          ) [FunctionBodyDerived1]
+        ) [MethodDeclDerived1]
+        NoMethDecl(
+        ) [NoMethDecl]
+      ) [ClassBodyConstrMeth]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+      ) [MethodNameType]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        NoStatement(
+        ) [NoStatement]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  03:40:10,865 - ===================================
+INFO  03:40:10,869 - Deklarisana promenljiva tezina na liniji 6
+INFO  03:40:10,869 - Deklarisana promenljiva vrsta na liniji 7
+INFO  03:40:10,869 - Obradjuje se funkcija postaviTezinu na liniji 10
+INFO  03:40:10,869 - Obradjuje se funkcija main na liniji 20
+ERROR 03:40:10,870 - Semanticka greska na liniji 20: funkcija main nema return iskaz!
+INFO  03:40:10,870 -  Print count calls = 0
+INFO  03:40:10,870 -  Deklarisanih promenljivih ima = 2
+INFO  03:40:10,870 - ===================================
+ERROR 03:40:10,871 - Parsiranje NIJE uspesno zavrseno!

@@ -1,35 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 23:59:19
+// 3/1/2023 22:17:39
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DesignatorIdent extends Designator {
 
-    private OptionalDesignList OptionalDesignList;
-    private String I2;
+    private String I1;
 
-    public DesignatorIdent (OptionalDesignList OptionalDesignList, String I2) {
-        this.OptionalDesignList=OptionalDesignList;
-        if(OptionalDesignList!=null) OptionalDesignList.setParent(this);
-        this.I2=I2;
+    public DesignatorIdent (String I1) {
+        this.I1=I1;
     }
 
-    public OptionalDesignList getOptionalDesignList() {
-        return OptionalDesignList;
+    public String getI1() {
+        return I1;
     }
 
-    public void setOptionalDesignList(OptionalDesignList OptionalDesignList) {
-        this.OptionalDesignList=OptionalDesignList;
-    }
-
-    public String getI2() {
-        return I2;
-    }
-
-    public void setI2(String I2) {
-        this.I2=I2;
+    public void setI1(String I1) {
+        this.I1=I1;
     }
 
     public void accept(Visitor visitor) {
@@ -37,16 +26,13 @@ public class DesignatorIdent extends Designator {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(OptionalDesignList!=null) OptionalDesignList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(OptionalDesignList!=null) OptionalDesignList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(OptionalDesignList!=null) OptionalDesignList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -55,13 +41,7 @@ public class DesignatorIdent extends Designator {
         buffer.append(tab);
         buffer.append("DesignatorIdent(\n");
 
-        if(OptionalDesignList!=null)
-            buffer.append(OptionalDesignList.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+I2);
+        buffer.append(" "+tab+I1);
         buffer.append("\n");
 
         buffer.append(tab);

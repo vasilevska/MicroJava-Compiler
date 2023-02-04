@@ -1,21 +1,26 @@
-//Test 303
-
-program test_303
-
-const int cinilac = 4, delilac = 3;
-
-int zapreminaK, zapreminaS;
-int tezinaK, tezinaS;
-{
+program MJProgram
+	const int x = 3;
+	const bool k = true, j = false;
+	const char c = 'a';
 	
-	void main() Predmet predmeti[]; int i; Sfera s1, s2, s3; Kvadar k1, k2, k3; int t;
-	{	
+	class Predmet
+{
+	 int tezina;
+	 char vrsta;
+	{
+		 Predmet(){}
+		 void postaviTezinu(int tezina)
+		  {
+		  }
+	}
+}
+	
+{
+	int main() {
 		
-		this.predmeti[5] = 4;
-
 		niz.foreach(curr => {
 			niz2 = niz2 + curr * curr;
 		});
-
+		return 3;
 	}
 }

@@ -1,0 +1,381 @@
+INFO  01:54:56,215 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  01:54:56,279 - #37 program
+INFO  01:54:56,280 - #47 test_303
+INFO  01:54:56,280 - #9 const
+INFO  01:54:56,281 - #47 int
+INFO  01:54:56,282 - #47 cinilac
+INFO  01:54:56,282 - #4 =
+INFO  01:54:56,283 - #48 4
+INFO  01:54:56,284 - #8 ,
+INFO  01:54:56,285 - #47 delilac
+INFO  01:54:56,285 - #4 =
+INFO  01:54:56,286 - #48 3
+INFO  01:54:56,286 - #43 ;
+INFO  01:54:56,286 - #47 int
+INFO  01:54:56,287 - #47 niz
+INFO  01:54:56,287 - #28 [
+INFO  01:54:56,287 - #42 ]
+INFO  01:54:56,288 - #43 ;
+INFO  01:54:56,289 - #47 int
+INFO  01:54:56,290 - #47 zapreminaK
+INFO  01:54:56,290 - #8 ,
+INFO  01:54:56,291 - #47 zapreminaS
+INFO  01:54:56,291 - #43 ;
+INFO  01:54:56,295 - #47 int
+INFO  01:54:56,296 - #47 tezinaK
+INFO  01:54:56,296 - #8 ,
+INFO  01:54:56,296 - #47 tezinaS
+INFO  01:54:56,296 - #43 ;
+INFO  01:54:56,296 - #25 {
+INFO  01:54:56,296 - #45 void
+INFO  01:54:56,297 - #47 main
+INFO  01:54:56,298 - #26 (
+INFO  01:54:56,298 - #41 )
+INFO  01:54:56,298 - #47 Predmet
+INFO  01:54:56,299 - #47 predmeti
+INFO  01:54:56,299 - #28 [
+INFO  01:54:56,299 - #42 ]
+INFO  01:54:56,299 - #43 ;
+INFO  01:54:56,300 - #47 int
+INFO  01:54:56,300 - #47 i
+INFO  01:54:56,300 - #43 ;
+INFO  01:54:56,301 - #47 Sfera
+INFO  01:54:56,301 - #47 s1
+INFO  01:54:56,301 - #8 ,
+INFO  01:54:56,301 - #47 s2
+INFO  01:54:56,301 - #8 ,
+INFO  01:54:56,302 - #47 s3
+INFO  01:54:56,302 - #43 ;
+INFO  01:54:56,302 - #47 Kvadar
+INFO  01:54:56,302 - #47 k1
+INFO  01:54:56,302 - #8 ,
+INFO  01:54:56,302 - #47 k2
+INFO  01:54:56,303 - #8 ,
+INFO  01:54:56,303 - #47 k3
+INFO  01:54:56,303 - #43 ;
+INFO  01:54:56,303 - #47 int
+INFO  01:54:56,303 - #47 t
+INFO  01:54:56,303 - #43 ;
+INFO  01:54:56,303 - #25 {
+INFO  01:54:56,303 - #28 [
+INFO  01:54:56,304 - #8 ,
+INFO  01:54:56,306 - #47 a
+INFO  01:54:56,307 - #8 ,
+INFO  01:54:56,308 - #42 ]
+INFO  01:54:56,308 - #4 =
+INFO  01:54:56,308 - #47 niz
+INFO  01:54:56,308 - #43 ;
+INFO  01:54:56,310 - #47 niz
+INFO  01:54:56,310 - #14 .
+INFO  01:54:56,310 - #18 foreach
+INFO  01:54:56,310 - #26 (
+INFO  01:54:56,310 - #47 curr
+INFO  01:54:56,310 - #34 =>
+INFO  01:54:56,311 - #25 {
+INFO  01:54:56,311 - #47 niz2
+INFO  01:54:56,311 - #4 =
+INFO  01:54:56,311 - #47 niz2
+INFO  01:54:56,311 - #2 +
+INFO  01:54:56,313 - #47 curr
+INFO  01:54:56,314 - #31 *
+INFO  01:54:56,314 - #47 curr
+INFO  01:54:56,316 - #43 ;
+INFO  01:54:56,317 - #38 }
+INFO  01:54:56,317 - #41 )
+INFO  01:54:56,317 - #43 ;
+INFO  01:54:56,318 - #38 }
+INFO  01:54:56,318 - #38 }
+INFO  01:54:56,328 - Program(
+  ProgName(
+   test_303
+  ) [ProgName]
+  DeclsVar(
+    DeclsVar(
+      DeclsVar(
+        DeclsConst(
+          NoDecl(
+          ) [NoDecl]
+          ConstDecl(
+            Type(
+             int
+            ) [Type]
+            AssignConst(
+             cinilac
+              Assignop(
+              ) [Assignop]
+              IntConst(
+               4
+              ) [IntConst]
+            ) [AssignConst]
+            NewRepeatConst(
+              NoRepeatConst(
+              ) [NoRepeatConst]
+              AssignConst(
+               delilac
+                Assignop(
+                ) [Assignop]
+                IntConst(
+                 3
+                ) [IntConst]
+              ) [AssignConst]
+            ) [NewRepeatConst]
+          ) [ConstDecl]
+        ) [DeclsConst]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+         niz
+          ArrayBrackets(
+          ) [ArrayBrackets]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [DeclsVar]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+       zapreminaK
+        NotArray(
+        ) [NotArray]
+        ArrayVar(
+          NotIdentArray(
+          ) [NotIdentArray]
+         zapreminaS
+          NotArray(
+          ) [NotArray]
+        ) [ArrayVar]
+      ) [VarDecl]
+    ) [DeclsVar]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     tezinaK
+      NotArray(
+      ) [NotArray]
+      ArrayVar(
+        NotIdentArray(
+        ) [NotIdentArray]
+       tezinaS
+        NotArray(
+        ) [NotArray]
+      ) [ArrayVar]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          VarDecls(
+            VarDecls(
+              VarDecls(
+                VarDecls(
+                  NoVarDecl(
+                  ) [NoVarDecl]
+                  VarDecl(
+                    Type(
+                     Predmet
+                    ) [Type]
+                   predmeti
+                    ArrayBrackets(
+                    ) [ArrayBrackets]
+                    NotIdentArray(
+                    ) [NotIdentArray]
+                  ) [VarDecl]
+                ) [VarDecls]
+                VarDecl(
+                  Type(
+                   int
+                  ) [Type]
+                 i
+                  NotArray(
+                  ) [NotArray]
+                  NotIdentArray(
+                  ) [NotIdentArray]
+                ) [VarDecl]
+              ) [VarDecls]
+              VarDecl(
+                Type(
+                 Sfera
+                ) [Type]
+               s1
+                NotArray(
+                ) [NotArray]
+                ArrayVar(
+                  ArrayVar(
+                    NotIdentArray(
+                    ) [NotIdentArray]
+                   s2
+                    NotArray(
+                    ) [NotArray]
+                  ) [ArrayVar]
+                 s3
+                  NotArray(
+                  ) [NotArray]
+                ) [ArrayVar]
+              ) [VarDecl]
+            ) [VarDecls]
+            VarDecl(
+              Type(
+               Kvadar
+              ) [Type]
+             k1
+              NotArray(
+              ) [NotArray]
+              ArrayVar(
+                ArrayVar(
+                  NotIdentArray(
+                  ) [NotIdentArray]
+                 k2
+                  NotArray(
+                  ) [NotArray]
+                ) [ArrayVar]
+               k3
+                NotArray(
+                ) [NotArray]
+              ) [ArrayVar]
+            ) [VarDecl]
+          ) [VarDecls]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           t
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementDesignator(
+              DesignatorStatementListAssign(
+                NoDesignatorArr(
+                ) [NoDesignatorArr]
+                DesignListMulti(
+                  DesignListMulti(
+                    NoDesignList(
+                    ) [NoDesignList]
+                    DesignatorArr(
+                      DesignatorIdent(
+                        NoOptDesignList(
+                        ) [NoOptDesignList]
+                       a
+                      ) [DesignatorIdent]
+                    ) [DesignatorArr]
+                  ) [DesignListMulti]
+                  NoDesignatorArr(
+                  ) [NoDesignatorArr]
+                ) [DesignListMulti]
+                AssignDesign(
+                  Assignop(
+                  ) [Assignop]
+                  DesignatorIdent(
+                    NoOptDesignList(
+                    ) [NoOptDesignList]
+                   niz
+                  ) [DesignatorIdent]
+                ) [AssignDesign]
+              ) [DesignatorStatementListAssign]
+            ) [StatementDesignator]
+          ) [Statements]
+          StatementForeach(
+            DesignatorIdent(
+              NoOptDesignList(
+              ) [NoOptDesignList]
+             niz
+            ) [DesignatorIdent]
+           curr
+            StatementBlock(
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+                StatementDesignator(
+                  DesignatorStatementAssignExpr(
+                    DesignatorIdent(
+                      NoOptDesignList(
+                      ) [NoOptDesignList]
+                     niz2
+                    ) [DesignatorIdent]
+                    Assignop(
+                    ) [Assignop]
+                    ExprBase(
+                      Term(
+                        FactorBase(
+                          DesignatorIdent(
+                            NoOptDesignList(
+                            ) [NoOptDesignList]
+                           niz2
+                          ) [DesignatorIdent]
+                        ) [FactorBase]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      AddTerms(
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                        AddOp(
+                        ) [AddOp]
+                        Term(
+                          FactorBase(
+                            DesignatorIdent(
+                              NoOptDesignList(
+                              ) [NoOptDesignList]
+                             curr
+                            ) [DesignatorIdent]
+                          ) [FactorBase]
+                          MulFactors(
+                            NoMulFactor(
+                            ) [NoMulFactor]
+                            MulOp(
+                            ) [MulOp]
+                            FactorBase(
+                              DesignatorIdent(
+                                NoOptDesignList(
+                                ) [NoOptDesignList]
+                               curr
+                              ) [DesignatorIdent]
+                            ) [FactorBase]
+                          ) [MulFactors]
+                        ) [Term]
+                      ) [AddTerms]
+                    ) [ExprBase]
+                  ) [DesignatorStatementAssignExpr]
+                ) [StatementDesignator]
+              ) [Statements]
+            ) [StatementBlock]
+          ) [StatementForeach]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  01:54:56,329 - ===================================
+INFO  01:54:56,336 - Deklarisana promenljiva niz na liniji 7
+INFO  01:54:56,336 - Deklarisana promenljiva zapreminaK na liniji 8
+INFO  01:54:56,336 - Deklarisana promenljiva tezinaK na liniji 9
+INFO  01:54:56,336 - Obradjuje se funkcija main na liniji 12
+ERROR 01:54:56,337 - Nije pronadjen tip Predmet u tabeli simbola! 
+INFO  01:54:56,337 - Deklarisana promenljiva predmeti na liniji 12
+INFO  01:54:56,337 - Deklarisana promenljiva i na liniji 12
+ERROR 01:54:56,337 - Nije pronadjen tip Sfera u tabeli simbola! 
+INFO  01:54:56,337 - Deklarisana promenljiva s1 na liniji 12
+ERROR 01:54:56,337 - Nije pronadjen tip Kvadar u tabeli simbola! 
+INFO  01:54:56,337 - Deklarisana promenljiva k1 na liniji 12
+INFO  01:54:56,337 - Deklarisana promenljiva t na liniji 12
+INFO  01:54:56,338 -  Print count calls = 0
+INFO  01:54:56,338 -  Deklarisanih promenljivih ima = 14
+INFO  01:54:56,338 - ===================================
+ERROR 01:54:56,339 - Parsiranje NIJE uspesno zavrseno!

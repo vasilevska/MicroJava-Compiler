@@ -1,16 +1,16 @@
 // generated with ast extension for cup
 // version 0.8
-// 2/1/2023 23:59:19
+// 3/1/2023 22:17:39
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DesignIdentList extends OptionalDesignList {
+public class DesignatorClassField extends Designator {
 
     private Designator Designator;
     private String I2;
 
-    public DesignIdentList (Designator Designator, String I2) {
+    public DesignatorClassField (Designator Designator, String I2) {
         this.Designator=Designator;
         if(Designator!=null) Designator.setParent(this);
         this.I2=I2;
@@ -53,7 +53,7 @@ public class DesignIdentList extends OptionalDesignList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DesignIdentList(\n");
+        buffer.append("DesignatorClassField(\n");
 
         if(Designator!=null)
             buffer.append(Designator.toString("  "+tab));
@@ -65,7 +65,7 @@ public class DesignIdentList extends OptionalDesignList {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [DesignIdentList]");
+        buffer.append(") [DesignatorClassField]");
         return buffer.toString();
     }
 }
