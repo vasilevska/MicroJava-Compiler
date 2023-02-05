@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 3/1/2023 22:17:39
+// 4/1/2023 18:32:30
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,14 @@ package rs.ac.bg.etf.pp1.ast;
 public class StatementForeach extends Statement {
 
     private Designator Designator;
-    private String I2;
+    private FEElem FEElem;
     private Statement Statement;
 
-    public StatementForeach (Designator Designator, String I2, Statement Statement) {
+    public StatementForeach (Designator Designator, FEElem FEElem, Statement Statement) {
         this.Designator=Designator;
         if(Designator!=null) Designator.setParent(this);
-        this.I2=I2;
+        this.FEElem=FEElem;
+        if(FEElem!=null) FEElem.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
     }
@@ -27,12 +28,12 @@ public class StatementForeach extends Statement {
         this.Designator=Designator;
     }
 
-    public String getI2() {
-        return I2;
+    public FEElem getFEElem() {
+        return FEElem;
     }
 
-    public void setI2(String I2) {
-        this.I2=I2;
+    public void setFEElem(FEElem FEElem) {
+        this.FEElem=FEElem;
     }
 
     public Statement getStatement() {
@@ -49,17 +50,20 @@ public class StatementForeach extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(Designator!=null) Designator.accept(visitor);
+        if(FEElem!=null) FEElem.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Designator!=null) Designator.traverseTopDown(visitor);
+        if(FEElem!=null) FEElem.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Designator!=null) Designator.traverseBottomUp(visitor);
+        if(FEElem!=null) FEElem.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -75,7 +79,10 @@ public class StatementForeach extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+I2);
+        if(FEElem!=null)
+            buffer.append(FEElem.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Statement!=null)

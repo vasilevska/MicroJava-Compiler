@@ -1,0 +1,349 @@
+INFO  17:31:45,271 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  17:31:45,319 - #36 program
+INFO  17:31:45,320 - #46 MJProgram
+INFO  17:31:45,320 - #9 const
+INFO  17:31:45,321 - #46 int
+INFO  17:31:45,321 - #46 x
+INFO  17:31:45,322 - #4 =
+INFO  17:31:45,322 - #47 3
+INFO  17:31:45,322 - #42 ;
+INFO  17:31:45,323 - #9 const
+INFO  17:31:45,324 - #46 bool
+INFO  17:31:45,324 - #46 k
+INFO  17:31:45,324 - #4 =
+INFO  17:31:45,324 - #48 true
+INFO  17:31:45,325 - #8 ,
+INFO  17:31:45,325 - #46 j
+INFO  17:31:45,325 - #4 =
+INFO  17:31:45,325 - #48 false
+INFO  17:31:45,325 - #42 ;
+INFO  17:31:45,325 - #9 const
+INFO  17:31:45,325 - #46 char
+INFO  17:31:45,325 - #46 c
+INFO  17:31:45,325 - #4 =
+INFO  17:31:45,329 - #49 a
+INFO  17:31:45,329 - #42 ;
+INFO  17:31:45,329 - #6 class
+INFO  17:31:45,329 - #46 Predmet
+INFO  17:31:45,329 - #24 {
+INFO  17:31:45,330 - #46 int
+INFO  17:31:45,331 - #46 tezina
+INFO  17:31:45,331 - #42 ;
+INFO  17:31:45,333 - #46 char
+INFO  17:31:45,333 - #46 vrsta
+INFO  17:31:45,333 - #42 ;
+INFO  17:31:45,333 - #24 {
+INFO  17:31:45,333 - #46 Predmet
+INFO  17:31:45,334 - #25 (
+INFO  17:31:45,335 - #40 )
+INFO  17:31:45,335 - #24 {
+INFO  17:31:45,335 - #37 }
+INFO  17:31:45,336 - #44 void
+INFO  17:31:45,337 - #46 postaviTezinu
+INFO  17:31:45,337 - #25 (
+INFO  17:31:45,337 - #46 int
+INFO  17:31:45,337 - #46 tezina
+INFO  17:31:45,337 - #40 )
+INFO  17:31:45,339 - #24 {
+INFO  17:31:45,339 - #37 }
+INFO  17:31:45,339 - #37 }
+INFO  17:31:45,340 - #37 }
+INFO  17:31:45,340 - #24 {
+INFO  17:31:45,340 - #46 int
+INFO  17:31:45,341 - #46 main
+INFO  17:31:45,341 - #25 (
+INFO  17:31:45,341 - #40 )
+INFO  17:31:45,341 - #24 {
+INFO  17:31:45,341 - #46 x
+INFO  17:31:45,341 - #13 .
+INFO  17:31:45,341 - #46 a
+INFO  17:31:45,341 - #42 ;
+INFO  17:31:45,341 - #46 niz
+INFO  17:31:45,342 - #13 .
+INFO  17:31:45,342 - #17 foreach
+INFO  17:31:45,342 - #25 (
+INFO  17:31:45,342 - #46 curr
+INFO  17:31:45,342 - #33 =>
+INFO  17:31:45,342 - #24 {
+INFO  17:31:45,343 - #46 niz2
+INFO  17:31:45,343 - #4 =
+INFO  17:31:45,343 - #46 niz2
+INFO  17:31:45,343 - #2 +
+INFO  17:31:45,344 - #46 curr
+INFO  17:31:45,345 - #30 *
+INFO  17:31:45,345 - #46 curr
+INFO  17:31:45,346 - #42 ;
+INFO  17:31:45,347 - #37 }
+INFO  17:31:45,347 - #40 )
+INFO  17:31:45,347 - #42 ;
+INFO  17:31:45,347 - #39 return
+INFO  17:31:45,347 - #47 3
+INFO  17:31:45,347 - #42 ;
+INFO  17:31:45,347 - #37 }
+INFO  17:31:45,347 - #37 }
+INFO  17:31:45,352 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclsClass(
+    DeclsConst(
+      DeclsConst(
+        DeclsConst(
+          NoDecl(
+          ) [NoDecl]
+          ConstDecl(
+            Type(
+             int
+            ) [Type]
+            AssignConst(
+             x
+              Assignop(
+              ) [Assignop]
+              IntConst(
+               3
+              ) [IntConst]
+            ) [AssignConst]
+            NoRepeatConst(
+            ) [NoRepeatConst]
+          ) [ConstDecl]
+        ) [DeclsConst]
+        ConstDecl(
+          Type(
+           bool
+          ) [Type]
+          AssignConst(
+           k
+            Assignop(
+            ) [Assignop]
+            BoolConst(
+             true
+            ) [BoolConst]
+          ) [AssignConst]
+          NewRepeatConst(
+            NoRepeatConst(
+            ) [NoRepeatConst]
+            AssignConst(
+             j
+              Assignop(
+              ) [Assignop]
+              BoolConst(
+               false
+              ) [BoolConst]
+            ) [AssignConst]
+          ) [NewRepeatConst]
+        ) [ConstDecl]
+      ) [DeclsConst]
+      ConstDecl(
+        Type(
+         char
+        ) [Type]
+        AssignConst(
+         c
+          Assignop(
+          ) [Assignop]
+          CharConst(
+           a
+          ) [CharConst]
+        ) [AssignConst]
+        NoRepeatConst(
+        ) [NoRepeatConst]
+      ) [ConstDecl]
+    ) [DeclsConst]
+    ClassDecl(
+      ClassName(
+       Predmet
+      ) [ClassName]
+      NoParent(
+      ) [NoParent]
+      VarDecls(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           tezina
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        VarDecl(
+          Type(
+           char
+          ) [Type]
+         vrsta
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [VarDecls]
+      ClassBodyConstrMeth(
+        ConstructorSingleDecl(
+          ConstructorDecl(
+            ConstructorName(
+             Predmet
+            ) [ConstructorName]
+            NoFormPars(
+            ) [NoFormPars]
+            FunctionBodyDerived1(
+              NoVarDecl(
+              ) [NoVarDecl]
+              NoStatement(
+              ) [NoStatement]
+            ) [FunctionBodyDerived1]
+          ) [ConstructorDecl]
+        ) [ConstructorSingleDecl]
+        MethodDeclDerived1(
+          MethodNameVoid(
+           postaviTezinu
+          ) [MethodNameVoid]
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             tezina
+              NotArray(
+              ) [NotArray]
+              NotParamArray(
+              ) [NotParamArray]
+            ) [FormPars]
+          ) [OptFormPars]
+          FunctionBodyDerived1(
+            NoVarDecl(
+            ) [NoVarDecl]
+            NoStatement(
+            ) [NoStatement]
+          ) [FunctionBodyDerived1]
+        ) [MethodDeclDerived1]
+        NoMethDecl(
+        ) [NoMethDecl]
+      ) [ClassBodyConstrMeth]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameType(
+        Type(
+         int
+        ) [Type]
+       main
+      ) [MethodNameType]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          Statements(
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementDesignator(
+                DesignatorStatementBase(
+                  DesignatorClassField(
+                    DesignatorIdent(
+                     x
+                    ) [DesignatorIdent]
+                   a
+                  ) [DesignatorClassField]
+                ) [DesignatorStatementBase]
+              ) [StatementDesignator]
+            ) [Statements]
+            StatementForeach(
+              DesignatorIdent(
+               niz
+              ) [DesignatorIdent]
+              FEElem(
+               curr
+              ) [FEElem]
+              StatementBlock(
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementDesignator(
+                    DesignatorStatementAssignExpr(
+                      DesignatorIdent(
+                       niz2
+                      ) [DesignatorIdent]
+                      Assignop(
+                      ) [Assignop]
+                      ExprBase(
+                        Term(
+                          FactorBase(
+                            DesignatorIdent(
+                             niz2
+                            ) [DesignatorIdent]
+                          ) [FactorBase]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        AddTerms(
+                          NoAddTerm(
+                          ) [NoAddTerm]
+                          AddOp(
+                          ) [AddOp]
+                          Term(
+                            FactorBase(
+                              DesignatorIdent(
+                               curr
+                              ) [DesignatorIdent]
+                            ) [FactorBase]
+                            MulFactors(
+                              NoMulFactor(
+                              ) [NoMulFactor]
+                              MulOp(
+                              ) [MulOp]
+                              FactorBase(
+                                DesignatorIdent(
+                                 curr
+                                ) [DesignatorIdent]
+                              ) [FactorBase]
+                            ) [MulFactors]
+                          ) [Term]
+                        ) [AddTerms]
+                      ) [ExprBase]
+                    ) [DesignatorStatementAssignExpr]
+                  ) [StatementDesignator]
+                ) [Statements]
+              ) [StatementBlock]
+            ) [StatementForeach]
+          ) [Statements]
+          StatementReturnExpr(
+            ExprBase(
+              Term(
+                FactorNumber(
+                 3
+                ) [FactorNumber]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementReturnExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  17:31:45,352 - ===================================
+INFO  17:31:45,357 - Deklarisana promenljiva tezina na liniji 8
+INFO  17:31:45,357 - Deklarisana promenljiva vrsta na liniji 9
+INFO  17:31:45,357 - Obradjuje se funkcija postaviTezinu na liniji 12
+INFO  17:31:45,358 - Obradjuje se funkcija main na liniji 19
+ERROR 17:31:45,358 - nema te klase
+ERROR 17:31:45,358 - ili ne postoji ili ne treba da mu se pristupa
+ERROR 17:31:45,358 - ili ne postoji ili ne treba da mu se pristupa
+ERROR 17:31:45,358 - ili ne postoji ili ne treba da mu se pristupa
+ERROR 17:31:45,358 - foreach moze da se radi samo nad nizom duh
+INFO  17:31:45,358 -  Print count calls = 0
+INFO  17:31:45,358 -  Deklarisanih promenljivih ima = 0
+INFO  17:31:45,358 - ===================================
+ERROR 17:31:45,359 - Parsiranje NIJE uspesno zavrseno!

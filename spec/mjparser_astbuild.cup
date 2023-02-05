@@ -51,7 +51,6 @@ scan with {:
 terminal ADD, AND, ASSIGN, BREAK, CLASS, COLON, COMMA, CONST, CONTINUE, DEC, DIV, DOT, ELSE, EQUAL, EXTENDS, FOREACH, GR, GRE, IF, IFNULL, INC, INSTANCEOF, LBRACE, LPAREN, LS, LSQUARE, LEQ, MOD, MUL, NEQUAL, NEW, NEXT, OR, PRINT, PROG, RBRACE,READ, RETURN, RPAREN, RSQUARE, SEMI, SUB, VOID, WHILE;
 nonterminal ActPars ActPars;
 nonterminal AddOpp AddOpp;
-nonterminal AddTermList AddTermList;
 nonterminal AssignConst AssignConst;
 nonterminal AssignDesign AssignDesign;
 nonterminal Assignop Assignop;
@@ -90,8 +89,8 @@ nonterminal StatementList StatementList;
 nonterminal VarDecl VarDecl;
 nonterminal VarDeclList VarDeclList;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator, ClassName, ConstructorDecl, ConstructorName;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulFactorList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, MethodDecl, MethodName, Designator, ClassName, ConstructorDecl, ConstructorName, FEElem;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, MulFactorList, AddTermList;
 
 terminal String IDENT;
 terminal Integer NUMBER;
@@ -133,6 +132,7 @@ Expr ::= (ExprBase) Term:T1 AddTermList:A2 {: RESULT=new ExprBase(T1, A2); RESUL
 ExprList ::= (Exprs) ExprList:E1 COMMA Expr:E2 {: RESULT=new Exprs(E1, E2); RESULT.setLine(E1left); :} | (NoExpr) {: RESULT=new NoExpr(); :} /* epsiolon*/;
 ExtendClass ::= (ParentClass) EXTENDS Type:T1 {: RESULT=new ParentClass(T1); RESULT.setLine(T1left); :} | (NoParent) {: RESULT=new NoParent(); :} /* epsilon */ ;
 Factor ::= (FactorBase) Designator:D1 {: RESULT=new FactorBase(D1); RESULT.setLine(D1left); :} | (FactorParen) Designator:D1 LPAREN RPAREN {: RESULT=new FactorParen(D1); RESULT.setLine(D1left); :} | (FactorActPars) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new FactorActPars(D1, A2); RESULT.setLine(D1left); :} | (FactorNumber) NUMBER:N1 {: RESULT=new FactorNumber(N1); RESULT.setLine(N1left); :} | (FactorChar) CHAR:C1 {: RESULT=new FactorChar(C1); RESULT.setLine(C1left); :} | (FactorBool) BOOL:B1 {: RESULT=new FactorBool(B1); RESULT.setLine(B1left); :} | (FactorNewSquare) NEW Type:T1 LSQUARE Expr:E2 RSQUARE {: RESULT=new FactorNewSquare(T1, E2); RESULT.setLine(T1left); :} | (FactorNewParen) NEW Type:T1 LPAREN RPAREN {: RESULT=new FactorNewParen(T1); RESULT.setLine(T1left); :} | (FactorNewActPars) NEW Type:T1 LPAREN ActPars:A2 RPAREN {: RESULT=new FactorNewActPars(T1, A2); RESULT.setLine(T1left); :} | (FactorParensExpr) LPAREN Expr:E1 RPAREN {: RESULT=new FactorParensExpr(E1); RESULT.setLine(E1left); :};
+FEElem ::= (FEElem) IDENT:I1 {: RESULT=new FEElem(I1); RESULT.setLine(I1left); :};
 FormPars ::= (FormPars) Type:T1 IDENT:I2 EmptySqBrackets:E3 ParamSqList:P4 {: RESULT=new FormPars(T1, I2, E3, P4); RESULT.setLine(T1left); :};
 FunctionBody ::= VarDeclList:V1 LBRACE StatementList:S2 RBRACE {: RESULT=new FunctionBodyDerived1(V1, S2); RESULT.setLine(V1left); :};
 IdentSqList ::= (ArrayVar) IdentSqList:I1 COMMA IDENT:I2 EmptySqBrackets:E3 {: RESULT=new ArrayVar(I1, I2, E3); RESULT.setLine(I1left); :} | (NotIdentArray) {: RESULT=new NotIdentArray(); :} /* epsilon */ ;
@@ -150,7 +150,7 @@ Program ::= (Program) ProgName:P1 DeclList:D2 LBRACE MethodDeclList:M3 RBRACE {:
 ProgName ::= (ProgName) PROG IDENT:I1 {: RESULT=new ProgName(I1); RESULT.setLine(I1left); :};
 RelOpp ::= (EqOp) EQUAL {: RESULT=new EqOp(); :} | (NeqOp) NEQUAL {: RESULT=new NeqOp(); :} | (GreOp) GRE {: RESULT=new GreOp(); :} | (LeqOp) LEQ {: RESULT=new LeqOp(); :} | (GrOp) GR {: RESULT=new GrOp(); :} | (LsOp) LS {: RESULT=new LsOp(); :};
 RepeatConst ::= (NewRepeatConst) RepeatConst:R1 COMMA AssignConst:A2 {: RESULT=new NewRepeatConst(R1, A2); RESULT.setLine(R1left); :} | (NoRepeatConst) {: RESULT=new NoRepeatConst(); :} /*epsion */;
-Statement ::= (StatementDesignator) DesignatorStatement:D1 SEMI {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :} | (StatementIfElse) IF LPAREN Condition:C1 RPAREN Statement:S2 OptionalElse:O3 {: RESULT=new StatementIfElse(C1, S2, O3); RESULT.setLine(C1left); :} | (StatementWhile) WHILE LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new StatementWhile(C1, S2); RESULT.setLine(C1left); :} | (StatementBreak) BREAK SEMI {: RESULT=new StatementBreak(); :} | (StatementContinue) CONTINUE SEMI {: RESULT=new StatementContinue(); :} | (StatementReturnVoid) RETURN SEMI {: RESULT=new StatementReturnVoid(); :} | (StatementReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new StatementReturnExpr(E1); RESULT.setLine(E1left); :} | (StatementRead) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new StatementRead(D1); RESULT.setLine(D1left); :} | (StatementPrintExpr) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new StatementPrintExpr(E1); RESULT.setLine(E1left); :} | (StatementPrintExprNumber) PRINT LPAREN Expr:E1 COMMA NUMBER:N2 RPAREN SEMI {: RESULT=new StatementPrintExprNumber(E1, N2); RESULT.setLine(E1left); :} |  (StatementBlock) LBRACE StatementList:S1 RBRACE {: RESULT=new StatementBlock(S1); RESULT.setLine(S1left); :} | (StatementForeach) Designator:D1 DOT FOREACH LPAREN IDENT:I2 NEXT Statement:S3 RPAREN SEMI {: RESULT=new StatementForeach(D1, I2, S3); RESULT.setLine(D1left); :};
+Statement ::= (StatementDesignator) DesignatorStatement:D1 SEMI {: RESULT=new StatementDesignator(D1); RESULT.setLine(D1left); :} | (StatementIfElse) IF LPAREN Condition:C1 RPAREN Statement:S2 OptionalElse:O3 {: RESULT=new StatementIfElse(C1, S2, O3); RESULT.setLine(C1left); :} | (StatementWhile) WHILE LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new StatementWhile(C1, S2); RESULT.setLine(C1left); :} | (StatementBreak) BREAK SEMI {: RESULT=new StatementBreak(); :} | (StatementContinue) CONTINUE SEMI {: RESULT=new StatementContinue(); :} | (StatementReturnVoid) RETURN SEMI {: RESULT=new StatementReturnVoid(); :} | (StatementReturnExpr) RETURN Expr:E1 SEMI {: RESULT=new StatementReturnExpr(E1); RESULT.setLine(E1left); :} | (StatementRead) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new StatementRead(D1); RESULT.setLine(D1left); :} | (StatementPrintExpr) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new StatementPrintExpr(E1); RESULT.setLine(E1left); :} | (StatementPrintExprNumber) PRINT LPAREN Expr:E1 COMMA NUMBER:N2 RPAREN SEMI {: RESULT=new StatementPrintExprNumber(E1, N2); RESULT.setLine(E1left); :} |  (StatementBlock) LBRACE StatementList:S1 RBRACE {: RESULT=new StatementBlock(S1); RESULT.setLine(S1left); :} | (StatementForeach) Designator:D1 DOT FOREACH LPAREN FEElem:F2 NEXT Statement:S3 RPAREN SEMI {: RESULT=new StatementForeach(D1, F2, S3); RESULT.setLine(D1left); :};
 StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new Statements(S1, S2); RESULT.setLine(S1left); :} | (NoStatement) {: RESULT=new NoStatement(); :} /* epsilon */ ;
 Term ::= (Term) Factor:F1 MulFactorList:M2 {: RESULT=new Term(F1, M2); RESULT.setLine(F1left); :};
 Type ::= (Type) IDENT:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};
