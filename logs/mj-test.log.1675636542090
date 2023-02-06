@@ -1,0 +1,366 @@
+INFO  23:35:30,004 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  23:35:30,053 - #36 program
+INFO  23:35:30,053 - #46 DEB
+INFO  23:35:30,053 - #9 const
+INFO  23:35:30,054 - #46 int
+INFO  23:35:30,054 - #46 x
+INFO  23:35:30,055 - #4 =
+INFO  23:35:30,055 - #47 4
+INFO  23:35:30,056 - #42 ;
+INFO  23:35:30,057 - #9 const
+INFO  23:35:30,058 - #46 int
+INFO  23:35:30,058 - #46 y
+INFO  23:35:30,058 - #4 =
+INFO  23:35:30,058 - #47 3
+INFO  23:35:30,058 - #42 ;
+INFO  23:35:30,058 - #24 {
+INFO  23:35:30,058 - #44 void
+INFO  23:35:30,059 - #46 main
+INFO  23:35:30,059 - #25 (
+INFO  23:35:30,060 - #40 )
+INFO  23:35:30,060 - #46 int
+INFO  23:35:30,061 - #46 c
+INFO  23:35:30,061 - #27 [
+INFO  23:35:30,061 - #41 ]
+INFO  23:35:30,065 - #42 ;
+INFO  23:35:30,066 - #24 {
+INFO  23:35:30,068 - #46 c
+INFO  23:35:30,069 - #4 =
+INFO  23:35:30,069 - #32 new
+INFO  23:35:30,069 - #46 int
+INFO  23:35:30,069 - #27 [
+INFO  23:35:30,069 - #47 3
+INFO  23:35:30,069 - #41 ]
+INFO  23:35:30,070 - #42 ;
+INFO  23:35:30,071 - #46 c
+INFO  23:35:30,071 - #27 [
+INFO  23:35:30,072 - #47 0
+INFO  23:35:30,072 - #41 ]
+INFO  23:35:30,072 - #4 =
+INFO  23:35:30,072 - #46 x
+INFO  23:35:30,072 - #42 ;
+INFO  23:35:30,072 - #46 c
+INFO  23:35:30,072 - #27 [
+INFO  23:35:30,072 - #47 1
+INFO  23:35:30,072 - #41 ]
+INFO  23:35:30,073 - #4 =
+INFO  23:35:30,073 - #47 2
+INFO  23:35:30,073 - #42 ;
+INFO  23:35:30,073 - #46 c
+INFO  23:35:30,073 - #27 [
+INFO  23:35:30,073 - #47 2
+INFO  23:35:30,073 - #41 ]
+INFO  23:35:30,073 - #4 =
+INFO  23:35:30,073 - #47 5
+INFO  23:35:30,073 - #42 ;
+INFO  23:35:30,073 - #27 [
+INFO  23:35:30,073 - #8 ,
+INFO  23:35:30,075 - #46 x
+INFO  23:35:30,075 - #8 ,
+INFO  23:35:30,075 - #46 y
+INFO  23:35:30,075 - #41 ]
+INFO  23:35:30,075 - #4 =
+INFO  23:35:30,075 - #46 c
+INFO  23:35:30,076 - #42 ;
+INFO  23:35:30,077 - #35 print
+INFO  23:35:30,077 - #25 (
+INFO  23:35:30,077 - #46 x
+INFO  23:35:30,078 - #40 )
+INFO  23:35:30,078 - #42 ;
+INFO  23:35:30,078 - #35 print
+INFO  23:35:30,078 - #25 (
+INFO  23:35:30,078 - #46 y
+INFO  23:35:30,078 - #40 )
+INFO  23:35:30,078 - #42 ;
+INFO  23:35:30,078 - #37 }
+INFO  23:35:30,078 - #37 }
+INFO  23:35:30,083 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsConst(
+    DeclsConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDecl(
+        Type(
+         int
+        ) [Type]
+        AssignConst(
+         x
+          Assignop(
+          ) [Assignop]
+          IntConst(
+           4
+          ) [IntConst]
+        ) [AssignConst]
+        NoRepeatConst(
+        ) [NoRepeatConst]
+      ) [ConstDecl]
+    ) [DeclsConst]
+    ConstDecl(
+      Type(
+       int
+      ) [Type]
+      AssignConst(
+       y
+        Assignop(
+        ) [Assignop]
+        IntConst(
+         3
+        ) [IntConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           c
+            ArrayBrackets(
+            ) [ArrayBrackets]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      NoStatement(
+                      ) [NoStatement]
+                      StatementDesignator(
+                        DesignatorStatementAssignExpr(
+                          DesignatorIdent(
+                           c
+                          ) [DesignatorIdent]
+                          Assignop(
+                          ) [Assignop]
+                          ExprBase(
+                            Term(
+                              FactorNewSquare(
+                                Type(
+                                 int
+                                ) [Type]
+                                ExprBase(
+                                  Term(
+                                    FactorNumber(
+                                     3
+                                    ) [FactorNumber]
+                                    NoMulFactor(
+                                    ) [NoMulFactor]
+                                  ) [Term]
+                                  NoAddTerm(
+                                  ) [NoAddTerm]
+                                ) [ExprBase]
+                              ) [FactorNewSquare]
+                              NoMulFactor(
+                              ) [NoMulFactor]
+                            ) [Term]
+                            NoAddTerm(
+                            ) [NoAddTerm]
+                          ) [ExprBase]
+                        ) [DesignatorStatementAssignExpr]
+                      ) [StatementDesignator]
+                    ) [Statements]
+                    StatementDesignator(
+                      DesignatorStatementAssignExpr(
+                        DesignatorExpr(
+                          ArrDesignator(
+                            DesignatorIdent(
+                             c
+                            ) [DesignatorIdent]
+                          ) [ArrDesignator]
+                          ExprBase(
+                            Term(
+                              FactorNumber(
+                               0
+                              ) [FactorNumber]
+                              NoMulFactor(
+                              ) [NoMulFactor]
+                            ) [Term]
+                            NoAddTerm(
+                            ) [NoAddTerm]
+                          ) [ExprBase]
+                        ) [DesignatorExpr]
+                        Assignop(
+                        ) [Assignop]
+                        ExprBase(
+                          Term(
+                            FactorBase(
+                              DesignatorIdent(
+                               x
+                              ) [DesignatorIdent]
+                            ) [FactorBase]
+                            NoMulFactor(
+                            ) [NoMulFactor]
+                          ) [Term]
+                          NoAddTerm(
+                          ) [NoAddTerm]
+                        ) [ExprBase]
+                      ) [DesignatorStatementAssignExpr]
+                    ) [StatementDesignator]
+                  ) [Statements]
+                  StatementDesignator(
+                    DesignatorStatementAssignExpr(
+                      DesignatorExpr(
+                        ArrDesignator(
+                          DesignatorIdent(
+                           c
+                          ) [DesignatorIdent]
+                        ) [ArrDesignator]
+                        ExprBase(
+                          Term(
+                            FactorNumber(
+                             1
+                            ) [FactorNumber]
+                            NoMulFactor(
+                            ) [NoMulFactor]
+                          ) [Term]
+                          NoAddTerm(
+                          ) [NoAddTerm]
+                        ) [ExprBase]
+                      ) [DesignatorExpr]
+                      Assignop(
+                      ) [Assignop]
+                      ExprBase(
+                        Term(
+                          FactorNumber(
+                           2
+                          ) [FactorNumber]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [DesignatorStatementAssignExpr]
+                  ) [StatementDesignator]
+                ) [Statements]
+                StatementDesignator(
+                  DesignatorStatementAssignExpr(
+                    DesignatorExpr(
+                      ArrDesignator(
+                        DesignatorIdent(
+                         c
+                        ) [DesignatorIdent]
+                      ) [ArrDesignator]
+                      ExprBase(
+                        Term(
+                          FactorNumber(
+                           2
+                          ) [FactorNumber]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [DesignatorExpr]
+                    Assignop(
+                    ) [Assignop]
+                    ExprBase(
+                      Term(
+                        FactorNumber(
+                         5
+                        ) [FactorNumber]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                  ) [DesignatorStatementAssignExpr]
+                ) [StatementDesignator]
+              ) [Statements]
+              StatementDesignator(
+                DesignatorStatementListAssign(
+                  NoDesignatorArr(
+                  ) [NoDesignatorArr]
+                  DesignListMulti(
+                    DesignListMulti(
+                      NoDesignList(
+                      ) [NoDesignList]
+                      DesignatorArr(
+                        DesignatorIdent(
+                         x
+                        ) [DesignatorIdent]
+                      ) [DesignatorArr]
+                    ) [DesignListMulti]
+                    DesignatorArr(
+                      DesignatorIdent(
+                       y
+                      ) [DesignatorIdent]
+                    ) [DesignatorArr]
+                  ) [DesignListMulti]
+                  AssignDesign(
+                    Assignop(
+                    ) [Assignop]
+                    DesignatorIdent(
+                     c
+                    ) [DesignatorIdent]
+                  ) [AssignDesign]
+                ) [DesignatorStatementListAssign]
+              ) [StatementDesignator]
+            ) [Statements]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorBase(
+                    DesignatorIdent(
+                     x
+                    ) [DesignatorIdent]
+                  ) [FactorBase]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorBase(
+                  DesignatorIdent(
+                   y
+                  ) [DesignatorIdent]
+                ) [FactorBase]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  23:35:30,083 - ===================================
+INFO  23:35:30,087 - Obradjuje se funkcija main na liniji 5
+INFO  23:35:30,087 - Deklarisana promenljiva c na liniji 6
+INFO  23:35:30,087 -  Print count calls = 0
+INFO  23:35:30,087 -  Deklarisanih promenljivih ima = 0
+INFO  23:35:30,087 - ===================================
+INFO  23:35:30,092 - Parsiranje uspesno zavrseno!

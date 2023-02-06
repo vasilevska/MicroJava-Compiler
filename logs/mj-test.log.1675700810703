@@ -1,0 +1,194 @@
+INFO  17:24:19,710 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  17:24:19,760 - #36 program
+INFO  17:24:19,760 - #46 DEB
+INFO  17:24:19,760 - #24 {
+INFO  17:24:19,761 - #46 int
+INFO  17:24:19,762 - #46 m
+INFO  17:24:19,762 - #25 (
+INFO  17:24:19,762 - #40 )
+INFO  17:24:19,763 - #24 {
+INFO  17:24:19,764 - #39 return
+INFO  17:24:19,764 - #47 4
+INFO  17:24:19,764 - #42 ;
+INFO  17:24:19,766 - #37 }
+INFO  17:24:19,766 - #44 void
+INFO  17:24:19,766 - #46 t
+INFO  17:24:19,766 - #25 (
+INFO  17:24:19,766 - #46 int
+INFO  17:24:19,766 - #46 x
+INFO  17:24:19,767 - #40 )
+INFO  17:24:19,768 - #24 {
+INFO  17:24:19,768 - #35 print
+INFO  17:24:19,768 - #25 (
+INFO  17:24:19,769 - #46 x
+INFO  17:24:19,769 - #40 )
+INFO  17:24:19,773 - #42 ;
+INFO  17:24:19,773 - #35 print
+INFO  17:24:19,773 - #25 (
+INFO  17:24:19,773 - #46 m
+INFO  17:24:19,773 - #25 (
+INFO  17:24:19,773 - #40 )
+INFO  17:24:19,773 - #40 )
+INFO  17:24:19,773 - #42 ;
+INFO  17:24:19,773 - #37 }
+INFO  17:24:19,773 - #44 void
+INFO  17:24:19,774 - #46 main
+INFO  17:24:19,774 - #25 (
+INFO  17:24:19,774 - #40 )
+INFO  17:24:19,774 - #24 {
+INFO  17:24:19,774 - #46 t
+INFO  17:24:19,774 - #25 (
+INFO  17:24:19,774 - #47 3
+INFO  17:24:19,774 - #40 )
+INFO  17:24:19,776 - #42 ;
+INFO  17:24:19,776 - #37 }
+INFO  17:24:19,776 - #37 }
+INFO  17:24:19,781 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  NoDecl(
+  ) [NoDecl]
+  MethDecls(
+    MethDecls(
+      MethDecls(
+        NoMethDecl(
+        ) [NoMethDecl]
+        MethodDeclDerived1(
+          MethodNameType(
+            Type(
+             int
+            ) [Type]
+           m
+          ) [MethodNameType]
+          NoFormPars(
+          ) [NoFormPars]
+          FunctionBodyDerived1(
+            NoVarDecl(
+            ) [NoVarDecl]
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementReturnExpr(
+                ExprBase(
+                  Term(
+                    FactorNumber(
+                     4
+                    ) [FactorNumber]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [StatementReturnExpr]
+            ) [Statements]
+          ) [FunctionBodyDerived1]
+        ) [MethodDeclDerived1]
+      ) [MethDecls]
+      MethodDeclDerived1(
+        MethodNameVoid(
+         t
+        ) [MethodNameVoid]
+        OptFormPars(
+          FormPars(
+            Type(
+             int
+            ) [Type]
+           x
+            NotArray(
+            ) [NotArray]
+            NotParamArray(
+            ) [NotParamArray]
+          ) [FormPars]
+        ) [OptFormPars]
+        FunctionBodyDerived1(
+          NoVarDecl(
+          ) [NoVarDecl]
+          Statements(
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementPrintExpr(
+                ExprBase(
+                  Term(
+                    FactorBase(
+                      DesignatorIdent(
+                       x
+                      ) [DesignatorIdent]
+                    ) [FactorBase]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [StatementPrintExpr]
+            ) [Statements]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorParen(
+                    DesignatorIdent(
+                     m
+                    ) [DesignatorIdent]
+                  ) [FactorParen]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementDesignator(
+            DesignatorStatementActPars(
+              DesignatorIdent(
+               t
+              ) [DesignatorIdent]
+              ActPars(
+                ExprBase(
+                  Term(
+                    FactorNumber(
+                     3
+                    ) [FactorNumber]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+                NoExpr(
+                ) [NoExpr]
+              ) [ActPars]
+            ) [DesignatorStatementActPars]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  17:24:19,782 - ===================================
+INFO  17:24:19,785 - Obradjuje se funkcija m na liniji 3
+INFO  17:24:19,785 - Obradjuje se funkcija t na liniji 6
+ERROR 17:24:19,788 - Linija 8: Operand instrukcije PRINT mora biti char ili int tipa
+INFO  17:24:19,788 - Obradjuje se funkcija main na liniji 10
+INFO  17:24:19,788 -  Print count calls = 0
+INFO  17:24:19,788 -  Deklarisanih promenljivih ima = 0
+INFO  17:24:19,788 - ===================================
+ERROR 17:24:19,789 - Parsiranje NIJE uspesno zavrseno!

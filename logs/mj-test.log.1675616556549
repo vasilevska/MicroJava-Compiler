@@ -1,0 +1,192 @@
+INFO  17:53:06,104 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  17:53:06,164 - #36 program
+INFO  17:53:06,164 - #46 DEB
+INFO  17:53:06,164 - #9 const
+INFO  17:53:06,166 - #46 int
+INFO  17:53:06,166 - #46 x
+INFO  17:53:06,167 - #4 =
+INFO  17:53:06,167 - #47 4
+INFO  17:53:06,167 - #42 ;
+INFO  17:53:06,173 - #9 const
+INFO  17:53:06,174 - #46 int
+INFO  17:53:06,174 - #46 y
+INFO  17:53:06,174 - #4 =
+INFO  17:53:06,175 - #47 3
+INFO  17:53:06,175 - #42 ;
+INFO  17:53:06,175 - #24 {
+INFO  17:53:06,175 - #44 void
+INFO  17:53:06,175 - #46 main
+INFO  17:53:06,176 - #25 (
+INFO  17:53:06,176 - #40 )
+INFO  17:53:06,176 - #46 int
+INFO  17:53:06,177 - #46 c
+INFO  17:53:06,177 - #27 [
+INFO  17:53:06,177 - #41 ]
+INFO  17:53:06,181 - #42 ;
+INFO  17:53:06,183 - #24 {
+INFO  17:53:06,184 - #46 c
+INFO  17:53:06,185 - #4 =
+INFO  17:53:06,185 - #32 new
+INFO  17:53:06,185 - #46 int
+INFO  17:53:06,185 - #27 [
+INFO  17:53:06,185 - #47 3
+INFO  17:53:06,185 - #41 ]
+INFO  17:53:06,187 - #42 ;
+INFO  17:53:06,187 - #46 c
+INFO  17:53:06,188 - #27 [
+INFO  17:53:06,188 - #47 0
+INFO  17:53:06,188 - #41 ]
+INFO  17:53:06,188 - #4 =
+INFO  17:53:06,188 - #46 x
+INFO  17:53:06,188 - #42 ;
+INFO  17:53:06,188 - #37 }
+INFO  17:53:06,188 - #37 }
+INFO  17:53:06,194 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsConst(
+    DeclsConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDecl(
+        Type(
+         int
+        ) [Type]
+        AssignConst(
+         x
+          Assignop(
+          ) [Assignop]
+          IntConst(
+           4
+          ) [IntConst]
+        ) [AssignConst]
+        NoRepeatConst(
+        ) [NoRepeatConst]
+      ) [ConstDecl]
+    ) [DeclsConst]
+    ConstDecl(
+      Type(
+       int
+      ) [Type]
+      AssignConst(
+       y
+        Assignop(
+        ) [Assignop]
+        IntConst(
+         3
+        ) [IntConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           c
+            ArrayBrackets(
+            ) [ArrayBrackets]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementDesignator(
+              DesignatorStatementAssignExpr(
+                DesignatorIdent(
+                 c
+                ) [DesignatorIdent]
+                Assignop(
+                ) [Assignop]
+                ExprBase(
+                  Term(
+                    FactorNewSquare(
+                      Type(
+                       int
+                      ) [Type]
+                      ExprBase(
+                        Term(
+                          FactorNumber(
+                           3
+                          ) [FactorNumber]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [FactorNewSquare]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [DesignatorStatementAssignExpr]
+            ) [StatementDesignator]
+          ) [Statements]
+          StatementDesignator(
+            DesignatorStatementAssignExpr(
+              DesignatorExpr(
+                DesignatorIdent(
+                 c
+                ) [DesignatorIdent]
+                ExprBase(
+                  Term(
+                    FactorNumber(
+                     0
+                    ) [FactorNumber]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [DesignatorExpr]
+              Assignop(
+              ) [Assignop]
+              ExprBase(
+                Term(
+                  FactorBase(
+                    DesignatorIdent(
+                     x
+                    ) [DesignatorIdent]
+                  ) [FactorBase]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [DesignatorStatementAssignExpr]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  17:53:06,195 - ===================================
+INFO  17:53:06,198 - Obradjuje se funkcija main na liniji 5
+INFO  17:53:06,198 - Deklarisana promenljiva c na liniji 6
+INFO  17:53:06,199 -  Print count calls = 0
+INFO  17:53:06,199 -  Deklarisanih promenljivih ima = 0
+INFO  17:53:06,199 - ===================================
+INFO  17:53:06,204 - Parsiranje uspesno zavrseno!

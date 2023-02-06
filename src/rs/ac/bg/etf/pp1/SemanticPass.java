@@ -61,6 +61,26 @@ public class SemanticPass extends VisitorAdaptor {
     	return !errorDetected;
     }
     
+    private boolean compatible(Struct fp, Struct ap) {
+    	while(fp.getKind() == Struct.Array && ap.getKind() == Struct.Array) {
+			fp = fp.getElemType();
+			ap = ap.getElemType();
+		}
+		if(fp.getKind() == Struct.Array || ap.getKind() == Struct.Array || (ap.getKind() != Struct.Class && fp.getKind() == Struct.Class) || (ap.getKind() == Struct.Class && fp.getKind() != Struct.Class)) {
+			report_error("pogresan tip parametara", null);
+			return false;
+		}
+		if(fp.getKind() == Struct.Class && ap.getKind() == Struct.Class) {
+			while(ap.getElemType() != null && !ap.equals(fp)) {
+				ap = ap.getElemType();
+			}
+			if(!ap.equals(fp))
+				report_error("klase prosledjenih parametara nisu kompatibilne", null);
+				return false;
+		}
+		return true;
+    }
+    
     
     //BASIC
     
@@ -197,6 +217,14 @@ public class SemanticPass extends VisitorAdaptor {
     	if(currentClass != null) Tab.insert(Obj.Var, "this", currentClass.getType());
     }
     
+    public void visit(ActPars pars) {
+    	curr.add(0, new Obj(Obj.Var, "", pars.getExpr().struct));
+    }
+    
+    public void visit(Exprs param) {
+    	curr.add(new Obj(Obj.Var, "", param.getExpr().struct));
+    }
+    
     
     //EXPRESIONS
     	//FIXME: operacije, factors
@@ -264,7 +292,7 @@ public class SemanticPass extends VisitorAdaptor {
     	Obj des = factor.getDesignator().obj;
     	if(des.getKind() != Obj.Meth)
     		report_error("probaj da npr pozoves metod", null);
-    	
+    	factor.struct = des.getType();
     	
     	List<Obj> formalPars = des.getLocalSymbols().stream().filter(o -> o.getKind() == Obj.Var && o.getName() != "this").limit(des.getLevel()).collect(Collectors.toList());
     	
@@ -287,21 +315,7 @@ public class SemanticPass extends VisitorAdaptor {
     	for(int i = 0; i<curr.size(); i++) {
     		Struct fp = formalPars.get(i).getType();
     		Struct ap = curr.get(i).getType();
-    		while(fp.getKind() == Struct.Array && ap.getKind() == Struct.Array) {
-    			fp = fp.getElemType();
-    			ap = ap.getElemType();
-    		}
-    		if(fp.getKind() == Struct.Array || ap.getKind() == Struct.Array || (ap.getKind() != Struct.Class && fp.getKind() == Struct.Class) || (ap.getKind() == Struct.Class && fp.getKind() != Struct.Class)) {
-    			report_error("pogresan tip parametara", null);
-    			return;
-    		}
-    		if(fp.getKind() == Struct.Class && ap.getKind() == Struct.Class) {
-    			while(ap.getElemType() != null && !ap.equals(fp)) {
-    				ap = ap.getElemType();
-    			}
-    			if(!ap.equals(fp))
-    				report_error("klase prosledjenih parametara nisu kompatibilne", null);
-    		}
+    		if(!compatible(fp, ap)) break;
     	}
     }
     
@@ -322,20 +336,23 @@ public class SemanticPass extends VisitorAdaptor {
     }
     
     //STATEMENTS
-    
-    //STATEMENTS
     	
     public void visit(StatementPrintExpr print) {
     	if(print.getExpr().struct != Tab.intType && print.getExpr().struct!= Tab.charType && print.getExpr().struct!= boolType) 
-    		report_error ("Semanticka greska na liniji " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
+    		report_error ("Linija " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
 	}
 	
     public void visit(StatementPrintExprNumber print) {
     	if((print.getExpr().struct != Tab.intType && print.getExpr().struct!= Tab.charType && print.getExpr().struct!= boolType) || print.getN2() < 1) 
-    		report_error ("Semanticka greska na liniji " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
+    		report_error ("Linija " + print.getLine() + ": Operand instrukcije PRINT mora biti char ili int tipa", null );
 	}
     
     public void visit(StatementRead stmt) {
+    	Obj des = stmt.getDesignator().obj;
+    	if(des.getType() != Tab.intType && des.getType() != Tab.charType && des.getType() != boolType)
+    		report_error("Linija " + stmt.getLine() + ": Polje u koje se cita treba da bude prostog tipa", null);
+    	if(des.getKind() != Obj.Elem && des.getKind() != Obj.Fld && des.getKind() != Obj.Var)
+    		report_error("Linija " + stmt.getLine() + ": Polje u koje se cita treba da bude neka varijabla", null);
     	
     }
     
@@ -363,9 +380,19 @@ public class SemanticPass extends VisitorAdaptor {
     	loopCount--;  	
     }
     
+    public void visit(FEElem el) {
+    	loopCount++;
+    	StatementForeach p = (StatementForeach) el.getParent(); 
+    	if(p.getDesignator().obj.getType().getKind() != Struct.Array) {
+    		report_error("foreach moze da se radi samo nad nizom duh", null);
+    		return;
+    	}
+    	el.obj = Tab.find(el.getI1());
+    	if(el.obj.getKind() != Obj.Var || p.getDesignator().obj.getType().getElemType() != el.obj.getType())
+    		report_error("prosledjeni parametar nije tipa koji odgovara tipu elemenata niza", null);	
+    }
+
     //CLASSES
-    
-    //CLASES
     	//FIXME: dodaj proveru za vec postojece konstruktore
     
     public void visit(ClassName className) {
@@ -428,9 +455,6 @@ public class SemanticPass extends VisitorAdaptor {
     	currentConstr = constrName.obj;
     }
     
-    //DESIGNATORS
-    
-    //OPERACIJE
     
     //DESIGNATORS
     
@@ -444,12 +468,12 @@ public class SemanticPass extends VisitorAdaptor {
     }
     
     public void visit(DesignatorExpr des) {
-    	Obj arr = des.getDesignator().obj;
+    	Obj arr = des.getArrDesignator().getDesignator().obj;
     	if(arr == Tab.noObj || arr.getType().getKind() != Struct.Array || des.getExpr().struct != Tab.intType) {
     		report_error("ne moze da se pristupa promenljivoj sa tim indeksom", null);
     		return;
     	}
-    	des.obj = new Obj(Obj.Elem, arr.getName(), arr.getType());
+    	des.obj = new Obj(Obj.Elem, arr.getName(), arr.getType().getElemType());
     }
 
     /* Da li radi u klasi? */
@@ -468,11 +492,49 @@ public class SemanticPass extends VisitorAdaptor {
     	}
     }
         
-    public void visit(DesignatorStatementAssignExpr des) {}
+    public void visit(DesignatorStatementAssignExpr des) {
+    	if(des.getDesignator().obj == Tab.noObj ||
+    			(des.getDesignator().obj.getKind() != Obj.Var && des.getDesignator().obj.getKind() != Obj.Elem && des.getDesignator().obj.getKind() != Obj.Fld)) {
+    		report_error("nije moguce dodeliti", null);
+    		return;
+    	}
+    	Struct fp = des.getDesignator().obj.getType();
+		Struct ap = des.getExpr().struct;
+		
+		compatible(fp, ap);
+    }
     
-    public void visit(DesignatorStatementParens des) {}
+    //FIXME: dodaj da pogleda opet ako nije dobar designator
+    public void visit(DesignatorStatementParens desStmt) {
+    	Obj des = desStmt.getDesignator().obj;
+    	if(des.getKind() != Obj.Meth)
+    		report_error("probaj da npr pozoves metod", null);
+    	
+    	
+    	List<Obj> formalPars = des.getLocalSymbols().stream().filter(o -> o.getKind() == Obj.Var && o.getName() != "this").limit(des.getLevel()).collect(Collectors.toList());
+    	
+    	if(formalPars.size() != 0)
+    		report_error("broj parametara ne odgovara", null);
+    }
     
-    public void visit(DesignatorStatementActPars des) {}
+    public void visit(DesignatorStatementActPars desStmt) {
+    	Obj des = desStmt.getDesignator().obj;
+    	if(des.getKind() != Obj.Meth)
+    		report_error("probaj da npr pozoves metod", null);
+    	
+    	
+    	List<Obj> formalPars = des.getLocalSymbols().stream().filter(o -> o.getKind() == Obj.Var && o.getName() != "this").limit(des.getLevel()).collect(Collectors.toList());
+    	
+    	if(formalPars.size() != curr.size())
+    		report_error("broj parametara ne odgovara", null);
+    	
+    	for(int i = 0; i<curr.size(); i++) {
+    		Struct fp = formalPars.get(i).getType();
+    		Struct ap = curr.get(i).getType();
+    		if(!compatible(fp, ap)) break;
+    	}
+    	curr.clear();
+    }
     
     public void visit(DesignatorStatementInc des) {
     	int k = des.getDesignator().obj.getKind();
@@ -486,8 +548,21 @@ public class SemanticPass extends VisitorAdaptor {
     		report_error("nevalidna promenljiva za dekrementiranje", null);
     }
     
-    public void visit(DesignatorStatementListAssign des) {}
+    public void visit(DesignatorStatementListAssign des) {
+    	if(des.getAssignDesign().getDesignator().obj.getType().getKind() != Struct.Array)
+    		report_error("Linija " + des.getLine() +": leva strana izraza nije niz", null);
+    	
+    	for(int i = 0; i<curr.size(); i++) {
+    		Struct fp = des.getAssignDesign().getDesignator().obj.getType().getElemType();
+    		Struct ap = curr.get(i).getType();
+    		if(!compatible(fp, ap)) break;
+    	}
+    	curr.clear();
+    }
     
+    public void visit(DesignatorArr des) {
+    	curr.add(des.getDesignator().obj);
+    }
     
     //CONDITIONS
     
@@ -495,17 +570,14 @@ public class SemanticPass extends VisitorAdaptor {
     	if(cond.getParent() instanceof StatementWhile) loopCount++;
     }   
     
-    public void visit(FEElem el) {
-    	loopCount++;
-    	StatementForeach p = (StatementForeach) el.getParent(); 
-    	if(p.getDesignator().obj.getType().getKind() != Struct.Array) {
-    		report_error("foreach moze da se radi samo nad nizom duh", null);
-    		return;
-    	}
-    	el.obj = Tab.find(el.getI1());
-    	if(el.obj.getKind() != Obj.Var || p.getDesignator().obj.getType().getElemType() != el.obj.getType())
-    		report_error("prosledjeni parametar nije tipa koji odgovara tipu elemenata niza", null);	
+    public void visit(CondFactRel cond) {
+    	if(!compatible(cond.getExpr().struct, cond.getExpr1().struct)) return;
+    	if(cond.getExpr().struct.getKind() == Struct.Class || cond.getExpr1().struct.getKind() == Struct.Class || cond.getExpr().struct.getKind() == Struct.Array || cond.getExpr1().struct.getKind() == Struct.Array)
+    		if(!(cond.getRelOpp() instanceof EqOp || cond.getRelOpp() instanceof NeqOp))
+    			report_error("Linija " + cond.getLine() + ": za klase i nizove sme da se koristi samo == i !=", null);
     }
+   
+    
     
     
 	/*

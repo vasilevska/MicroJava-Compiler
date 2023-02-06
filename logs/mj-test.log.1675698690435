@@ -1,0 +1,96 @@
+INFO  16:51:19,216 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  16:51:19,270 - #36 program
+INFO  16:51:19,270 - #46 DEB
+INFO  16:51:19,270 - #24 {
+INFO  16:51:19,271 - #44 void
+INFO  16:51:19,272 - #46 t
+INFO  16:51:19,272 - #25 (
+INFO  16:51:19,272 - #40 )
+INFO  16:51:19,273 - #24 {
+INFO  16:51:19,274 - #35 print
+INFO  16:51:19,275 - #25 (
+INFO  16:51:19,275 - #47 3
+INFO  16:51:19,275 - #40 )
+INFO  16:51:19,277 - #42 ;
+INFO  16:51:19,277 - #37 }
+INFO  16:51:19,278 - #44 void
+INFO  16:51:19,278 - #46 main
+INFO  16:51:19,278 - #25 (
+INFO  16:51:19,278 - #40 )
+INFO  16:51:19,279 - #24 {
+INFO  16:51:19,279 - #46 t
+INFO  16:51:19,279 - #25 (
+INFO  16:51:19,279 - #40 )
+INFO  16:51:19,279 - #42 ;
+INFO  16:51:19,283 - #37 }
+INFO  16:51:19,283 - #37 }
+INFO  16:51:19,288 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  NoDecl(
+  ) [NoDecl]
+  MethDecls(
+    MethDecls(
+      NoMethDecl(
+      ) [NoMethDecl]
+      MethodDeclDerived1(
+        MethodNameVoid(
+         t
+        ) [MethodNameVoid]
+        NoFormPars(
+        ) [NoFormPars]
+        FunctionBodyDerived1(
+          NoVarDecl(
+          ) [NoVarDecl]
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorNumber(
+                   3
+                  ) [FactorNumber]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementDesignator(
+            DesignatorStatementParens(
+              DesignatorIdent(
+               t
+              ) [DesignatorIdent]
+            ) [DesignatorStatementParens]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  16:51:19,289 - ===================================
+INFO  16:51:19,293 - Obradjuje se funkcija t na liniji 3
+INFO  16:51:19,293 - Obradjuje se funkcija main na liniji 6
+INFO  16:51:19,296 -  Print count calls = 0
+INFO  16:51:19,296 -  Deklarisanih promenljivih ima = 0
+INFO  16:51:19,296 - ===================================
+INFO  16:51:19,301 - Parsiranje uspesno zavrseno!

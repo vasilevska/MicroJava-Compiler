@@ -1,0 +1,148 @@
+INFO  18:07:22,235 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  18:07:22,297 - #36 program
+INFO  18:07:22,297 - #46 DEB
+INFO  18:07:22,297 - #9 const
+INFO  18:07:22,298 - #46 int
+INFO  18:07:22,299 - #46 x
+INFO  18:07:22,299 - #4 =
+INFO  18:07:22,300 - #47 4
+INFO  18:07:22,300 - #42 ;
+INFO  18:07:22,302 - #9 const
+INFO  18:07:22,303 - #46 int
+INFO  18:07:22,303 - #46 y
+INFO  18:07:22,303 - #4 =
+INFO  18:07:22,303 - #47 3
+INFO  18:07:22,304 - #42 ;
+INFO  18:07:22,304 - #24 {
+INFO  18:07:22,304 - #44 void
+INFO  18:07:22,305 - #46 main
+INFO  18:07:22,305 - #25 (
+INFO  18:07:22,305 - #40 )
+INFO  18:07:22,306 - #46 int
+INFO  18:07:22,307 - #46 c
+INFO  18:07:22,307 - #27 [
+INFO  18:07:22,307 - #41 ]
+INFO  18:07:22,311 - #42 ;
+INFO  18:07:22,313 - #24 {
+INFO  18:07:22,314 - #46 c
+INFO  18:07:22,316 - #4 =
+INFO  18:07:22,316 - #32 new
+INFO  18:07:22,316 - #46 int
+INFO  18:07:22,316 - #27 [
+INFO  18:07:22,316 - #47 3
+INFO  18:07:22,316 - #41 ]
+INFO  18:07:22,319 - #42 ;
+INFO  18:07:22,319 - #37 }
+INFO  18:07:22,320 - #37 }
+INFO  18:07:22,325 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsConst(
+    DeclsConst(
+      NoDecl(
+      ) [NoDecl]
+      ConstDecl(
+        Type(
+         int
+        ) [Type]
+        AssignConst(
+         x
+          Assignop(
+          ) [Assignop]
+          IntConst(
+           4
+          ) [IntConst]
+        ) [AssignConst]
+        NoRepeatConst(
+        ) [NoRepeatConst]
+      ) [ConstDecl]
+    ) [DeclsConst]
+    ConstDecl(
+      Type(
+       int
+      ) [Type]
+      AssignConst(
+       y
+        Assignop(
+        ) [Assignop]
+        IntConst(
+         3
+        ) [IntConst]
+      ) [AssignConst]
+      NoRepeatConst(
+      ) [NoRepeatConst]
+    ) [ConstDecl]
+  ) [DeclsConst]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           c
+            ArrayBrackets(
+            ) [ArrayBrackets]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementDesignator(
+            DesignatorStatementAssignExpr(
+              DesignatorIdent(
+               c
+              ) [DesignatorIdent]
+              Assignop(
+              ) [Assignop]
+              ExprBase(
+                Term(
+                  FactorNewSquare(
+                    Type(
+                     int
+                    ) [Type]
+                    ExprBase(
+                      Term(
+                        FactorNumber(
+                         3
+                        ) [FactorNumber]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                  ) [FactorNewSquare]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [DesignatorStatementAssignExpr]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  18:07:22,326 - ===================================
+INFO  18:07:22,329 - Obradjuje se funkcija main na liniji 5
+INFO  18:07:22,329 - Deklarisana promenljiva c na liniji 6
+INFO  18:07:22,330 -  Print count calls = 0
+INFO  18:07:22,330 -  Deklarisanih promenljivih ima = 0
+INFO  18:07:22,330 - ===================================
+INFO  18:07:22,335 - Parsiranje uspesno zavrseno!

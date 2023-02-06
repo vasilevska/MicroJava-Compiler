@@ -1,0 +1,165 @@
+INFO  17:11:01,643 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  17:11:01,692 - #36 program
+INFO  17:11:01,692 - #46 DEB
+INFO  17:11:01,692 - #24 {
+INFO  17:11:01,693 - #44 void
+INFO  17:11:01,694 - #46 t
+INFO  17:11:01,694 - #25 (
+INFO  17:11:01,694 - #46 int
+INFO  17:11:01,694 - #46 x
+INFO  17:11:01,695 - #40 )
+INFO  17:11:01,697 - #24 {
+INFO  17:11:01,698 - #35 print
+INFO  17:11:01,699 - #25 (
+INFO  17:11:01,699 - #46 x
+INFO  17:11:01,699 - #40 )
+INFO  17:11:01,701 - #42 ;
+INFO  17:11:01,701 - #37 }
+INFO  17:11:01,702 - #44 void
+INFO  17:11:01,702 - #46 t
+INFO  17:11:01,702 - #25 (
+INFO  17:11:01,702 - #40 )
+INFO  17:11:01,703 - #24 {
+INFO  17:11:01,703 - #35 print
+INFO  17:11:01,703 - #25 (
+INFO  17:11:01,707 - #47 4
+INFO  17:11:01,707 - #40 )
+INFO  17:11:01,707 - #42 ;
+INFO  17:11:01,707 - #37 }
+INFO  17:11:01,707 - #44 void
+INFO  17:11:01,707 - #46 main
+INFO  17:11:01,707 - #25 (
+INFO  17:11:01,708 - #40 )
+INFO  17:11:01,708 - #24 {
+INFO  17:11:01,708 - #46 t
+INFO  17:11:01,708 - #25 (
+INFO  17:11:01,708 - #47 3
+INFO  17:11:01,708 - #40 )
+INFO  17:11:01,710 - #42 ;
+INFO  17:11:01,710 - #37 }
+INFO  17:11:01,710 - #37 }
+INFO  17:11:01,716 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  NoDecl(
+  ) [NoDecl]
+  MethDecls(
+    MethDecls(
+      MethDecls(
+        NoMethDecl(
+        ) [NoMethDecl]
+        MethodDeclDerived1(
+          MethodNameVoid(
+           t
+          ) [MethodNameVoid]
+          OptFormPars(
+            FormPars(
+              Type(
+               int
+              ) [Type]
+             x
+              NotArray(
+              ) [NotArray]
+              NotParamArray(
+              ) [NotParamArray]
+            ) [FormPars]
+          ) [OptFormPars]
+          FunctionBodyDerived1(
+            NoVarDecl(
+            ) [NoVarDecl]
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementPrintExpr(
+                ExprBase(
+                  Term(
+                    FactorBase(
+                      DesignatorIdent(
+                       x
+                      ) [DesignatorIdent]
+                    ) [FactorBase]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [StatementPrintExpr]
+            ) [Statements]
+          ) [FunctionBodyDerived1]
+        ) [MethodDeclDerived1]
+      ) [MethDecls]
+      MethodDeclDerived1(
+        MethodNameVoid(
+         t
+        ) [MethodNameVoid]
+        NoFormPars(
+        ) [NoFormPars]
+        FunctionBodyDerived1(
+          NoVarDecl(
+          ) [NoVarDecl]
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorNumber(
+                   4
+                  ) [FactorNumber]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+        ) [FunctionBodyDerived1]
+      ) [MethodDeclDerived1]
+    ) [MethDecls]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementDesignator(
+            DesignatorStatementActPars(
+              DesignatorIdent(
+               t
+              ) [DesignatorIdent]
+              ActPars(
+                ExprBase(
+                  Term(
+                    FactorNumber(
+                     3
+                    ) [FactorNumber]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+                NoExpr(
+                ) [NoExpr]
+              ) [ActPars]
+            ) [DesignatorStatementActPars]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  17:11:01,716 - ===================================
+INFO  17:11:01,719 - Obradjuje se funkcija t na liniji 3
+INFO  17:11:01,720 - Obradjuje se funkcija t na liniji 6
+INFO  17:11:01,720 - Obradjuje se funkcija main na liniji 9
+ERROR 17:11:01,722 - broj parametara ne odgovara

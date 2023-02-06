@@ -1,0 +1,101 @@
+INFO  12:57:34,621 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  12:57:34,676 - #36 program
+INFO  12:57:34,676 - #46 DEB
+INFO  12:57:34,676 - #24 {
+INFO  12:57:34,677 - #44 void
+INFO  12:57:34,678 - #46 main
+INFO  12:57:34,678 - #25 (
+INFO  12:57:34,678 - #40 )
+INFO  12:57:34,679 - #24 {
+INFO  12:57:34,679 - #35 print
+INFO  12:57:34,680 - #25 (
+INFO  12:57:34,680 - #49 d
+INFO  12:57:34,680 - #40 )
+INFO  12:57:34,682 - #42 ;
+INFO  12:57:34,682 - #35 print
+INFO  12:57:34,682 - #25 (
+INFO  12:57:34,682 - #49 e
+INFO  12:57:34,682 - #40 )
+INFO  12:57:34,682 - #42 ;
+INFO  12:57:34,682 - #35 print
+INFO  12:57:34,682 - #25 (
+INFO  12:57:34,682 - #49 b
+INFO  12:57:34,682 - #40 )
+INFO  12:57:34,683 - #42 ;
+INFO  12:57:34,686 - #37 }
+INFO  12:57:34,686 - #37 }
+INFO  12:57:34,691 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  NoDecl(
+  ) [NoDecl]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          Statements(
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementPrintExpr(
+                ExprBase(
+                  Term(
+                    FactorChar(
+                     d
+                    ) [FactorChar]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [StatementPrintExpr]
+            ) [Statements]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorChar(
+                   e
+                  ) [FactorChar]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+          StatementPrintExpr(
+            ExprBase(
+              Term(
+                FactorChar(
+                 b
+                ) [FactorChar]
+                NoMulFactor(
+                ) [NoMulFactor]
+              ) [Term]
+              NoAddTerm(
+              ) [NoAddTerm]
+            ) [ExprBase]
+          ) [StatementPrintExpr]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  12:57:34,691 - ===================================
+INFO  12:57:34,696 - Obradjuje se funkcija main na liniji 3
+INFO  12:57:34,696 -  Print count calls = 0
+INFO  12:57:34,696 -  Deklarisanih promenljivih ima = 0
+INFO  12:57:34,696 - ===================================
+INFO  12:57:34,697 - Parsiranje uspesno zavrseno!
