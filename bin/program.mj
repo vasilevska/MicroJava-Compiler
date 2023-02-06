@@ -2,12 +2,14 @@ program DEB
 {
 	void main()
 		int x;
+		int y;
 	{
 		x = 0;
-		if(x > 3)
+		y = 0;
+		while(x < 3){
 			print('l');
-		else 
-			print('g');
+			x++;
+		}
 		
 	}
 }

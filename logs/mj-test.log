@@ -1,39 +1,45 @@
-INFO  21:01:13,139 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
-INFO  21:01:13,194 - #36 program
-INFO  21:01:13,194 - #46 DEB
-INFO  21:01:13,195 - #24 {
-INFO  21:01:13,196 - #44 void
-INFO  21:01:13,196 - #46 main
-INFO  21:01:13,196 - #25 (
-INFO  21:01:13,197 - #40 )
-INFO  21:01:13,197 - #46 int
-INFO  21:01:13,198 - #46 x
-INFO  21:01:13,199 - #42 ;
-INFO  21:01:13,200 - #24 {
-INFO  21:01:13,201 - #46 x
-INFO  21:01:13,202 - #4 =
-INFO  21:01:13,202 - #47 0
-INFO  21:01:13,203 - #42 ;
-INFO  21:01:13,205 - #20 if
-INFO  21:01:13,205 - #25 (
-INFO  21:01:13,206 - #46 x
-INFO  21:01:13,206 - #18 >
-INFO  21:01:13,206 - #47 3
-INFO  21:01:13,207 - #40 )
-INFO  21:01:13,209 - #35 print
-INFO  21:01:13,209 - #25 (
-INFO  21:01:13,213 - #49 l
-INFO  21:01:13,213 - #40 )
-INFO  21:01:13,213 - #42 ;
-INFO  21:01:13,213 - #14 else
-INFO  21:01:13,213 - #35 print
-INFO  21:01:13,214 - #25 (
-INFO  21:01:13,215 - #49 g
-INFO  21:01:13,215 - #40 )
-INFO  21:01:13,215 - #42 ;
-INFO  21:01:13,215 - #37 }
-INFO  21:01:13,215 - #37 }
-INFO  21:01:13,219 - Program(
+INFO  00:33:10,092 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  00:33:10,147 - #36 program
+INFO  00:33:10,147 - #46 DEB
+INFO  00:33:10,147 - #24 {
+INFO  00:33:10,147 - #44 void
+INFO  00:33:10,148 - #46 main
+INFO  00:33:10,148 - #25 (
+INFO  00:33:10,148 - #40 )
+INFO  00:33:10,149 - #46 int
+INFO  00:33:10,149 - #46 x
+INFO  00:33:10,151 - #42 ;
+INFO  00:33:10,152 - #46 int
+INFO  00:33:10,152 - #46 y
+INFO  00:33:10,152 - #42 ;
+INFO  00:33:10,152 - #24 {
+INFO  00:33:10,152 - #46 x
+INFO  00:33:10,153 - #4 =
+INFO  00:33:10,153 - #47 0
+INFO  00:33:10,154 - #42 ;
+INFO  00:33:10,156 - #46 y
+INFO  00:33:10,156 - #4 =
+INFO  00:33:10,156 - #47 0
+INFO  00:33:10,156 - #42 ;
+INFO  00:33:10,156 - #45 while
+INFO  00:33:10,160 - #25 (
+INFO  00:33:10,161 - #46 x
+INFO  00:33:10,163 - #26 <
+INFO  00:33:10,163 - #47 3
+INFO  00:33:10,164 - #40 )
+INFO  00:33:10,166 - #24 {
+INFO  00:33:10,166 - #35 print
+INFO  00:33:10,166 - #25 (
+INFO  00:33:10,166 - #49 l
+INFO  00:33:10,166 - #40 )
+INFO  00:33:10,167 - #42 ;
+INFO  00:33:10,167 - #46 x
+INFO  00:33:10,167 - #22 ++
+INFO  00:33:10,167 - #42 ;
+INFO  00:33:10,167 - #37 }
+INFO  00:33:10,167 - #37 }
+INFO  00:33:10,167 - #37 }
+INFO  00:33:10,172 - Program(
   ProgName(
    DEB
   ) [ProgName]
@@ -50,13 +56,25 @@ INFO  21:01:13,219 - Program(
       ) [NoFormPars]
       FunctionBodyDerived1(
         VarDecls(
-          NoVarDecl(
-          ) [NoVarDecl]
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+             x
+              NotArray(
+              ) [NotArray]
+              NotIdentArray(
+              ) [NotIdentArray]
+            ) [VarDecl]
+          ) [VarDecls]
           VarDecl(
             Type(
              int
             ) [Type]
-           x
+           y
             NotArray(
             ) [NotArray]
             NotIdentArray(
@@ -65,12 +83,34 @@ INFO  21:01:13,219 - Program(
         ) [VarDecls]
         Statements(
           Statements(
-            NoStatement(
-            ) [NoStatement]
+            Statements(
+              NoStatement(
+              ) [NoStatement]
+              StatementDesignator(
+                DesignatorStatementAssignExpr(
+                  DesignatorIdent(
+                   x
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  ExprBase(
+                    Term(
+                      FactorNumber(
+                       0
+                      ) [FactorNumber]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [DesignatorStatementAssignExpr]
+              ) [StatementDesignator]
+            ) [Statements]
             StatementDesignator(
               DesignatorStatementAssignExpr(
                 DesignatorIdent(
-                 x
+                 y
                 ) [DesignatorIdent]
                 Assignop(
                 ) [Assignop]
@@ -88,11 +128,15 @@ INFO  21:01:13,219 - Program(
               ) [DesignatorStatementAssignExpr]
             ) [StatementDesignator]
           ) [Statements]
-          StatementIfElse(
-            If(
-            ) [If]
+          StatementWhile(
+            While(
+            ) [While]
             Condition(
+              NoCondTerm(
+              ) [NoCondTerm]
               CondTerm(
+                NoCondFact(
+                ) [NoCondFact]
                 CondFactRel(
                   ExprBase(
                     Term(
@@ -107,8 +151,8 @@ INFO  21:01:13,219 - Program(
                     NoAddTerm(
                     ) [NoAddTerm]
                   ) [ExprBase]
-                  GrOp(
-                  ) [GrOp]
+                  LsOp(
+                  ) [LsOp]
                   ExprBase(
                     Term(
                       FactorNumber(
@@ -121,52 +165,47 @@ INFO  21:01:13,219 - Program(
                     ) [NoAddTerm]
                   ) [ExprBase]
                 ) [CondFactRel]
-                NoCondFact(
-                ) [NoCondFact]
               ) [CondTerm]
-              NoCondTerm(
-              ) [NoCondTerm]
             ) [Condition]
-            StatementPrintExpr(
-              ExprBase(
-                Term(
-                  FactorChar(
-                   l
-                  ) [FactorChar]
-                  NoMulFactor(
-                  ) [NoMulFactor]
-                ) [Term]
-                NoAddTerm(
-                ) [NoAddTerm]
-              ) [ExprBase]
-            ) [StatementPrintExpr]
-            StatementElse(
-              Else(
-              ) [Else]
-              StatementPrintExpr(
-                ExprBase(
-                  Term(
-                    FactorChar(
-                     g
-                    ) [FactorChar]
-                    NoMulFactor(
-                    ) [NoMulFactor]
-                  ) [Term]
-                  NoAddTerm(
-                  ) [NoAddTerm]
-                ) [ExprBase]
-              ) [StatementPrintExpr]
-            ) [StatementElse]
-          ) [StatementIfElse]
+            StatementBlock(
+              Statements(
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementPrintExpr(
+                    ExprBase(
+                      Term(
+                        FactorChar(
+                         l
+                        ) [FactorChar]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                  ) [StatementPrintExpr]
+                ) [Statements]
+                StatementDesignator(
+                  DesignatorStatementInc(
+                    DesignatorIdent(
+                     x
+                    ) [DesignatorIdent]
+                  ) [DesignatorStatementInc]
+                ) [StatementDesignator]
+              ) [Statements]
+            ) [StatementBlock]
+          ) [StatementWhile]
         ) [Statements]
       ) [FunctionBodyDerived1]
     ) [MethodDeclDerived1]
   ) [MethDecls]
 ) [Program]
-INFO  21:01:13,220 - ===================================
-INFO  21:01:13,224 - Obradjuje se funkcija main na liniji 3
-INFO  21:01:13,224 - Deklarisana promenljiva x na liniji 4
-INFO  21:01:13,225 -  Print count calls = 0
-INFO  21:01:13,225 -  Deklarisanih promenljivih ima = 0
-INFO  21:01:13,225 - ===================================
-INFO  21:01:13,231 - Parsiranje uspesno zavrseno!
+INFO  00:33:10,172 - ===================================
+INFO  00:33:10,177 - Obradjuje se funkcija main na liniji 3
+INFO  00:33:10,177 - Deklarisana promenljiva x na liniji 4
+INFO  00:33:10,178 - Deklarisana promenljiva y na liniji 5
+INFO  00:33:10,178 -  Print count calls = 0
+INFO  00:33:10,178 -  Deklarisanih promenljivih ima = 0
+INFO  00:33:10,179 - ===================================
+INFO  00:33:10,185 - Parsiranje uspesno zavrseno!

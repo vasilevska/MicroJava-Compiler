@@ -17,7 +17,8 @@ import rs.ac.bg.etf.pp1.SemanticPass;
 public class CodeGenerator extends VisitorAdaptor {
 
 	private int mainPc;
-	private int counter = 0;
+	private Stack<Integer> counter = new Stack<>();
+	private Stack<Integer> counterOr = new Stack<>();
 	private Vector<Obj> curr = new Vector<Obj>(10);
 	private Vector<Struct> types = new Vector<Struct>(10);
 	//private Stack<Vector<Integer>> condFacts = new Stack<>();
@@ -249,6 +250,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		ccnt.push(0);
 		lastLoop.push(1);
 		loopStart.add(Code.pc);
+		counter.push(0);
+		counterOr.push(0);
 	}
 	
 	public void visit(StatementWhile stmt) {
@@ -258,7 +261,12 @@ public class CodeGenerator extends VisitorAdaptor {
 			continuePC.remove(continuePC.size()-1);
 		}
 		Code.putJump(loopStart.peek());
-		Code.fixup(condFixUp.pop());
+		
+		for(int i = 0; i < counter.peek(); i++) {
+			Code.fixup(condFixUp.pop());
+		}
+		counter.pop();
+		
 		cnt = bcnt.pop();
 		for(int i = 0; i<cnt; i++) {
 			Code.fixup(breakPC.lastElement()); 
@@ -268,11 +276,19 @@ public class CodeGenerator extends VisitorAdaptor {
 		loopStart.pop();
 	}
 	
+	public void visit(If ifstart) {
+		counter.push(0);
+		counterOr.push(0);
+	}
+	
 	public void visit(Else e) {
-		int ifcond = condFixUp.pop();
 		Code.putJump(0);
-		condFixUp.push(Code.pc - 2);
-		Code.fixup(ifcond);
+		int ifcond = Code.pc - 2;
+		for(int i = 0; i < counter.peek(); i++) {
+			Code.fixup(condFixUp.pop());
+		}
+		counter.pop();
+		condFixUp.push(ifcond);
 	}
 	public void visit(StatementIfElse stmt) {
 		Code.fixup(condFixUp.pop());
@@ -334,10 +350,11 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(CondFactBase cond) {
-		Code.loadConst(Code.const_1);
+		Code.loadConst(1);
 		Code.putFalseJump(Code.eq, 0);
-		//FIXME: lista nekakva na koju se stavlja adresa skoka na stacku koja treba da se patchuje?
+		
 		condFixUp.push(Code.pc - 2);
+		counter.push(counter.pop() + 1);
 	}
 	
 	public void visit(CondFactRel cond) {	
@@ -347,16 +364,29 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(cond.getRelOpp() instanceof LeqOp) Code.putFalseJump(Code.le, 0);
 		if(cond.getRelOpp() instanceof GrOp) Code.putFalseJump(Code.gt, 0);
 		if(cond.getRelOpp() instanceof LsOp) Code.putFalseJump(Code.lt, 0);
-		//FIXME: dodaj na listu isto kao gore
-		condFixUp.push(Code.pc - 2);
-	}
-	
-	public void visit(CondFactList cond) {
 		
+		condFixUp.push(Code.pc - 2);
+		counter.push(counter.pop() + 1);
 	}
 	
 	public void visit(CondTerm cond) {
-		
+		if(!(cond.getParent() instanceof Condition)) {
+			Code.putJump(0);
+			for(int i = 0; i < counter.peek(); i++) {
+				Code.fixup(condFixUp.pop());
+			}
+			counter.pop();
+			counter.push(0);
+			condFixUp.add(Code.pc-2);
+			counterOr.push(counterOr.pop() + 1);
+		}	
+	}
+	
+	public void visit(Condition cond) {
+		for(int i = 0; i < counterOr.peek(); i++) {
+			Code.fixup(condFixUp.get(0));
+			condFixUp.remove(0);
+		}
 	}
 	
 	
