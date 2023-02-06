@@ -1,57 +1,39 @@
-INFO  20:11:53,394 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
-INFO  20:11:53,449 - #36 program
-INFO  20:11:53,450 - #46 DEB
-INFO  20:11:53,450 - #24 {
-INFO  20:11:53,452 - #44 void
-INFO  20:11:53,453 - #46 main
-INFO  20:11:53,453 - #25 (
-INFO  20:11:53,453 - #40 )
-INFO  20:11:53,454 - #46 int
-INFO  20:11:53,455 - #46 niz
-INFO  20:11:53,456 - #27 [
-INFO  20:11:53,456 - #41 ]
-INFO  20:11:53,456 - #42 ;
-INFO  20:11:53,458 - #46 int
-INFO  20:11:53,459 - #46 el
-INFO  20:11:53,459 - #42 ;
-INFO  20:11:53,460 - #24 {
-INFO  20:11:53,460 - #46 niz
-INFO  20:11:53,461 - #4 =
-INFO  20:11:53,462 - #32 new
-INFO  20:11:53,462 - #46 int
-INFO  20:11:53,463 - #27 [
-INFO  20:11:53,463 - #47 3
-INFO  20:11:53,463 - #41 ]
-INFO  20:11:53,469 - #42 ;
-INFO  20:11:53,470 - #46 niz
-INFO  20:11:53,470 - #27 [
-INFO  20:11:53,472 - #47 0
-INFO  20:11:53,472 - #41 ]
-INFO  20:11:53,472 - #4 =
-INFO  20:11:53,472 - #47 4
-INFO  20:11:53,472 - #42 ;
-INFO  20:11:53,473 - #46 niz
-INFO  20:11:53,473 - #13 .
-INFO  20:11:53,473 - #17 foreach
-INFO  20:11:53,473 - #25 (
-INFO  20:11:53,473 - #46 el
-INFO  20:11:53,473 - #33 =>
-INFO  20:11:53,475 - #24 {
-INFO  20:11:53,475 - #10 continue
-INFO  20:11:53,475 - #42 ;
-INFO  20:11:53,475 - #35 print
-INFO  20:11:53,476 - #25 (
-INFO  20:11:53,476 - #46 el
-INFO  20:11:53,476 - #40 )
-INFO  20:11:53,477 - #42 ;
-INFO  20:11:53,477 - #5 break
-INFO  20:11:53,478 - #42 ;
-INFO  20:11:53,478 - #37 }
-INFO  20:11:53,479 - #40 )
-INFO  20:11:53,479 - #42 ;
-INFO  20:11:53,479 - #37 }
-INFO  20:11:53,480 - #37 }
-INFO  20:11:53,488 - Program(
+INFO  21:01:13,139 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  21:01:13,194 - #36 program
+INFO  21:01:13,194 - #46 DEB
+INFO  21:01:13,195 - #24 {
+INFO  21:01:13,196 - #44 void
+INFO  21:01:13,196 - #46 main
+INFO  21:01:13,196 - #25 (
+INFO  21:01:13,197 - #40 )
+INFO  21:01:13,197 - #46 int
+INFO  21:01:13,198 - #46 x
+INFO  21:01:13,199 - #42 ;
+INFO  21:01:13,200 - #24 {
+INFO  21:01:13,201 - #46 x
+INFO  21:01:13,202 - #4 =
+INFO  21:01:13,202 - #47 0
+INFO  21:01:13,203 - #42 ;
+INFO  21:01:13,205 - #20 if
+INFO  21:01:13,205 - #25 (
+INFO  21:01:13,206 - #46 x
+INFO  21:01:13,206 - #18 >
+INFO  21:01:13,206 - #47 3
+INFO  21:01:13,207 - #40 )
+INFO  21:01:13,209 - #35 print
+INFO  21:01:13,209 - #25 (
+INFO  21:01:13,213 - #49 l
+INFO  21:01:13,213 - #40 )
+INFO  21:01:13,213 - #42 ;
+INFO  21:01:13,213 - #14 else
+INFO  21:01:13,213 - #35 print
+INFO  21:01:13,214 - #25 (
+INFO  21:01:13,215 - #49 g
+INFO  21:01:13,215 - #40 )
+INFO  21:01:13,215 - #42 ;
+INFO  21:01:13,215 - #37 }
+INFO  21:01:13,215 - #37 }
+INFO  21:01:13,219 - Program(
   ProgName(
    DEB
   ) [ProgName]
@@ -68,25 +50,13 @@ INFO  20:11:53,488 - Program(
       ) [NoFormPars]
       FunctionBodyDerived1(
         VarDecls(
-          VarDecls(
-            NoVarDecl(
-            ) [NoVarDecl]
-            VarDecl(
-              Type(
-               int
-              ) [Type]
-             niz
-              ArrayBrackets(
-              ) [ArrayBrackets]
-              NotIdentArray(
-              ) [NotIdentArray]
-            ) [VarDecl]
-          ) [VarDecls]
+          NoVarDecl(
+          ) [NoVarDecl]
           VarDecl(
             Type(
              int
             ) [Type]
-           el
+           x
             NotArray(
             ) [NotArray]
             NotIdentArray(
@@ -95,69 +65,19 @@ INFO  20:11:53,488 - Program(
         ) [VarDecls]
         Statements(
           Statements(
-            Statements(
-              NoStatement(
-              ) [NoStatement]
-              StatementDesignator(
-                DesignatorStatementAssignExpr(
-                  DesignatorIdent(
-                   niz
-                  ) [DesignatorIdent]
-                  Assignop(
-                  ) [Assignop]
-                  ExprBase(
-                    Term(
-                      FactorNewSquare(
-                        Type(
-                         int
-                        ) [Type]
-                        ExprBase(
-                          Term(
-                            FactorNumber(
-                             3
-                            ) [FactorNumber]
-                            NoMulFactor(
-                            ) [NoMulFactor]
-                          ) [Term]
-                          NoAddTerm(
-                          ) [NoAddTerm]
-                        ) [ExprBase]
-                      ) [FactorNewSquare]
-                      NoMulFactor(
-                      ) [NoMulFactor]
-                    ) [Term]
-                    NoAddTerm(
-                    ) [NoAddTerm]
-                  ) [ExprBase]
-                ) [DesignatorStatementAssignExpr]
-              ) [StatementDesignator]
-            ) [Statements]
+            NoStatement(
+            ) [NoStatement]
             StatementDesignator(
               DesignatorStatementAssignExpr(
-                DesignatorExpr(
-                  ArrDesignator(
-                    DesignatorIdent(
-                     niz
-                    ) [DesignatorIdent]
-                  ) [ArrDesignator]
-                  ExprBase(
-                    Term(
-                      FactorNumber(
-                       0
-                      ) [FactorNumber]
-                      NoMulFactor(
-                      ) [NoMulFactor]
-                    ) [Term]
-                    NoAddTerm(
-                    ) [NoAddTerm]
-                  ) [ExprBase]
-                ) [DesignatorExpr]
+                DesignatorIdent(
+                 x
+                ) [DesignatorIdent]
                 Assignop(
                 ) [Assignop]
                 ExprBase(
                   Term(
                     FactorNumber(
-                     4
+                     0
                     ) [FactorNumber]
                     NoMulFactor(
                     ) [NoMulFactor]
@@ -168,53 +88,85 @@ INFO  20:11:53,488 - Program(
               ) [DesignatorStatementAssignExpr]
             ) [StatementDesignator]
           ) [Statements]
-          StatementForeach(
-            DesignatorIdent(
-             niz
-            ) [DesignatorIdent]
-            FEElem(
-             el
-            ) [FEElem]
-            StatementBlock(
-              Statements(
-                Statements(
-                  Statements(
-                    NoStatement(
-                    ) [NoStatement]
-                    StatementContinue(
-                    ) [StatementContinue]
-                  ) [Statements]
-                  StatementPrintExpr(
-                    ExprBase(
-                      Term(
-                        FactorBase(
-                          DesignatorIdent(
-                           el
-                          ) [DesignatorIdent]
-                        ) [FactorBase]
-                        NoMulFactor(
-                        ) [NoMulFactor]
-                      ) [Term]
-                      NoAddTerm(
-                      ) [NoAddTerm]
-                    ) [ExprBase]
-                  ) [StatementPrintExpr]
-                ) [Statements]
-                StatementBreak(
-                ) [StatementBreak]
-              ) [Statements]
-            ) [StatementBlock]
-          ) [StatementForeach]
+          StatementIfElse(
+            If(
+            ) [If]
+            Condition(
+              CondTerm(
+                CondFactRel(
+                  ExprBase(
+                    Term(
+                      FactorBase(
+                        DesignatorIdent(
+                         x
+                        ) [DesignatorIdent]
+                      ) [FactorBase]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                  GrOp(
+                  ) [GrOp]
+                  ExprBase(
+                    Term(
+                      FactorNumber(
+                       3
+                      ) [FactorNumber]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [CondFactRel]
+                NoCondFact(
+                ) [NoCondFact]
+              ) [CondTerm]
+              NoCondTerm(
+              ) [NoCondTerm]
+            ) [Condition]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorChar(
+                   l
+                  ) [FactorChar]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+            StatementElse(
+              Else(
+              ) [Else]
+              StatementPrintExpr(
+                ExprBase(
+                  Term(
+                    FactorChar(
+                     g
+                    ) [FactorChar]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [StatementPrintExpr]
+            ) [StatementElse]
+          ) [StatementIfElse]
         ) [Statements]
       ) [FunctionBodyDerived1]
     ) [MethodDeclDerived1]
   ) [MethDecls]
 ) [Program]
-INFO  20:11:53,488 - ===================================
-INFO  20:11:53,494 - Obradjuje se funkcija main na liniji 3
-INFO  20:11:53,494 - Deklarisana promenljiva niz na liniji 4
-INFO  20:11:53,494 - Deklarisana promenljiva el na liniji 5
-INFO  20:11:53,495 -  Print count calls = 0
-INFO  20:11:53,495 -  Deklarisanih promenljivih ima = 0
-INFO  20:11:53,495 - ===================================
-INFO  20:11:53,501 - Parsiranje uspesno zavrseno!
+INFO  21:01:13,220 - ===================================
+INFO  21:01:13,224 - Obradjuje se funkcija main na liniji 3
+INFO  21:01:13,224 - Deklarisana promenljiva x na liniji 4
+INFO  21:01:13,225 -  Print count calls = 0
+INFO  21:01:13,225 -  Deklarisanih promenljivih ima = 0
+INFO  21:01:13,225 - ===================================
+INFO  21:01:13,231 - Parsiranje uspesno zavrseno!

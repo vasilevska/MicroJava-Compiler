@@ -27,6 +27,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Vector<Integer> continuePC = new Vector<Integer>(5);
 	private Stack<Integer> bcnt = new Stack<>();
 	private Stack<Integer> ccnt = new Stack<>();
+	private Stack<Integer> condFixUp = new Stack<>();
 	
 	public int getMainPc(){
 		return mainPc;
@@ -243,6 +244,40 @@ public class CodeGenerator extends VisitorAdaptor {
 		loopStart.pop();
 	}
 	
+	public void visit(While w) {
+		bcnt.push(0);
+		ccnt.push(0);
+		lastLoop.push(1);
+		loopStart.add(Code.pc);
+	}
+	
+	public void visit(StatementWhile stmt) {
+		int cnt = ccnt.pop();
+		for(int i = 0; i<cnt; i++) {
+			Code.fixup(continuePC.lastElement()); 
+			continuePC.remove(continuePC.size()-1);
+		}
+		Code.putJump(loopStart.peek());
+		Code.fixup(condFixUp.pop());
+		cnt = bcnt.pop();
+		for(int i = 0; i<cnt; i++) {
+			Code.fixup(breakPC.lastElement()); 
+			breakPC.remove(breakPC.size()-1);
+		}
+		lastLoop.pop();	
+		loopStart.pop();
+	}
+	
+	public void visit(Else e) {
+		int ifcond = condFixUp.pop();
+		Code.putJump(0);
+		condFixUp.push(Code.pc - 2);
+		Code.fixup(ifcond);
+	}
+	public void visit(StatementIfElse stmt) {
+		Code.fixup(condFixUp.pop());
+	}
+	
 	public void visit(ArrDesignator des) {
 		Code.load(des.getDesignator().obj);
 	}
@@ -302,10 +337,10 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.loadConst(Code.const_1);
 		Code.putFalseJump(Code.eq, 0);
 		//FIXME: lista nekakva na koju se stavlja adresa skoka na stacku koja treba da se patchuje?
+		condFixUp.push(Code.pc - 2);
 	}
 	
-	public void visit(CondFactRel cond) {
-		
+	public void visit(CondFactRel cond) {	
 		if(cond.getRelOpp() instanceof EqOp) Code.putFalseJump(Code.eq, 0);
 		if(cond.getRelOpp() instanceof NeqOp) Code.putFalseJump(Code.ne, 0);
 		if(cond.getRelOpp() instanceof GreOp) Code.putFalseJump(Code.ge, 0);
@@ -313,6 +348,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(cond.getRelOpp() instanceof GrOp) Code.putFalseJump(Code.gt, 0);
 		if(cond.getRelOpp() instanceof LsOp) Code.putFalseJump(Code.lt, 0);
 		//FIXME: dodaj na listu isto kao gore
+		condFixUp.push(Code.pc - 2);
 	}
 	
 	public void visit(CondFactList cond) {
@@ -333,6 +369,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.call);
 		Code.put2(offset);
 	}
+	
 	/*
 	
 	public void visit(Assignment assignment){

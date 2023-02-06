@@ -1,25 +1,31 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/1/2023 20:16:11
+// 6/1/2023 21:0:13
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Else extends OptionalElse {
+public class Else implements SyntaxNode {
 
-    private Statement Statement;
-
-    public Else (Statement Statement) {
-        this.Statement=Statement;
-        if(Statement!=null) Statement.setParent(this);
+    private SyntaxNode parent;
+    private int line;
+    public Else () {
     }
 
-    public Statement getStatement() {
-        return Statement;
+    public SyntaxNode getParent() {
+        return parent;
     }
 
-    public void setStatement(Statement Statement) {
-        this.Statement=Statement;
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +33,13 @@ public class Else extends OptionalElse {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -44,12 +47,6 @@ public class Else extends OptionalElse {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("Else(\n");
-
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [Else]");

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 6/1/2023 20:16:11
+// 6/1/2023 21:0:13
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -77,7 +77,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoFormPars NoFormPars) { visit(); }
     public void visit(OptFormPars OptFormPars) { visit(); }
     public void visit(NoElse NoElse) { visit(); }
-    public void visit(Else Else) { visit(); }
+    public void visit(StatementElse StatementElse) { visit(); }
     public void visit(NoDesignatorArr NoDesignatorArr) { visit(); }
     public void visit(DesignatorArr DesignatorArr) { visit(); }
     public void visit(ClassBodyConstrMeth ClassBodyConstrMeth) { visit(); }
@@ -94,12 +94,12 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoMethDecl NoMethDecl) { visit(); }
     public void visit(MethDecls MethDecls) { visit(); }
     public void visit(MethodDeclDerived1 MethodDeclDerived1) { visit(); }
+    public void visit(Else Else) { visit(); }
     public void visit(If If) { visit(); }
     public void visit(NotIdentArray NotIdentArray) { visit(); }
     public void visit(ArrayVar ArrayVar) { visit(); }
     public void visit(FunctionBodyDerived1 FunctionBodyDerived1) { visit(); }
     public void visit(FormPars FormPars) { visit(); }
-    public void visit(ArrDesignator ArrDesignator) { visit(); }
     public void visit(FEElem FEElem) { visit(); }
     public void visit(FactorParensExpr FactorParensExpr) { visit(); }
     public void visit(FactorNewActPars FactorNewActPars) { visit(); }
@@ -156,6 +156,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Assignop Assignop) { visit(); }
     public void visit(AssignDesign AssignDesign) { visit(); }
     public void visit(AssignConst AssignConst) { visit(); }
+    public void visit(ArrDesignator ArrDesignator) { visit(); }
     public void visit(NoAddTerm NoAddTerm) { visit(); }
     public void visit(AddTerms AddTerms) { visit(); }
     public void visit(SubOp SubOp) { visit(); }

@@ -1,11 +1,13 @@
 program DEB
 {
 	void main()
-		int niz[];
-		int el;
+		int x;
 	{
-		niz = new int[3];
-		niz[0] = 4;
-		niz.foreach(el => { continue; print(el); break;} );
+		x = 0;
+		if(x > 3)
+			print('l');
+		else 
+			print('g');
+		
 	}
 }
