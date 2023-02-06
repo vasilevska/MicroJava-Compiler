@@ -1,75 +1,159 @@
-INFO  17:27:47,024 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
-INFO  17:27:47,069 - #36 program
-INFO  17:27:47,069 - #46 DEB
-INFO  17:27:47,069 - #24 {
-INFO  17:27:47,070 - #46 int
-INFO  17:27:47,071 - #46 m
-INFO  17:27:47,072 - #25 (
-INFO  17:27:47,072 - #40 )
-INFO  17:27:47,073 - #24 {
-INFO  17:27:47,073 - #39 return
-INFO  17:27:47,074 - #47 4
-INFO  17:27:47,074 - #42 ;
-INFO  17:27:47,076 - #37 }
-INFO  17:27:47,076 - #44 void
-INFO  17:27:47,076 - #46 t
-INFO  17:27:47,076 - #25 (
-INFO  17:27:47,076 - #46 int
-INFO  17:27:47,076 - #46 x
-INFO  17:27:47,076 - #40 )
-INFO  17:27:47,079 - #24 {
-INFO  17:27:47,079 - #35 print
-INFO  17:27:47,079 - #25 (
-INFO  17:27:47,079 - #46 x
-INFO  17:27:47,079 - #40 )
-INFO  17:27:47,083 - #42 ;
-INFO  17:27:47,083 - #35 print
-INFO  17:27:47,083 - #25 (
-INFO  17:27:47,083 - #46 m
-INFO  17:27:47,083 - #25 (
-INFO  17:27:47,083 - #40 )
-INFO  17:27:47,083 - #40 )
-INFO  17:27:47,084 - #42 ;
-INFO  17:27:47,084 - #37 }
-INFO  17:27:47,084 - #44 void
-INFO  17:27:47,084 - #46 main
-INFO  17:27:47,084 - #25 (
-INFO  17:27:47,084 - #40 )
-INFO  17:27:47,084 - #24 {
-INFO  17:27:47,084 - #46 t
-INFO  17:27:47,084 - #25 (
-INFO  17:27:47,084 - #47 3
-INFO  17:27:47,084 - #40 )
-INFO  17:27:47,086 - #42 ;
-INFO  17:27:47,086 - #37 }
-INFO  17:27:47,086 - #37 }
-INFO  17:27:47,091 - Program(
+INFO  20:11:53,394 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  20:11:53,449 - #36 program
+INFO  20:11:53,450 - #46 DEB
+INFO  20:11:53,450 - #24 {
+INFO  20:11:53,452 - #44 void
+INFO  20:11:53,453 - #46 main
+INFO  20:11:53,453 - #25 (
+INFO  20:11:53,453 - #40 )
+INFO  20:11:53,454 - #46 int
+INFO  20:11:53,455 - #46 niz
+INFO  20:11:53,456 - #27 [
+INFO  20:11:53,456 - #41 ]
+INFO  20:11:53,456 - #42 ;
+INFO  20:11:53,458 - #46 int
+INFO  20:11:53,459 - #46 el
+INFO  20:11:53,459 - #42 ;
+INFO  20:11:53,460 - #24 {
+INFO  20:11:53,460 - #46 niz
+INFO  20:11:53,461 - #4 =
+INFO  20:11:53,462 - #32 new
+INFO  20:11:53,462 - #46 int
+INFO  20:11:53,463 - #27 [
+INFO  20:11:53,463 - #47 3
+INFO  20:11:53,463 - #41 ]
+INFO  20:11:53,469 - #42 ;
+INFO  20:11:53,470 - #46 niz
+INFO  20:11:53,470 - #27 [
+INFO  20:11:53,472 - #47 0
+INFO  20:11:53,472 - #41 ]
+INFO  20:11:53,472 - #4 =
+INFO  20:11:53,472 - #47 4
+INFO  20:11:53,472 - #42 ;
+INFO  20:11:53,473 - #46 niz
+INFO  20:11:53,473 - #13 .
+INFO  20:11:53,473 - #17 foreach
+INFO  20:11:53,473 - #25 (
+INFO  20:11:53,473 - #46 el
+INFO  20:11:53,473 - #33 =>
+INFO  20:11:53,475 - #24 {
+INFO  20:11:53,475 - #10 continue
+INFO  20:11:53,475 - #42 ;
+INFO  20:11:53,475 - #35 print
+INFO  20:11:53,476 - #25 (
+INFO  20:11:53,476 - #46 el
+INFO  20:11:53,476 - #40 )
+INFO  20:11:53,477 - #42 ;
+INFO  20:11:53,477 - #5 break
+INFO  20:11:53,478 - #42 ;
+INFO  20:11:53,478 - #37 }
+INFO  20:11:53,479 - #40 )
+INFO  20:11:53,479 - #42 ;
+INFO  20:11:53,479 - #37 }
+INFO  20:11:53,480 - #37 }
+INFO  20:11:53,488 - Program(
   ProgName(
    DEB
   ) [ProgName]
   NoDecl(
   ) [NoDecl]
   MethDecls(
-    MethDecls(
-      MethDecls(
-        NoMethDecl(
-        ) [NoMethDecl]
-        MethodDeclDerived1(
-          MethodNameType(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          VarDecls(
+            NoVarDecl(
+            ) [NoVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+             niz
+              ArrayBrackets(
+              ) [ArrayBrackets]
+              NotIdentArray(
+              ) [NotIdentArray]
+            ) [VarDecl]
+          ) [VarDecls]
+          VarDecl(
             Type(
              int
             ) [Type]
-           m
-          ) [MethodNameType]
-          NoFormPars(
-          ) [NoFormPars]
-          FunctionBodyDerived1(
-            NoVarDecl(
-            ) [NoVarDecl]
+           el
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
             Statements(
               NoStatement(
               ) [NoStatement]
-              StatementReturnExpr(
+              StatementDesignator(
+                DesignatorStatementAssignExpr(
+                  DesignatorIdent(
+                   niz
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  ExprBase(
+                    Term(
+                      FactorNewSquare(
+                        Type(
+                         int
+                        ) [Type]
+                        ExprBase(
+                          Term(
+                            FactorNumber(
+                             3
+                            ) [FactorNumber]
+                            NoMulFactor(
+                            ) [NoMulFactor]
+                          ) [Term]
+                          NoAddTerm(
+                          ) [NoAddTerm]
+                        ) [ExprBase]
+                      ) [FactorNewSquare]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [DesignatorStatementAssignExpr]
+              ) [StatementDesignator]
+            ) [Statements]
+            StatementDesignator(
+              DesignatorStatementAssignExpr(
+                DesignatorExpr(
+                  ArrDesignator(
+                    DesignatorIdent(
+                     niz
+                    ) [DesignatorIdent]
+                  ) [ArrDesignator]
+                  ExprBase(
+                    Term(
+                      FactorNumber(
+                       0
+                      ) [FactorNumber]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [DesignatorExpr]
+                Assignop(
+                ) [Assignop]
                 ExprBase(
                   Term(
                     FactorNumber(
@@ -81,113 +165,56 @@ INFO  17:27:47,091 - Program(
                   NoAddTerm(
                   ) [NoAddTerm]
                 ) [ExprBase]
-              ) [StatementReturnExpr]
-            ) [Statements]
-          ) [FunctionBodyDerived1]
-        ) [MethodDeclDerived1]
-      ) [MethDecls]
-      MethodDeclDerived1(
-        MethodNameVoid(
-         t
-        ) [MethodNameVoid]
-        OptFormPars(
-          FormPars(
-            Type(
-             int
-            ) [Type]
-           x
-            NotArray(
-            ) [NotArray]
-            NotParamArray(
-            ) [NotParamArray]
-          ) [FormPars]
-        ) [OptFormPars]
-        FunctionBodyDerived1(
-          NoVarDecl(
-          ) [NoVarDecl]
-          Statements(
-            Statements(
-              NoStatement(
-              ) [NoStatement]
-              StatementPrintExpr(
-                ExprBase(
-                  Term(
-                    FactorBase(
-                      DesignatorIdent(
-                       x
-                      ) [DesignatorIdent]
-                    ) [FactorBase]
-                    NoMulFactor(
-                    ) [NoMulFactor]
-                  ) [Term]
-                  NoAddTerm(
-                  ) [NoAddTerm]
-                ) [ExprBase]
-              ) [StatementPrintExpr]
-            ) [Statements]
-            StatementPrintExpr(
-              ExprBase(
-                Term(
-                  FactorParen(
-                    DesignatorIdent(
-                     m
-                    ) [DesignatorIdent]
-                  ) [FactorParen]
-                  NoMulFactor(
-                  ) [NoMulFactor]
-                ) [Term]
-                NoAddTerm(
-                ) [NoAddTerm]
-              ) [ExprBase]
-            ) [StatementPrintExpr]
+              ) [DesignatorStatementAssignExpr]
+            ) [StatementDesignator]
           ) [Statements]
-        ) [FunctionBodyDerived1]
-      ) [MethodDeclDerived1]
-    ) [MethDecls]
-    MethodDeclDerived1(
-      MethodNameVoid(
-       main
-      ) [MethodNameVoid]
-      NoFormPars(
-      ) [NoFormPars]
-      FunctionBodyDerived1(
-        NoVarDecl(
-        ) [NoVarDecl]
-        Statements(
-          NoStatement(
-          ) [NoStatement]
-          StatementDesignator(
-            DesignatorStatementActPars(
-              DesignatorIdent(
-               t
-              ) [DesignatorIdent]
-              ActPars(
-                ExprBase(
-                  Term(
-                    FactorNumber(
-                     3
-                    ) [FactorNumber]
-                    NoMulFactor(
-                    ) [NoMulFactor]
-                  ) [Term]
-                  NoAddTerm(
-                  ) [NoAddTerm]
-                ) [ExprBase]
-                NoExpr(
-                ) [NoExpr]
-              ) [ActPars]
-            ) [DesignatorStatementActPars]
-          ) [StatementDesignator]
+          StatementForeach(
+            DesignatorIdent(
+             niz
+            ) [DesignatorIdent]
+            FEElem(
+             el
+            ) [FEElem]
+            StatementBlock(
+              Statements(
+                Statements(
+                  Statements(
+                    NoStatement(
+                    ) [NoStatement]
+                    StatementContinue(
+                    ) [StatementContinue]
+                  ) [Statements]
+                  StatementPrintExpr(
+                    ExprBase(
+                      Term(
+                        FactorBase(
+                          DesignatorIdent(
+                           el
+                          ) [DesignatorIdent]
+                        ) [FactorBase]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                  ) [StatementPrintExpr]
+                ) [Statements]
+                StatementBreak(
+                ) [StatementBreak]
+              ) [Statements]
+            ) [StatementBlock]
+          ) [StatementForeach]
         ) [Statements]
       ) [FunctionBodyDerived1]
     ) [MethodDeclDerived1]
   ) [MethDecls]
 ) [Program]
-INFO  17:27:47,091 - ===================================
-INFO  17:27:47,096 - Obradjuje se funkcija m na liniji 3
-INFO  17:27:47,096 - Obradjuje se funkcija t na liniji 6
-INFO  17:27:47,099 - Obradjuje se funkcija main na liniji 10
-INFO  17:27:47,100 -  Print count calls = 0
-INFO  17:27:47,100 -  Deklarisanih promenljivih ima = 0
-INFO  17:27:47,100 - ===================================
-INFO  17:27:47,104 - Parsiranje uspesno zavrseno!
+INFO  20:11:53,488 - ===================================
+INFO  20:11:53,494 - Obradjuje se funkcija main na liniji 3
+INFO  20:11:53,494 - Deklarisana promenljiva niz na liniji 4
+INFO  20:11:53,494 - Deklarisana promenljiva el na liniji 5
+INFO  20:11:53,495 -  Print count calls = 0
+INFO  20:11:53,495 -  Deklarisanih promenljivih ima = 0
+INFO  20:11:53,495 - ===================================
+INFO  20:11:53,501 - Parsiranje uspesno zavrseno!

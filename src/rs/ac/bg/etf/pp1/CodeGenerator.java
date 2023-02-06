@@ -21,6 +21,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Vector<Obj> curr = new Vector<Obj>(10);
 	private Vector<Struct> types = new Vector<Struct>(10);
 	//private Stack<Vector<Integer>> condFacts = new Stack<>();
+	private Stack<Integer> lastLoop = new Stack<>();
+	private Stack<Integer> loopStart = new Stack<>();
+	private Vector<Integer> breakPC = new Vector<Integer>(5);
+	private Vector<Integer> continuePC = new Vector<Integer>(5);
+	private Stack<Integer> bcnt = new Stack<>();
+	private Stack<Integer> ccnt = new Stack<>();
 	
 	public int getMainPc(){
 		return mainPc;
@@ -98,6 +104,16 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	
+	public void visit(StatementBreak stmt) {
+		Code.putJump(0);
+		breakPC.add(Code.pc - 2);
+		bcnt.push(bcnt.pop() + 1);
+	}
+	public void visit(StatementContinue stmt) {
+		Code.putJump(0);
+		continuePC.add(Code.pc - 2);
+		ccnt.push(ccnt.pop() + 1);
+	}
 	
 	public void visit(StatementPrintExpr printStmt){
 		if(printStmt.getExpr().struct != Tab.charType){
@@ -186,6 +202,46 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.return_);
 	}
 	
+	//FIXME: mozes ovo malo da izmenis ako imas vremena cisto da ne bude bas previse ocigledno
+	public void visit(FEElem el) {
+		bcnt.push(0);
+		ccnt.push(0);
+		lastLoop.push(2);
+		Obj des =((StatementForeach) el.getParent()).getDesignator().obj;
+		Code.load(des);
+		Code.put(Code.arraylength);
+		Code.loadConst(0);
+		loopStart.push(Code.pc);
+		Code.put(Code.dup);
+		Code.load(des);
+		Code.put(Code.dup_x1);
+		Code.put(Code.pop);
+		Code.put(Code.aload);
+		Code.store(el.obj);
+	}
+	
+	public void visit(StatementForeach stmt) {
+		int cnt = ccnt.pop();
+		//loop continue adr
+		for(int i = 0; i<cnt; i++) {
+			Code.fixup(continuePC.lastElement()); 
+			continuePC.remove(continuePC.size()-1);
+		}
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.put(Code.dup2);
+		Code.putFalseJump(Code.eq, loopStart.peek());
+		//loop break adr
+		cnt = bcnt.pop();
+		for(int i = 0; i<cnt; i++) {
+			Code.fixup(breakPC.lastElement()); 
+			breakPC.remove(breakPC.size()-1);
+		}
+		Code.put(Code.pop);
+		Code.put(Code.pop);
+		lastLoop.pop();	
+		loopStart.pop();
+	}
 	
 	public void visit(ArrDesignator des) {
 		Code.load(des.getDesignator().obj);

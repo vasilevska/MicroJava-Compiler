@@ -1,14 +1,11 @@
 program DEB
 {
-	int m(){
-		return 4;
-	}
-	void t(int x){
-		print(x);
-		print(m());
-	}
 	void main()
+		int niz[];
+		int el;
 	{
-		t(3);
+		niz = new int[3];
+		niz[0] = 4;
+		niz.foreach(el => { continue; print(el); break;} );
 	}
 }
