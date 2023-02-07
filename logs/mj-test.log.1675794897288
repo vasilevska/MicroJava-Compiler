@@ -1,0 +1,257 @@
+INFO  19:34:44,919 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  19:34:44,968 - #36 program
+INFO  19:34:44,968 - #46 DEB
+INFO  19:34:44,968 - #6 class
+INFO  19:34:44,969 - #46 Debko
+INFO  19:34:44,969 - #24 {
+INFO  19:34:44,970 - #46 int
+INFO  19:34:44,971 - #46 d
+INFO  19:34:44,972 - #42 ;
+INFO  19:34:44,973 - #24 {
+INFO  19:34:44,974 - #46 Debko
+INFO  19:34:44,974 - #25 (
+INFO  19:34:44,975 - #40 )
+INFO  19:34:44,975 - #24 {
+INFO  19:34:44,976 - #35 print
+INFO  19:34:44,976 - #25 (
+INFO  19:34:44,977 - #49 a
+INFO  19:34:44,977 - #40 )
+INFO  19:34:44,978 - #42 ;
+INFO  19:34:44,978 - #46 this
+INFO  19:34:44,979 - #13 .
+INFO  19:34:44,979 - #46 d
+INFO  19:34:44,979 - #4 =
+INFO  19:34:44,979 - #47 2
+INFO  19:34:44,983 - #42 ;
+INFO  19:34:44,984 - #37 }
+INFO  19:34:44,984 - #37 }
+INFO  19:34:44,985 - #37 }
+INFO  19:34:44,985 - #46 int
+INFO  19:34:44,986 - #46 x
+INFO  19:34:44,986 - #42 ;
+INFO  19:34:44,986 - #24 {
+INFO  19:34:44,986 - #44 void
+INFO  19:34:44,987 - #46 main
+INFO  19:34:44,987 - #25 (
+INFO  19:34:44,987 - #40 )
+INFO  19:34:44,987 - #46 Debko
+INFO  19:34:44,987 - #46 bambi
+INFO  19:34:44,987 - #42 ;
+INFO  19:34:44,987 - #24 {
+INFO  19:34:44,987 - #35 print
+INFO  19:34:44,987 - #25 (
+INFO  19:34:44,988 - #49 d
+INFO  19:34:44,988 - #40 )
+INFO  19:34:44,988 - #42 ;
+INFO  19:34:44,988 - #46 bambi
+INFO  19:34:44,988 - #4 =
+INFO  19:34:44,988 - #32 new
+INFO  19:34:44,988 - #46 Debko
+INFO  19:34:44,988 - #25 (
+INFO  19:34:44,988 - #40 )
+INFO  19:34:44,988 - #42 ;
+INFO  19:34:44,989 - #35 print
+INFO  19:34:44,989 - #25 (
+INFO  19:34:44,989 - #46 bambi
+INFO  19:34:44,989 - #13 .
+INFO  19:34:44,989 - #46 d
+INFO  19:34:44,989 - #40 )
+INFO  19:34:44,989 - #42 ;
+INFO  19:34:44,989 - #39 return
+INFO  19:34:44,989 - #42 ;
+INFO  19:34:44,989 - #37 }
+INFO  19:34:44,990 - #37 }
+INFO  19:34:44,994 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsVar(
+    DeclsClass(
+      NoDecl(
+      ) [NoDecl]
+      ClassDecl(
+        ClassName(
+         Debko
+        ) [ClassName]
+        NoParent(
+        ) [NoParent]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           d
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        ClassBodyConstr(
+          ConstructorSingleDecl(
+            ConstructorDecl(
+              ConstructorName(
+               Debko
+              ) [ConstructorName]
+              NoFormPars(
+              ) [NoFormPars]
+              FunctionBodyDerived1(
+                NoVarDecl(
+                ) [NoVarDecl]
+                Statements(
+                  Statements(
+                    NoStatement(
+                    ) [NoStatement]
+                    StatementPrintExpr(
+                      ExprBase(
+                        Term(
+                          FactorChar(
+                           a
+                          ) [FactorChar]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [StatementPrintExpr]
+                  ) [Statements]
+                  StatementDesignator(
+                    DesignatorStatementAssignExpr(
+                      DesignatorClassField(
+                        DesignatorIdent(
+                         this
+                        ) [DesignatorIdent]
+                       d
+                      ) [DesignatorClassField]
+                      Assignop(
+                      ) [Assignop]
+                      ExprBase(
+                        Term(
+                          FactorNumber(
+                           2
+                          ) [FactorNumber]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                    ) [DesignatorStatementAssignExpr]
+                  ) [StatementDesignator]
+                ) [Statements]
+              ) [FunctionBodyDerived1]
+            ) [ConstructorDecl]
+          ) [ConstructorSingleDecl]
+        ) [ClassBodyConstr]
+      ) [ClassDecl]
+    ) [DeclsClass]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     x
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             Debko
+            ) [Type]
+           bambi
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+                StatementPrintExpr(
+                  ExprBase(
+                    Term(
+                      FactorChar(
+                       d
+                      ) [FactorChar]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [StatementPrintExpr]
+              ) [Statements]
+              StatementDesignator(
+                DesignatorStatementAssignExpr(
+                  DesignatorIdent(
+                   bambi
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  ExprBase(
+                    Term(
+                      FactorNewParen(
+                        Type(
+                         Debko
+                        ) [Type]
+                      ) [FactorNewParen]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [DesignatorStatementAssignExpr]
+              ) [StatementDesignator]
+            ) [Statements]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorBase(
+                    DesignatorClassField(
+                      DesignatorIdent(
+                       bambi
+                      ) [DesignatorIdent]
+                     d
+                    ) [DesignatorClassField]
+                  ) [FactorBase]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+          StatementReturnVoid(
+          ) [StatementReturnVoid]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  19:34:44,995 - ===================================
+INFO  19:34:45,000 - Deklarisana promenljiva d na liniji 4
+ERROR 19:34:45,002 - nema trazenog polja u klasi

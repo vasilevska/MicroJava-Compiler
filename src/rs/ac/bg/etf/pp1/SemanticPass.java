@@ -29,7 +29,7 @@ public class SemanticPass extends VisitorAdaptor {
 	boolean mainFound = false;
 	boolean returnFound = false;
 	boolean errorDetected = false;
-	
+	int constrCnt = 0;
 	int nVars;
 	public static final Struct boolType =  new Struct(Struct.Bool);
 	
@@ -179,6 +179,7 @@ public class SemanticPass extends VisitorAdaptor {
     	
     	returnFound = false;
     	currentMethod = null;
+    	paramCount = 0;
     }
     
     public void visit(StatementReturnExpr returnExpr){
@@ -305,7 +306,7 @@ public class SemanticPass extends VisitorAdaptor {
     	Obj des = factor.getDesignator().obj;
     	if(des.getKind() != Obj.Meth)
     		report_error("probaj da npr pozoves metod", null);
-    	
+    	factor.struct = des.getType();
     	
     	List<Obj> formalPars = des.getLocalSymbols().stream().filter(o -> o.getKind() == Obj.Var && o.getName() != "this").limit(des.getLevel()).collect(Collectors.toList());
     	
@@ -317,6 +318,7 @@ public class SemanticPass extends VisitorAdaptor {
     		Struct ap = curr.get(i).getType();
     		if(!compatible(fp, ap)) break;
     	}
+    	curr.clear();
     }
     
     public void visit(FactorNewSquare factor) {
@@ -326,7 +328,13 @@ public class SemanticPass extends VisitorAdaptor {
     }
     
     public void visit(FactorNewActPars factor) {
-    	factor.struct = new Struct(Struct.Class, factor.getType().struct);
+    	factor.struct = factor.getType().struct;
+    	if(factor.getType().struct.getKind() != Struct.Class)
+    		report_error("Klasa od koje se instacira objekat ne postoji", null);
+    }
+        
+    public void visit(FactorNewParen factor) {
+    	factor.struct =  factor.getType().struct;
     	if(factor.getType().struct.getKind() != Struct.Class)
     		report_error("Klasa od koje se instacira objekat ne postoji", null);
     }
@@ -407,6 +415,7 @@ public class SemanticPass extends VisitorAdaptor {
     	currentClass = className.obj;
     	
     	ClassDecl decl = (ClassDecl) className.getParent();
+    	Tab.insert(Obj.Fld, "vmtable", Tab.intType);
     	if(decl.getOptionalClassBody() instanceof ClassBodyEmpty || decl.getOptionalClassBody() instanceof ClassBodyMeth) {
 			Obj con = Tab.insert(Obj.Meth, currentClass.getName() + "~", Tab.noType);
 			Tab.openScope();
@@ -414,7 +423,7 @@ public class SemanticPass extends VisitorAdaptor {
 			Tab.chainLocalSymbols(con);
 			Tab.closeScope();
     	}
-    	Tab.insert(Obj.Fld, "vmtable", Tab.intType);
+    	
     }
     
     public void visit(ClassDecl classDecl) {
@@ -422,6 +431,7 @@ public class SemanticPass extends VisitorAdaptor {
     	Tab.closeScope();
     	currentClass = null;
     	currentParent = null;
+    	constrCnt = 0;
     }
     
     public void visit(ParentClass classParent) {
@@ -431,7 +441,7 @@ public class SemanticPass extends VisitorAdaptor {
     		return;
     	}
     	
-    	currentClass.getType().setElementType(parent.getType().getElemType());
+    	currentClass.getType().setElementType(parent.getType());
     	parent.getType().getMembers().forEach(o -> {
     		if(o.getKind() == Obj.Fld && o.getName() != "vmtable") 
     			Tab.insert(o.getKind(), o.getName(), o.getType());
@@ -446,11 +456,14 @@ public class SemanticPass extends VisitorAdaptor {
     }
     
     public void visit(ConstructorName constrName) {
+    	constrCnt++;
     	if(!constrName.getI1().equals(currentClass.getName())) {
     		report_error("constrName != className", null);
     		return;
     	}
-    	constrName.obj = Tab.insert(Obj.Meth, constrName.getI1(), Tab.noType);
+    	ConstructorDecl p = (ConstructorDecl) constrName.getParent();
+    	if(p.getOptionalFormPars() instanceof NoFormPars) constrName.obj = Tab.insert(Obj.Meth, constrName.getI1()+"~", Tab.noType);
+    	else constrName.obj = Tab.insert(Obj.Meth, constrName.getI1()+"#"+ constrCnt, Tab.noType);
     	Tab.openScope();
     	currentConstr = constrName.obj;
     }

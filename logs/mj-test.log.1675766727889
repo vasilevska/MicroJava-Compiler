@@ -1,0 +1,139 @@
+INFO  11:43:17,277 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  11:43:17,404 - #36 program
+INFO  11:43:17,404 - #46 DEB
+INFO  11:43:17,405 - #6 class
+INFO  11:43:17,407 - #46 Predmet
+INFO  11:43:17,407 - #24 {
+INFO  11:43:17,409 - #46 int
+INFO  11:43:17,410 - #46 tezina
+INFO  11:43:17,411 - #42 ;
+INFO  11:43:17,414 - #24 {
+INFO  11:43:17,415 - #46 Predmet
+INFO  11:43:17,415 - #25 (
+INFO  11:43:17,416 - #40 )
+INFO  11:43:17,417 - #24 {
+INFO  11:43:17,418 - #37 }
+INFO  11:43:17,419 - #37 }
+INFO  11:43:17,421 - #37 }
+INFO  11:43:17,421 - #24 {
+INFO  11:43:17,422 - #44 void
+INFO  11:43:17,423 - #46 main
+INFO  11:43:17,423 - #25 (
+INFO  11:43:17,424 - #40 )
+INFO  11:43:17,424 - #46 Predmet
+INFO  11:43:17,428 - #46 p
+INFO  11:43:17,428 - #42 ;
+INFO  11:43:17,428 - #24 {
+INFO  11:43:17,428 - #46 p
+INFO  11:43:17,428 - #4 =
+INFO  11:43:17,428 - #32 new
+INFO  11:43:17,429 - #46 Predmet
+INFO  11:43:17,430 - #25 (
+INFO  11:43:17,430 - #40 )
+INFO  11:43:17,430 - #42 ;
+INFO  11:43:17,434 - #37 }
+INFO  11:43:17,435 - #37 }
+INFO  11:43:17,444 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsClass(
+    NoDecl(
+    ) [NoDecl]
+    ClassDecl(
+      ClassName(
+       Predmet
+      ) [ClassName]
+      NoParent(
+      ) [NoParent]
+      VarDecls(
+        NoVarDecl(
+        ) [NoVarDecl]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+         tezina
+          NotArray(
+          ) [NotArray]
+          NotIdentArray(
+          ) [NotIdentArray]
+        ) [VarDecl]
+      ) [VarDecls]
+      ClassBodyConstr(
+        ConstructorSingleDecl(
+          ConstructorDecl(
+            ConstructorName(
+             Predmet
+            ) [ConstructorName]
+            NoFormPars(
+            ) [NoFormPars]
+            FunctionBodyDerived1(
+              NoVarDecl(
+              ) [NoVarDecl]
+              NoStatement(
+              ) [NoStatement]
+            ) [FunctionBodyDerived1]
+          ) [ConstructorDecl]
+        ) [ConstructorSingleDecl]
+      ) [ClassBodyConstr]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             Predmet
+            ) [Type]
+           p
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementDesignator(
+            DesignatorStatementAssignExpr(
+              DesignatorIdent(
+               p
+              ) [DesignatorIdent]
+              Assignop(
+              ) [Assignop]
+              ExprBase(
+                Term(
+                  FactorNewParen(
+                    Type(
+                     Predmet
+                    ) [Type]
+                  ) [FactorNewParen]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [DesignatorStatementAssignExpr]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  11:43:17,444 - ===================================
+INFO  11:43:17,451 - Deklarisana promenljiva tezina na liniji 5
+INFO  11:43:17,452 - Obradjuje se funkcija main na liniji 12
+INFO  11:43:17,452 - Deklarisana promenljiva p na liniji 13

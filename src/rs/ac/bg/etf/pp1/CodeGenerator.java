@@ -9,13 +9,20 @@ import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 import java.util.Vector;
+import java.util.stream.Stream;
 
 import rs.ac.bg.etf.pp1.SemanticPass;
 
+
+
 public class CodeGenerator extends VisitorAdaptor {
 
+	record Pair ( Obj obj , Integer adr ) {}
+	
 	private int mainPc;
 	private Stack<Integer> counter = new Stack<>();
 	private Stack<Integer> counterOr = new Stack<>();
@@ -29,6 +36,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<Integer> bcnt = new Stack<>();
 	private Stack<Integer> ccnt = new Stack<>();
 	private Stack<Integer> condFixUp = new Stack<>();
+	private Map<String, Pair> vmTableAdr = new HashMap<>();
+	boolean constrCall = false;
+	
+	Obj currentClass = null;
 	
 	public int getMainPc(){
 		return mainPc;
@@ -38,12 +49,20 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	//EXPRESSIONS
 		//FIXME: drugacije loadovanje ako su objekti klase
+	public void visit(Type t) {
+		if(t.getParent() instanceof FactorNewActPars) {
+			curr.clear();
+			constrCall = true;
+		}
+	}
+	
 	public void visit(FactorNumber cnst) {
 		Obj con = Tab.insert(Obj.Con, "$", Tab.intType);
 		con.setLevel(0);
 		con.setAdr(cnst.getN1());
 		
-		Code.load(con);
+		if(!constrCall) Code.load(con);
+		curr.add(con);
 	}
 	
 	public void visit(FactorChar cnst) {
@@ -51,7 +70,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		con.setLevel(0);
 		con.setAdr(cnst.getC1());
 		
-		Code.load(con);
+		if(!constrCall) Code.load(con);
+		curr.add(con);
 	}
 	
 	public void visit(FactorBool cnst) {
@@ -59,11 +79,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		con.setLevel(0);
 		con.setAdr(cnst.getB1()? 1:0);
 		
-		Code.load(con);
+		if(!constrCall) Code.load(con);
+		curr.add(con);
 	}
 	
 	public void visit(FactorBase factor) {
-		Code.load(factor.getDesignator().obj);
+		if(!constrCall) Code.load(factor.getDesignator().obj);
+		curr.add(factor.getDesignator().obj);
 	}
 	
 	public void visit(FactorParen factor) {
@@ -73,6 +95,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(FactorActPars factor) {
 		methodCall(factor.getDesignator());
 	}
+	
 	
 	public void visit(FactorNewSquare factor) {
 		Code.put(Code.newarray);
@@ -111,8 +134,9 @@ public class CodeGenerator extends VisitorAdaptor {
 		breakPC.add(Code.pc - 2);
 		bcnt.push(bcnt.pop() + 1);
 	}
+	
 	public void visit(StatementContinue stmt) {
-		Code.putJump(0);
+		Code.putJump(loopStart.peek());
 		continuePC.add(Code.pc - 2);
 		ccnt.push(ccnt.pop() + 1);
 	}
@@ -150,28 +174,25 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(MethodNameType methodName){
 		
-		if("main".equalsIgnoreCase(methodName.getI2())){
-			mainPc = Code.pc;
-		}
 		methodName.obj.setAdr(Code.pc);
 		// Collect arguments and local variables
 		MethodDeclDerived1 methodNode = (MethodDeclDerived1) methodName.getParent();
 		VarCounter varCnt = new VarCounter();
 		methodNode.traverseTopDown(varCnt);
 		
-		FormParamCounter fpCnt = new FormParamCounter();
-		methodNode.traverseTopDown(fpCnt);
+		
 		// Generate the entry
 		Code.put(Code.enter);
-		Code.put(fpCnt.getCount());
-		Code.put(fpCnt.getCount() + varCnt.getCount());
+		Code.put(methodName.obj.getLevel());
+		Code.put(methodName.obj.getLocalSymbols().size());
 	
 	}
 	
 	public void visit(MethodNameVoid methodName){
 		
-		if("main".equalsIgnoreCase(methodName.getI1())){
+		if("main".equals(methodName.getI1())){
 			mainPc = Code.pc;
+			//vmtable();
 		}
 		methodName.obj.setAdr(Code.pc);
 		
@@ -184,22 +205,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		methodNode.traverseTopDown(fpCnt);
 		// Generate the entry
 		Code.put(Code.enter);
-		Code.put(fpCnt.getCount());
-		Code.put(fpCnt.getCount() + varCnt.getCount());
-	
+		Code.put(methodName.obj.getLevel());
+		Code.put(methodName.obj.getLocalSymbols().size());
+		
 	}
 	
 	public void visit(MethodDeclDerived1 methodDecl){
-		Code.put(Code.exit);
-		Code.put(Code.return_);
-	}
-	
-	public void visit(StatementReturnExpr returnExpr){
-		Code.put(Code.exit);
-		Code.put(Code.return_);
-	}
-	
-	public void visit(StatementReturnVoid returnNoExpr){
 		Code.put(Code.exit);
 		Code.put(Code.return_);
 	}
@@ -255,11 +266,13 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(StatementWhile stmt) {
+		/*
 		int cnt = ccnt.pop();
 		for(int i = 0; i<cnt; i++) {
 			Code.fixup(continuePC.lastElement()); 
 			continuePC.remove(continuePC.size()-1);
 		}
+		*/
 		Code.putJump(loopStart.peek());
 		
 		for(int i = 0; i < counter.peek(); i++) {
@@ -267,7 +280,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 		counter.pop();
 		
-		cnt = bcnt.pop();
+		int cnt = bcnt.pop();
 		for(int i = 0; i<cnt; i++) {
 			Code.fixup(breakPC.lastElement()); 
 			breakPC.remove(breakPC.size()-1);
@@ -290,12 +303,20 @@ public class CodeGenerator extends VisitorAdaptor {
 		counter.pop();
 		condFixUp.push(ifcond);
 	}
+	
 	public void visit(StatementIfElse stmt) {
 		Code.fixup(condFixUp.pop());
 	}
 	
 	public void visit(ArrDesignator des) {
 		Code.load(des.getDesignator().obj);
+		if(des.getParent() instanceof FactorActPars || des.getParent() instanceof DesignatorStatementActPars) curr.clear();
+	}
+	public void visit(DesignatorIdent des) {
+		if(des.getParent() instanceof FactorActPars || des.getParent() instanceof DesignatorStatementActPars) curr.clear();
+	}
+	public void visit(DesignatorClassField des) {
+		if(des.getParent() instanceof FactorActPars || des.getParent() instanceof DesignatorStatementActPars) curr.clear();
 	}
 	
 	public void visit(DesignatorStatementAssignExpr stmt) {
@@ -389,8 +410,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 	
-	
-	
 	private void methodCall(Designator des) {
 		String name = des.obj.getName();
 		if(name == "ord" || name == "len" || name == "chr") return;
@@ -398,6 +417,123 @@ public class CodeGenerator extends VisitorAdaptor {
 		int offset = des.obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
+	}
+	
+	
+	
+	private void defaultConstructor() {
+		Obj constr = (Obj) currentClass.getType().getMembers().toArray()[1];
+		constr.setAdr(Code.pc);
+		Code.put(Code.enter);
+		Code.put(constr.getLevel());
+		Code.put(constr.getLocalSymbols().size());
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	private void vmtable() {
+		int curadr; 
+		for(Pair p: vmTableAdr.values()) {
+			curadr = p.adr();
+			Stream<Obj> methods = p.obj().getType().getMembers().stream().filter(o-> o.getKind() == Obj.Meth && !o.getName().contains("~") && !o.getName().contains("#"));
+			for(Obj method: methods.toList()) {
+				for(int c: method.getName().chars().toArray()) {
+					Code.loadConst(c);
+					Code.put(Code.putstatic);
+					Code.put2(curadr);
+					curadr++;
+				}
+				Code.put(Code.const_m1);
+				Code.put(Code.putstatic);
+				Code.put2(curadr);
+				curadr++;
+				Code.loadConst(method.getAdr());
+				Code.put(Code.putstatic);
+				Code.put2(curadr);
+				curadr++;
+			}
+			Code.loadConst(-2);
+            Code.put(Code.putstatic);
+            Code.put2(curadr);
+			curadr++;
+		}
+	}
+
+	public void visit(ClassName cl) {
+		currentClass = cl.obj;
+	}
+	
+	public void visit(ClassDecl cl) {
+		if(currentClass.getType().getElemType() != null) {
+			//ovde za ako postoji parent
+		}
+		vmTableAdr.put(currentClass.getName(), new Pair(currentClass, Code.dataSize));
+		Code.dataSize += currentClass.getType().getMembers().stream().filter(o -> o.getKind() == Obj.Meth).mapToInt(o -> o.getName().length() + 2).sum() + 1;
+		currentClass = null;
+	}
+	
+	public void visit(ConstructorName constr) {
+		Code.put(Code.enter);
+		Code.put(constr.obj.getLevel());
+		Code.put(constr.obj.getLocalSymbols().size());
+		
+	}
+	
+	public void visit(ConstructorDecl constr) {
+		Code.put(Code.exit);
+		Code.put(Code.return_);
+	}
+	
+	public void visit(ClassBodyEmpty body) {
+		defaultConstructor();
+	}
+	
+	public void visit(ClassBodyMeth body) {
+		defaultConstructor();
+	}
+	
+	public void visit(FactorNewParen factor) {
+		Code.put(Code.new_);
+		Code.put2(factor.struct.getNumberOfFields() * 4); 
+		Code.put(Code.dup);
+		Code.put(Code.dup);
+		Code.loadConst(vmTableAdr.get(factor.getType().getI1()).adr());
+		Code.put(Code.putfield);
+        Code.put2(0);
+        Code.put(Code.call);
+        int conAdr = vmTableAdr.get(factor.getType().getI1()).obj().getType().getMembers().stream().filter(o->o.getName().equals(factor.getType().getI1()+"~") ).toList().get(0).getAdr();
+        Code.put2(conAdr - Code.pc +1);
+	}
+	
+	public void visit(FactorNewActPars factor) {
+		Code.put(Code.new_);
+		Code.put2(factor.struct.getNumberOfFields() * 4); 
+		Code.put(Code.dup);
+		Code.put(Code.dup);
+		Code.loadConst(vmTableAdr.get(factor.getType().getI1()).adr());
+		Code.put(Code.putfield);
+        Code.put2(0);
+        for(Obj a: curr) {
+        	Code.load(a);
+        }
+        int conAdr = -10;
+        for(Obj con: vmTableAdr.get(factor.getType().getI1()).obj().getType().getMembers().stream().filter(o->o.getName().contains(factor.getType().getI1()+"#") ).toList()) {
+        	boolean flag = true;
+        	int i = 0;
+        	for(Obj par: con.getLocalSymbols().stream().limit(con.getLevel()).toList()) {
+        		if(par.getName().equals("this")) continue;
+        		if(par.getKind() != types.get(i).getKind()) flag = false;
+        		i++;
+        	}
+        	if(flag) {
+        		conAdr = vmTableAdr.get(factor.getType().getI1()).obj().getType().getMembers().stream().filter(o->o.getName().equals(con.getName())).toList().get(0).getAdr();
+        		break;
+        	}
+        }
+        Code.put(Code.call);
+        Code.put2(conAdr - Code.pc +1);
+        curr.clear();
+        constrCall = false;
 	}
 	
 	/*

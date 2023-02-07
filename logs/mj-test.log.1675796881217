@@ -1,0 +1,262 @@
+INFO  20:07:48,485 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  20:07:48,532 - #36 program
+INFO  20:07:48,532 - #46 DEB
+INFO  20:07:48,532 - #6 class
+INFO  20:07:48,533 - #46 Debko
+INFO  20:07:48,533 - #24 {
+INFO  20:07:48,535 - #46 int
+INFO  20:07:48,536 - #46 d
+INFO  20:07:48,536 - #42 ;
+INFO  20:07:48,538 - #24 {
+INFO  20:07:48,539 - #46 Debko
+INFO  20:07:48,539 - #25 (
+INFO  20:07:48,539 - #46 char
+INFO  20:07:48,540 - #46 c
+INFO  20:07:48,540 - #40 )
+INFO  20:07:48,541 - #24 {
+INFO  20:07:48,542 - #35 print
+INFO  20:07:48,543 - #25 (
+INFO  20:07:48,543 - #46 c
+INFO  20:07:48,543 - #40 )
+INFO  20:07:48,545 - #42 ;
+INFO  20:07:48,546 - #37 }
+INFO  20:07:48,546 - #37 }
+INFO  20:07:48,547 - #37 }
+INFO  20:07:48,551 - #46 int
+INFO  20:07:48,552 - #46 x
+INFO  20:07:48,552 - #42 ;
+INFO  20:07:48,552 - #24 {
+INFO  20:07:48,552 - #44 void
+INFO  20:07:48,553 - #46 main
+INFO  20:07:48,553 - #25 (
+INFO  20:07:48,553 - #40 )
+INFO  20:07:48,554 - #46 Debko
+INFO  20:07:48,554 - #46 bambi
+INFO  20:07:48,554 - #42 ;
+INFO  20:07:48,554 - #24 {
+INFO  20:07:48,555 - #35 print
+INFO  20:07:48,555 - #25 (
+INFO  20:07:48,555 - #49 d
+INFO  20:07:48,555 - #40 )
+INFO  20:07:48,555 - #42 ;
+INFO  20:07:48,555 - #46 bambi
+INFO  20:07:48,555 - #4 =
+INFO  20:07:48,555 - #32 new
+INFO  20:07:48,556 - #46 Debko
+INFO  20:07:48,556 - #25 (
+INFO  20:07:48,556 - #49 a
+INFO  20:07:48,556 - #40 )
+INFO  20:07:48,558 - #42 ;
+INFO  20:07:48,558 - #35 print
+INFO  20:07:48,558 - #25 (
+INFO  20:07:48,558 - #46 bambi
+INFO  20:07:48,558 - #13 .
+INFO  20:07:48,559 - #46 d
+INFO  20:07:48,559 - #40 )
+INFO  20:07:48,559 - #42 ;
+INFO  20:07:48,559 - #39 return
+INFO  20:07:48,559 - #42 ;
+INFO  20:07:48,559 - #37 }
+INFO  20:07:48,561 - #37 }
+INFO  20:07:48,566 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsVar(
+    DeclsClass(
+      NoDecl(
+      ) [NoDecl]
+      ClassDecl(
+        ClassName(
+         Debko
+        ) [ClassName]
+        NoParent(
+        ) [NoParent]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           d
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        ClassBodyConstr(
+          ConstructorSingleDecl(
+            ConstructorDecl(
+              ConstructorName(
+               Debko
+              ) [ConstructorName]
+              OptFormPars(
+                FormPars(
+                  Type(
+                   char
+                  ) [Type]
+                 c
+                  NotArray(
+                  ) [NotArray]
+                  NotParamArray(
+                  ) [NotParamArray]
+                ) [FormPars]
+              ) [OptFormPars]
+              FunctionBodyDerived1(
+                NoVarDecl(
+                ) [NoVarDecl]
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementPrintExpr(
+                    ExprBase(
+                      Term(
+                        FactorBase(
+                          DesignatorIdent(
+                           c
+                          ) [DesignatorIdent]
+                        ) [FactorBase]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                  ) [StatementPrintExpr]
+                ) [Statements]
+              ) [FunctionBodyDerived1]
+            ) [ConstructorDecl]
+          ) [ConstructorSingleDecl]
+        ) [ClassBodyConstr]
+      ) [ClassDecl]
+    ) [DeclsClass]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     x
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             Debko
+            ) [Type]
+           bambi
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            Statements(
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+                StatementPrintExpr(
+                  ExprBase(
+                    Term(
+                      FactorChar(
+                       d
+                      ) [FactorChar]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [StatementPrintExpr]
+              ) [Statements]
+              StatementDesignator(
+                DesignatorStatementAssignExpr(
+                  DesignatorIdent(
+                   bambi
+                  ) [DesignatorIdent]
+                  Assignop(
+                  ) [Assignop]
+                  ExprBase(
+                    Term(
+                      FactorNewActPars(
+                        Type(
+                         Debko
+                        ) [Type]
+                        ActPars(
+                          ExprBase(
+                            Term(
+                              FactorChar(
+                               a
+                              ) [FactorChar]
+                              NoMulFactor(
+                              ) [NoMulFactor]
+                            ) [Term]
+                            NoAddTerm(
+                            ) [NoAddTerm]
+                          ) [ExprBase]
+                          NoExpr(
+                          ) [NoExpr]
+                        ) [ActPars]
+                      ) [FactorNewActPars]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [DesignatorStatementAssignExpr]
+              ) [StatementDesignator]
+            ) [Statements]
+            StatementPrintExpr(
+              ExprBase(
+                Term(
+                  FactorBase(
+                    DesignatorClassField(
+                      DesignatorIdent(
+                       bambi
+                      ) [DesignatorIdent]
+                     d
+                    ) [DesignatorClassField]
+                  ) [FactorBase]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [StatementPrintExpr]
+          ) [Statements]
+          StatementReturnVoid(
+          ) [StatementReturnVoid]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  20:07:48,566 - ===================================
+INFO  20:07:48,571 - Deklarisana promenljiva d na liniji 4
+INFO  20:07:48,572 - Deklarisana promenljiva x na liniji 11
+INFO  20:07:48,572 - Obradjuje se funkcija main na liniji 13
+INFO  20:07:48,572 - Deklarisana promenljiva bambi na liniji 14
+INFO  20:07:48,573 -  Print count calls = 0
+INFO  20:07:48,573 -  Deklarisanih promenljivih ima = 0
+INFO  20:07:48,574 - ===================================
+INFO  20:07:48,585 - Parsiranje uspesno zavrseno!

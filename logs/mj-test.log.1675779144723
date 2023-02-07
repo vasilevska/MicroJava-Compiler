@@ -1,0 +1,144 @@
+INFO  15:11:52,223 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  15:11:52,811 - #36 program
+INFO  15:11:52,812 - #46 DEB
+INFO  15:11:52,818 - #6 class
+INFO  15:11:52,825 - #46 Debko
+INFO  15:11:52,826 - #24 {
+INFO  15:11:52,834 - #46 int
+INFO  15:11:52,837 - #46 d
+INFO  15:11:52,840 - #42 ;
+INFO  15:11:52,848 - #24 {
+INFO  15:11:52,853 - #37 }
+INFO  15:11:52,854 - #37 }
+INFO  15:11:52,857 - #46 int
+INFO  15:11:52,860 - #46 x
+INFO  15:11:52,860 - #42 ;
+INFO  15:11:52,861 - #24 {
+INFO  15:11:52,862 - #44 void
+INFO  15:11:52,865 - #46 main
+INFO  15:11:52,867 - #25 (
+INFO  15:11:52,871 - #40 )
+INFO  15:11:52,876 - #46 Debko
+INFO  15:11:52,877 - #46 bambi
+INFO  15:11:52,878 - #42 ;
+INFO  15:11:52,879 - #24 {
+INFO  15:11:52,880 - #46 bambi
+INFO  15:11:52,884 - #4 =
+INFO  15:11:52,886 - #32 new
+INFO  15:11:52,889 - #46 Debko
+INFO  15:11:52,890 - #25 (
+INFO  15:11:52,891 - #40 )
+INFO  15:11:52,892 - #42 ;
+INFO  15:11:52,903 - #39 return
+INFO  15:11:52,904 - #42 ;
+INFO  15:11:52,905 - #37 }
+INFO  15:11:52,909 - #37 }
+INFO  15:11:52,950 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsVar(
+    DeclsClass(
+      NoDecl(
+      ) [NoDecl]
+      ClassDecl(
+        ClassName(
+         Debko
+        ) [ClassName]
+        NoParent(
+        ) [NoParent]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           d
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        ClassBodyEmpty(
+        ) [ClassBodyEmpty]
+      ) [ClassDecl]
+    ) [DeclsClass]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     x
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             Debko
+            ) [Type]
+           bambi
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementDesignator(
+              DesignatorStatementAssignExpr(
+                DesignatorIdent(
+                 bambi
+                ) [DesignatorIdent]
+                Assignop(
+                ) [Assignop]
+                ExprBase(
+                  Term(
+                    FactorNewParen(
+                      Type(
+                       Debko
+                      ) [Type]
+                    ) [FactorNewParen]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [DesignatorStatementAssignExpr]
+            ) [StatementDesignator]
+          ) [Statements]
+          StatementReturnVoid(
+          ) [StatementReturnVoid]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  15:11:52,961 - ===================================
+INFO  15:11:53,102 - Deklarisana promenljiva d na liniji 3
+INFO  15:11:53,128 - Deklarisana promenljiva x na liniji 6
+INFO  15:11:53,129 - Obradjuje se funkcija main na liniji 8
+INFO  15:11:53,132 - Deklarisana promenljiva bambi na liniji 9
+INFO  15:11:53,137 -  Print count calls = 0
+INFO  15:11:53,137 -  Deklarisanih promenljivih ima = 0
+INFO  15:11:53,139 - ===================================

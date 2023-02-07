@@ -1,0 +1,98 @@
+INFO  14:06:43,287 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  14:06:43,404 - #36 program
+INFO  14:06:43,404 - #46 DEB
+INFO  14:06:43,404 - #6 class
+INFO  14:06:43,407 - #46 Debko
+INFO  14:06:43,407 - #24 {
+INFO  14:06:43,410 - #46 int
+INFO  14:06:43,411 - #46 d
+INFO  14:06:43,413 - #42 ;
+INFO  14:06:43,417 - #24 {
+INFO  14:06:43,419 - #37 }
+INFO  14:06:43,419 - #37 }
+INFO  14:06:43,420 - #46 int
+INFO  14:06:43,422 - #46 x
+INFO  14:06:43,422 - #42 ;
+INFO  14:06:43,422 - #24 {
+INFO  14:06:43,423 - #44 void
+INFO  14:06:43,424 - #46 main
+INFO  14:06:43,424 - #25 (
+INFO  14:06:43,424 - #40 )
+INFO  14:06:43,426 - #24 {
+INFO  14:06:43,426 - #39 return
+INFO  14:06:43,427 - #42 ;
+INFO  14:06:43,428 - #37 }
+INFO  14:06:43,430 - #37 }
+INFO  14:06:43,439 - Program(
+  ProgName(
+   DEB
+  ) [ProgName]
+  DeclsVar(
+    DeclsClass(
+      NoDecl(
+      ) [NoDecl]
+      ClassDecl(
+        ClassName(
+         Debko
+        ) [ClassName]
+        NoParent(
+        ) [NoParent]
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             int
+            ) [Type]
+           d
+            NotArray(
+            ) [NotArray]
+            NotIdentArray(
+            ) [NotIdentArray]
+          ) [VarDecl]
+        ) [VarDecls]
+        ClassBodyEmpty(
+        ) [ClassBodyEmpty]
+      ) [ClassDecl]
+    ) [DeclsClass]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+     x
+      NotArray(
+      ) [NotArray]
+      NotIdentArray(
+      ) [NotIdentArray]
+    ) [VarDecl]
+  ) [DeclsVar]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        NoVarDecl(
+        ) [NoVarDecl]
+        Statements(
+          NoStatement(
+          ) [NoStatement]
+          StatementReturnVoid(
+          ) [StatementReturnVoid]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  14:06:43,440 - ===================================
+INFO  14:06:43,452 - Deklarisana promenljiva d na liniji 3
+INFO  14:06:43,453 - Deklarisana promenljiva x na liniji 6
+INFO  14:06:43,454 - Obradjuje se funkcija main na liniji 8
+INFO  14:06:43,454 -  Print count calls = 0
+INFO  14:06:43,454 -  Deklarisanih promenljivih ima = 0
+INFO  14:06:43,454 - ===================================
+INFO  14:06:43,466 - Parsiranje uspesno zavrseno!
