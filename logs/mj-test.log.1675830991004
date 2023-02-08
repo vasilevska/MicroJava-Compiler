@@ -1,0 +1,255 @@
+INFO  05:35:56,555 - Compiling source file: D:\faks\PP1\MJCompiler\test\program.mj
+INFO  05:35:56,610 - #36 program
+INFO  05:35:56,610 - #46 Prog
+INFO  05:35:56,610 - #6 class
+INFO  05:35:56,612 - #46 Klasa
+INFO  05:35:56,613 - #24 {
+INFO  05:35:56,614 - #24 {
+INFO  05:35:56,615 - #46 Klasa
+INFO  05:35:56,615 - #25 (
+INFO  05:35:56,615 - #40 )
+INFO  05:35:56,616 - #24 {
+INFO  05:35:56,616 - #35 print
+INFO  05:35:56,616 - #25 (
+INFO  05:35:56,617 - #47 1
+INFO  05:35:56,617 - #40 )
+INFO  05:35:56,618 - #42 ;
+INFO  05:35:56,618 - #37 }
+INFO  05:35:56,619 - #46 Klasa
+INFO  05:35:56,620 - #25 (
+INFO  05:35:56,620 - #46 int
+INFO  05:35:56,620 - #46 c
+INFO  05:35:56,621 - #40 )
+INFO  05:35:56,623 - #24 {
+INFO  05:35:56,624 - #35 print
+INFO  05:35:56,624 - #25 (
+INFO  05:35:56,624 - #46 c
+INFO  05:35:56,624 - #40 )
+INFO  05:35:56,624 - #42 ;
+INFO  05:35:56,624 - #37 }
+INFO  05:35:56,624 - #37 }
+INFO  05:35:56,624 - #37 }
+INFO  05:35:56,624 - #24 {
+INFO  05:35:56,625 - #44 void
+INFO  05:35:56,626 - #46 main
+INFO  05:35:56,626 - #25 (
+INFO  05:35:56,626 - #40 )
+INFO  05:35:56,626 - #46 Klasa
+INFO  05:35:56,626 - #46 k1
+INFO  05:35:56,626 - #8 ,
+INFO  05:35:56,627 - #46 k2
+INFO  05:35:56,627 - #42 ;
+INFO  05:35:56,627 - #24 {
+INFO  05:35:56,628 - #46 k1
+INFO  05:35:56,628 - #4 =
+INFO  05:35:56,628 - #32 new
+INFO  05:35:56,630 - #46 Klasa
+INFO  05:35:56,630 - #25 (
+INFO  05:35:56,630 - #40 )
+INFO  05:35:56,630 - #42 ;
+INFO  05:35:56,630 - #46 k2
+INFO  05:35:56,630 - #4 =
+INFO  05:35:56,630 - #32 new
+INFO  05:35:56,631 - #46 Klasa
+INFO  05:35:56,631 - #25 (
+INFO  05:35:56,631 - #47 2
+INFO  05:35:56,631 - #40 )
+INFO  05:35:56,633 - #42 ;
+INFO  05:35:56,633 - #37 }
+INFO  05:35:56,633 - #37 }
+INFO  05:35:56,638 - Program(
+  ProgName(
+   Prog
+  ) [ProgName]
+  DeclsClass(
+    NoDecl(
+    ) [NoDecl]
+    ClassDecl(
+      ClassName(
+       Klasa
+      ) [ClassName]
+      NoParent(
+      ) [NoParent]
+      NoVarDecl(
+      ) [NoVarDecl]
+      ClassBodyConstr(
+        ConstructorDecls(
+          ConstructorSingleDecl(
+            ConstructorDecl(
+              ConstructorName(
+               Klasa
+              ) [ConstructorName]
+              NoFormPars(
+              ) [NoFormPars]
+              FunctionBodyDerived1(
+                NoVarDecl(
+                ) [NoVarDecl]
+                Statements(
+                  NoStatement(
+                  ) [NoStatement]
+                  StatementPrintExpr(
+                    ExprBase(
+                      Term(
+                        FactorNumber(
+                         1
+                        ) [FactorNumber]
+                        NoMulFactor(
+                        ) [NoMulFactor]
+                      ) [Term]
+                      NoAddTerm(
+                      ) [NoAddTerm]
+                    ) [ExprBase]
+                  ) [StatementPrintExpr]
+                ) [Statements]
+              ) [FunctionBodyDerived1]
+            ) [ConstructorDecl]
+          ) [ConstructorSingleDecl]
+          ConstructorDecl(
+            ConstructorName(
+             Klasa
+            ) [ConstructorName]
+            OptFormPars(
+              FormPars(
+                Type(
+                 int
+                ) [Type]
+               c
+                NotArray(
+                ) [NotArray]
+                NotParamArray(
+                ) [NotParamArray]
+              ) [FormPars]
+            ) [OptFormPars]
+            FunctionBodyDerived1(
+              NoVarDecl(
+              ) [NoVarDecl]
+              Statements(
+                NoStatement(
+                ) [NoStatement]
+                StatementPrintExpr(
+                  ExprBase(
+                    Term(
+                      FactorBase(
+                        DesignatorIdent(
+                         c
+                        ) [DesignatorIdent]
+                      ) [FactorBase]
+                      NoMulFactor(
+                      ) [NoMulFactor]
+                    ) [Term]
+                    NoAddTerm(
+                    ) [NoAddTerm]
+                  ) [ExprBase]
+                ) [StatementPrintExpr]
+              ) [Statements]
+            ) [FunctionBodyDerived1]
+          ) [ConstructorDecl]
+        ) [ConstructorDecls]
+      ) [ClassBodyConstr]
+    ) [ClassDecl]
+  ) [DeclsClass]
+  MethDecls(
+    NoMethDecl(
+    ) [NoMethDecl]
+    MethodDeclDerived1(
+      MethodNameVoid(
+       main
+      ) [MethodNameVoid]
+      NoFormPars(
+      ) [NoFormPars]
+      FunctionBodyDerived1(
+        VarDecls(
+          NoVarDecl(
+          ) [NoVarDecl]
+          VarDecl(
+            Type(
+             Klasa
+            ) [Type]
+           k1
+            NotArray(
+            ) [NotArray]
+            ArrayVar(
+              NotIdentArray(
+              ) [NotIdentArray]
+             k2
+              NotArray(
+              ) [NotArray]
+            ) [ArrayVar]
+          ) [VarDecl]
+        ) [VarDecls]
+        Statements(
+          Statements(
+            NoStatement(
+            ) [NoStatement]
+            StatementDesignator(
+              DesignatorStatementAssignExpr(
+                DesignatorIdent(
+                 k1
+                ) [DesignatorIdent]
+                Assignop(
+                ) [Assignop]
+                ExprBase(
+                  Term(
+                    FactorNewParen(
+                      Type(
+                       Klasa
+                      ) [Type]
+                    ) [FactorNewParen]
+                    NoMulFactor(
+                    ) [NoMulFactor]
+                  ) [Term]
+                  NoAddTerm(
+                  ) [NoAddTerm]
+                ) [ExprBase]
+              ) [DesignatorStatementAssignExpr]
+            ) [StatementDesignator]
+          ) [Statements]
+          StatementDesignator(
+            DesignatorStatementAssignExpr(
+              DesignatorIdent(
+               k2
+              ) [DesignatorIdent]
+              Assignop(
+              ) [Assignop]
+              ExprBase(
+                Term(
+                  FactorNewActPars(
+                    Type(
+                     Klasa
+                    ) [Type]
+                    ActPars(
+                      ExprBase(
+                        Term(
+                          FactorNumber(
+                           2
+                          ) [FactorNumber]
+                          NoMulFactor(
+                          ) [NoMulFactor]
+                        ) [Term]
+                        NoAddTerm(
+                        ) [NoAddTerm]
+                      ) [ExprBase]
+                      NoExpr(
+                      ) [NoExpr]
+                    ) [ActPars]
+                  ) [FactorNewActPars]
+                  NoMulFactor(
+                  ) [NoMulFactor]
+                ) [Term]
+                NoAddTerm(
+                ) [NoAddTerm]
+              ) [ExprBase]
+            ) [DesignatorStatementAssignExpr]
+          ) [StatementDesignator]
+        ) [Statements]
+      ) [FunctionBodyDerived1]
+    ) [MethodDeclDerived1]
+  ) [MethDecls]
+) [Program]
+INFO  05:35:56,638 - ===================================
+INFO  05:35:56,643 - Obradjuje se funkcija main na liniji 13
+INFO  05:35:56,643 - Deklarisana promenljiva k1 na liniji 14
+INFO  05:35:56,643 -  Print count calls = 0
+INFO  05:35:56,643 -  Deklarisanih promenljivih ima = 0
+INFO  05:35:56,643 - ===================================
+INFO  05:35:56,653 - Parsiranje uspesno zavrseno!

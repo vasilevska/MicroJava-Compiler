@@ -331,6 +331,7 @@ public class SemanticPass extends VisitorAdaptor {
     	factor.struct = factor.getType().struct;
     	if(factor.getType().struct.getKind() != Struct.Class)
     		report_error("Klasa od koje se instacira objekat ne postoji", null);
+    	curr.clear();
     }
         
     public void visit(FactorNewParen factor) {
@@ -436,7 +437,7 @@ public class SemanticPass extends VisitorAdaptor {
     
     public void visit(ParentClass classParent) {
     	Obj parent = Tab.find(classParent.getType().getI1());
-    	if(parent == Tab.noObj || parent.getKind() != Struct.Class) {
+    	if(parent == Tab.noObj || parent.getKind() != Obj.Type) {
     		report_error("Ne postoji klasa sa imenom " + parent.getName(),null);
     		return;
     	}
@@ -473,7 +474,7 @@ public class SemanticPass extends VisitorAdaptor {
     
     public void visit(DesignatorIdent des) {
     	des.obj = Tab.find(des.getI1());
-    	if(des.obj == Tab.noObj || (des.obj.getKind()!= Obj.Var && des.obj.getKind() != Obj.Meth && des.obj.getKind() != Obj.Con)) {
+    	if(des.obj == Tab.noObj || (des.obj.getKind()!= Obj.Fld && des.obj.getKind()!= Obj.Var && des.obj.getKind() != Obj.Meth && des.obj.getKind() != Obj.Con)) {
     		report_error("ili ne postoji ili ne treba da mu se pristupa", null);
     		des.obj = Tab.noObj;
     		return;
@@ -496,10 +497,13 @@ public class SemanticPass extends VisitorAdaptor {
     		report_error("nema te klase", null);
     		return;
     	}
-    	
-    	cls.getType().getMembers().forEach(o ->{
-    		if(o.getName().equals(des.getI2())) des.obj = o;
-    	});
+    	if(currentClass == null) {
+    		cls.getType().getMembers().forEach(o ->{
+        		if(o.getName().equals(des.getI2())) des.obj = o;
+        	});
+    	}else {
+    		des.obj = Tab.currentScope().getOuter().findSymbol(des.getI2());
+    	}
     	if(des.obj == null) {
     		report_error("nema trazenog polja u klasi", null);
     	}

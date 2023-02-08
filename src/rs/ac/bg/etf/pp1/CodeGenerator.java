@@ -1,14 +1,15 @@
 package rs.ac.bg.etf.pp1;
 
 
-import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
-import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.ac.bg.etf.pp1.ast.*;
+import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
+import rs.ac.bg.etf.pp1.CounterVisitor.FormParamCounter;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
 import rs.etf.pp1.symboltable.concepts.Obj;
 import rs.etf.pp1.symboltable.concepts.Struct;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -27,6 +28,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private Stack<Integer> counter = new Stack<>();
 	private Stack<Integer> counterOr = new Stack<>();
 	private Vector<Obj> curr = new Vector<Obj>(10);
+	private Vector<Obj> arrlist = new Vector<Obj>(10);
 	private Vector<Struct> types = new Vector<Struct>(10);
 	//private Stack<Vector<Integer>> condFacts = new Stack<>();
 	private Stack<Integer> lastLoop = new Stack<>();
@@ -55,7 +57,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			constrCall = true;
 		}
 	}
-	
+
 	public void visit(FactorNumber cnst) {
 		Obj con = Tab.insert(Obj.Con, "$", Tab.intType);
 		con.setLevel(0);
@@ -190,9 +192,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(MethodNameVoid methodName){
 		
-		if("main".equals(methodName.getI1())){
+		if("main".equals(methodName.getI1())){		
+			vmtable();
 			mainPc = Code.pc;
-			//vmtable();
 		}
 		methodName.obj.setAdr(Code.pc);
 		
@@ -201,8 +203,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		VarCounter varCnt = new VarCounter();
 		methodNode.traverseTopDown(varCnt);
 		
-		FormParamCounter fpCnt = new FormParamCounter();
-		methodNode.traverseTopDown(fpCnt);
 		// Generate the entry
 		Code.put(Code.enter);
 		Code.put(methodName.obj.getLevel());
@@ -339,27 +339,33 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.sub);
 		Code.store(des);
 	}
-		
+	
+	boolean flagListAs = false;
 	public void visit(DesignatorArr des) {
-		curr.add(des.getDesignator().obj);
+		if(des.getParent() instanceof DesignatorStatementListAssign) arrlist.clear();
+		if(des.getDesignator() instanceof DesignatorExpr) flagListAs = true;
+		arrlist.add(des.getDesignator().obj);
 	}
 	
 	public void visit(NoDesignatorArr des) {
-		curr.add(Tab.noObj);
+		if(des.getParent() instanceof DesignatorStatementListAssign) arrlist.clear();
+		arrlist.add(Tab.noObj);
 	}
 	
 	public void visit(DesignatorStatementListAssign stmt) {
-		Obj des = stmt.getAssignDesign().getDesignator().obj;
-		for(int i = 0; i < curr.size(); i++) {
-			if(curr.get(i) != Tab.noObj) {
-				Code.load(des);
-				Code.put(Code.const_);
-				Code.put4(i);
-				Code.put(Code.aload);
-				Code.store(curr.get(i));
+		Obj des = stmt.getAssignDesign().getDesignator().obj; 
+			for(int i = 0; i < arrlist.size(); i++) {
+				if(arrlist.get(i) != Tab.noObj) {
+					Code.load(des);
+					Code.put(Code.const_);
+					if(!flagListAs) Code.put4(i);
+					else Code.put4(arrlist.size()-1-i);
+					Code.put(Code.aload);
+					Code.store(arrlist.get(i));
+				}
 			}
-		}
-		curr.clear();
+		arrlist.clear();
+		flagListAs = false;
 	}
 	
 	public void visit(DesignatorStatementParens stmt) {
@@ -417,6 +423,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		int offset = des.obj.getAdr() - Code.pc;
 		Code.put(Code.call);
 		Code.put2(offset);
+		curr.clear();
 	}
 	
 	
